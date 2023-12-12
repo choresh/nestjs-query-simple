@@ -5,7 +5,7 @@ A thin layer built on top of 'NestJS-Query', enables easy definition of MongoDB/
 
 ## Key Advantages of this Package
 * Provides powerful decorators for entities/DTOs, abstracting away complexities:
-    *  Eliminates the need for multiple decorators to define MongoDB and GraphQL metadata. With a single class and a solitary decorator per property, all commonly required aspects are addressed.
+    *  Eliminates the need for multiple decorators while defining MongoDB/GraphQL metadata. With a single class and a solitary decorator per property, all commonly required aspects are addressed.
     * Simplifies entity relationship definitions (one-to-one, one-to-many, many-to-one) through a singular decorator.
     * Streamlines the definition of many other MongoDB/GraphQL data aspects.
     * Utilizes just four easily comprehensible decorators: `@Dato()`, `@DatoProp()`, `@Dto()`, `@DtoProp()`.
