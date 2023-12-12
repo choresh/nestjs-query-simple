@@ -1,5 +1,5 @@
 import { type Ref } from '@typegoose/typegoose'
-import { Dato, DatoProp, IdentifiableDato } from 'nestjs-query-plain/dist'
+import { Dato, DatoProp, IdentifiableDato } from 'nestjs-query-simple/dist'
 import { SprintDato } from '../../sprints/datos/sprint.dato'
 import { TaskDato } from '../../tasks/datos/task.dato'
 

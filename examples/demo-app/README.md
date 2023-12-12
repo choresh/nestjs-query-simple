@@ -1,7 +1,7 @@
 # demo-app
 
 ## Description
-Sample application, demostrate usage of npm pakage [nestjs-query-plain](https://www.npmjs.com/package/nestjs-query-plain).
+Sample application, demostrate usage of npm pakage [nestjs-query-simple](https://www.npmjs.com/package/nestjs-query-simple).
 
 ## Prerequisites
 * [MongoDB](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/).

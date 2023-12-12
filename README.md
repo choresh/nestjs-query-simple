@@ -1,4 +1,4 @@
-# nestjs-query-plain
+# nestjs-query-simple
 
 ## Description
 A thin layer built on top of 'NestJS-Query', enables easy definition of MongoDB/GraphQL Entities and DTOs within NestJS apps.
@@ -15,7 +15,7 @@ A thin layer built on top of 'NestJS-Query', enables easy definition of MongoDB/
 This package heavily relies on [NestJS-Query](https://tripss.github.io/nestjs-query/), yet it presents its core capabilities in a more focused and simplified manner.
 
 ## Sample application
-See [demo-app](https://github.com/choresh/nestjs-query-plain/blob/main/examples/demo-app/README.md).
+See [demo-app](https://github.com/choresh/nestjs-query-simple/blob/main/examples/demo-app/README.md).
 
 ## Code samples (Entities/DTOs):
 * Dato class (each single decorator in it hide fiew lower level GraphQL/MongoDb decorators): TBD

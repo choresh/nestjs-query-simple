@@ -1,4 +1,4 @@
-import { InputDto, UpdateDto, DtoProp } from 'nestjs-query-plain/dist'
+import { InputDto, UpdateDto, DtoProp } from 'nestjs-query-simple/dist'
 
 @InputDto('TenantBilling')
 export class TenantBillingInputDto {

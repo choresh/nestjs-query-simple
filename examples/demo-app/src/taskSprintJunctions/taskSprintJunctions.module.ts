@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common'
 import { TaskSprintJunctionsService } from './taskSprintJunctions.service'
 import { TaskSprintJunctionsResolver } from './taskSprintJunctions.resolver'
 import { TaskSprintJunctionDato } from './datos/taskSprintJunction.dato'
-import { ResourceHelper } from 'nestjs-query-plain/dist'
+import { ResourceHelper } from 'nestjs-query-simple/dist'
 
 @Module({
   providers: [TaskSprintJunctionsResolver, TaskSprintJunctionsService],

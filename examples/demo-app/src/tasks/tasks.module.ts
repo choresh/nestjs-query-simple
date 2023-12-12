@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common'
 import { TasksService } from './tasks.service'
 import { TasksResolver } from './tasks.resolver'
 import { TaskDato } from './datos/task.dato'
-import { ResourceHelper } from 'nestjs-query-plain/dist'
+import { ResourceHelper } from 'nestjs-query-simple/dist'
 
 @Module({
   providers: [TasksResolver, TasksService],

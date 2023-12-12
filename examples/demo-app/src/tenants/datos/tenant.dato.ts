@@ -1,6 +1,6 @@
 import { UserDato } from '../../users/datos/user.dato'
 import { type Ref } from '@typegoose/typegoose'
-import { Dato, DatoProp, IdentifiableDato } from 'nestjs-query-plain/dist'
+import { Dato, DatoProp, IdentifiableDato } from 'nestjs-query-simple/dist'
 import { TenantBillingDato } from '../../tenantBillings/datos/tenantBilling.dato'
 import { Index } from '@typegoose/typegoose'
 

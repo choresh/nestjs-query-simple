@@ -8,7 +8,7 @@ import { TasksModule } from './tasks/tasks.module'
 import { TenantsModule } from './tenants/tenants.module'
 import { SprintsModule } from './sprints/sprints.module'
 import { TaskSprintJunctionsModule } from './taskSprintJunctions/taskSprintJunctions.module'
-import { AppHelper } from 'nestjs-query-plain/dist'
+import { AppHelper } from 'nestjs-query-simple/dist'
 import { TenantBillingsModule } from './tenantBillings/tenantBillings.module'
 
 @Module({

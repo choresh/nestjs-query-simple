@@ -4,7 +4,7 @@ import { InjectModel } from '@m8a/nestjs-typegoose'
 import { ReturnModelType, type DocumentType } from '@typegoose/typegoose'
 import { TenantBillingDato } from './datos/tenantBilling.dato'
 import { QueryService } from '@ptc-org/nestjs-query-core'
-import { ServiceBase } from 'nestjs-query-plain/dist'
+import { ServiceBase } from 'nestjs-query-simple/dist'
 import { TenantsService } from '../tenants/tenants.service'
 import {
   type DeepPartial,

@@ -1,4 +1,4 @@
-import { InputDto, UpdateDto, DtoProp } from 'nestjs-query-plain/dist'
+import { InputDto, UpdateDto, DtoProp } from 'nestjs-query-simple/dist'
 import { Gender } from '../datos/user.dato'
 
 @InputDto('User')
