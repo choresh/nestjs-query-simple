@@ -18,14 +18,16 @@ This package heavily relies on [NestJS-Query](https://tripss.github.io/nestjs-qu
 See [demo-app](https://github.com/choresh/nestjs-query-simple/blob/main/examples/demo-app/README.md).
 
 ## Code samples (DATOs/DTOs):
-* Dato class (each single decorator in it hide fiew lower level GraphQL/MongoDb decorators): TBD
-* Passing types (enum, class...) to decorator: TBD
-* One-to-one relation: TBD
-* One-to-many relation: TBD
-* Many-to-one relation: TBD
-* Embeded (i.e. not refernce) entity: TBD
-* Virtual (calculated) entity: TBD
-* DTO (cary input/update parameters): TBD
+* Classes:
+    - DATO (each single decorator in it hide fiew lower level GraphQL/MongoDb decorators): TBD
+    - DTO (cary input/update parameters): TBD
+    - Embeded (i.e. not refernced) : TBD
+    - Virtual (calculated): TBD
+* Properties:
+    - Passing types (enum, class...) to decorator: TBD
+    - One-to-one relation: TBD
+    - One-to-many relation: TBD
+    - Many-to-one relation: TBD
 
 ## Code samples (modules and services):
 * Resource service: TBD
