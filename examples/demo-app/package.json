@@ -60,6 +60,8 @@
     "testEnvironment": "node"
   },
   "dependencies": {
-    "nestjs-query-simple": "1.0.0"
+    "nestjs-query-simple": "1.0.0",
+    "@typegoose/typegoose": "^12.0.0",
+    "@m8a/nestjs-typegoose": "^12.0.0"
   }
 }
