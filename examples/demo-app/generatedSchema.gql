@@ -1,0 +1,464 @@
+type TaskComment {
+  id: ID!
+  text: String!
+}
+
+type TaskDetails {
+  id: ID!
+  title: String!
+  description: String!
+}
+
+type Sprint {
+  id: ID!
+  name: String!
+  taskSprintJunctions: [TaskSprintJunction!]
+}
+
+type TaskSprintJunction {
+  id: ID!
+  taskId: String!
+  sprintId: String!
+  task: Task!
+  sprint: Sprint!
+}
+
+type Task {
+  id: ID!
+  name: String!
+  userId: String!
+  user: User!
+  details: TaskDetails!
+  comments: [TaskComment!]
+  taskSprintJunctions: [TaskSprintJunction!]
+}
+
+type User {
+  id: ID!
+  name: String!
+  tasks: [Task!]
+  tenantId: String!
+  tenant: Tenant!
+  gender: Gender!
+  age: Float!
+}
+
+enum Gender {
+  female
+  male
+}
+
+type TenantBilling {
+  id: ID!
+  taxNumber: String!
+  phoneNumber: String!
+  tenant: Tenant!
+  tenantId: String!
+}
+
+type Tenant {
+  id: ID!
+  name: String!
+  users(
+    """Limit or page results."""
+    paging: OffsetPaging! = {limit: 10}
+
+    """Specify to filter the records returned."""
+    filter: UserFilter! = {}
+
+    """Specify to sort results."""
+    sorting: [UserSort!]! = []
+  ): TenantUsersConnection!
+  tenantBilling: TenantBilling
+  tenantBillingId: String
+}
+
+input OffsetPaging {
+  """Limit the number of records returned"""
+  limit: Int
+
+  """Offset to start returning records from"""
+  offset: Int
+}
+
+input UserFilter {
+  and: [UserFilter!]
+  or: [UserFilter!]
+  id: IDFilterComparison
+  name: StringFieldComparison
+  tenantId: StringFieldComparison
+  tenant: TenantDatoFilterComparison
+  gender: GenderFilterComparison
+  age: NumberFieldComparison
+  tasks: UserFilterTaskFilter
+}
+
+input IDFilterComparison {
+  is: Boolean
+  isNot: Boolean
+  eq: ID
+  neq: ID
+  gt: ID
+  gte: ID
+  lt: ID
+  lte: ID
+  like: ID
+  notLike: ID
+  iLike: ID
+  notILike: ID
+  in: [ID!]
+  notIn: [ID!]
+}
+
+input StringFieldComparison {
+  is: Boolean
+  isNot: Boolean
+  eq: String
+  neq: String
+  gt: String
+  gte: String
+  lt: String
+  lte: String
+  like: String
+  notLike: String
+  iLike: String
+  notILike: String
+  in: [String!]
+  notIn: [String!]
+}
+
+input TenantDatoFilterComparison {
+  is: Boolean
+  isNot: Boolean
+  eq: TenantNonEmbeddedInput
+  neq: TenantNonEmbeddedInput
+  gt: TenantNonEmbeddedInput
+  gte: TenantNonEmbeddedInput
+  lt: TenantNonEmbeddedInput
+  lte: TenantNonEmbeddedInput
+  like: TenantNonEmbeddedInput
+  notLike: TenantNonEmbeddedInput
+  iLike: TenantNonEmbeddedInput
+  notILike: TenantNonEmbeddedInput
+  in: [TenantNonEmbeddedInput!]
+  notIn: [TenantNonEmbeddedInput!]
+}
+
+input GenderFilterComparison {
+  is: Boolean
+  isNot: Boolean
+  eq: Gender
+  neq: Gender
+  gt: Gender
+  gte: Gender
+  lt: Gender
+  lte: Gender
+  like: Gender
+  notLike: Gender
+  iLike: Gender
+  notILike: Gender
+  in: [Gender!]
+  notIn: [Gender!]
+}
+
+input NumberFieldComparison {
+  is: Boolean
+  isNot: Boolean
+  eq: Float
+  neq: Float
+  gt: Float
+  gte: Float
+  lt: Float
+  lte: Float
+  in: [Float!]
+  notIn: [Float!]
+  between: NumberFieldComparisonBetween
+  notBetween: NumberFieldComparisonBetween
+}
+
+input NumberFieldComparisonBetween {
+  lower: Float!
+  upper: Float!
+}
+
+input UserFilterTaskFilter {
+  and: [UserFilterTaskFilter!]
+  or: [UserFilterTaskFilter!]
+  id: IDFilterComparison
+  name: StringFieldComparison
+  userId: StringFieldComparison
+  user: UserDatoFilterComparison
+  details: UserFilterTaskFilterTaskDetailsFilter
+}
+
+input UserDatoFilterComparison {
+  is: Boolean
+  isNot: Boolean
+  eq: UserNonEmbeddedInput
+  neq: UserNonEmbeddedInput
+  gt: UserNonEmbeddedInput
+  gte: UserNonEmbeddedInput
+  lt: UserNonEmbeddedInput
+  lte: UserNonEmbeddedInput
+  like: UserNonEmbeddedInput
+  notLike: UserNonEmbeddedInput
+  iLike: UserNonEmbeddedInput
+  notILike: UserNonEmbeddedInput
+  in: [UserNonEmbeddedInput!]
+  notIn: [UserNonEmbeddedInput!]
+}
+
+input UserFilterTaskFilterTaskDetailsFilter {
+  and: [UserFilterTaskFilterTaskDetailsFilter!]
+  or: [UserFilterTaskFilterTaskDetailsFilter!]
+  id: IDFilterComparison
+  title: StringFieldComparison
+  description: StringFieldComparison
+}
+
+input UserSort {
+  field: UserSortFields!
+  direction: SortDirection!
+  nulls: SortNulls
+}
+
+enum UserSortFields {
+  id
+  name
+  tenantId
+  tenant
+  gender
+  age
+}
+
+"""Sort Directions"""
+enum SortDirection {
+  ASC
+  DESC
+}
+
+"""Sort Nulls Options"""
+enum SortNulls {
+  NULLS_FIRST
+  NULLS_LAST
+}
+
+type DeleteManyResponse {
+  """The number of records deleted."""
+  deletedCount: Int!
+}
+
+type TenantDeleteResponse {
+  id: ID
+  name: String
+  users: [User!]
+  tenantBilling: TenantBilling
+  tenantBillingId: String
+}
+
+type UpdateManyResponse {
+  """The number of records updated."""
+  updatedCount: Int!
+}
+
+type OffsetPageInfo {
+  """true if paging forward and there are more records."""
+  hasNextPage: Boolean
+
+  """true if paging backwards and there are more records."""
+  hasPreviousPage: Boolean
+}
+
+type TenantConnection {
+  """Paging information"""
+  pageInfo: OffsetPageInfo!
+
+  """Array of nodes."""
+  nodes: [Tenant!]!
+}
+
+type TenantUsersConnection {
+  """Paging information"""
+  pageInfo: OffsetPageInfo!
+
+  """Array of nodes."""
+  nodes: [User!]!
+}
+
+input TaskCommentEmbeddedInput {
+  text: String!
+}
+
+input TaskDetailsEmbeddedInput {
+  title: String!
+  description: String!
+}
+
+input SprintNonEmbeddedInput {
+  name: String!
+  taskSprintJunctions: [TaskSprintJunctionNonEmbeddedInput!]
+}
+
+input TaskSprintJunctionNonEmbeddedInput {
+  taskId: String!
+  sprintId: String!
+  task: TaskNonEmbeddedInput!
+  sprint: SprintNonEmbeddedInput!
+}
+
+input TaskNonEmbeddedInput {
+  name: String!
+  userId: String!
+  user: UserNonEmbeddedInput!
+  details: TaskDetailsEmbeddedInput!
+  comments: [TaskCommentEmbeddedInput!]
+  taskSprintJunctions: [TaskSprintJunctionNonEmbeddedInput!]
+}
+
+input UserNonEmbeddedInput {
+  name: String!
+  tasks: [TaskNonEmbeddedInput!]
+  tenantId: String!
+  tenant: TenantNonEmbeddedInput!
+  gender: Gender!
+  age: Float!
+}
+
+input TenantBillingNonEmbeddedInput {
+  taxNumber: String!
+  phoneNumber: String!
+  tenant: TenantNonEmbeddedInput!
+  tenantId: String!
+}
+
+input TenantNonEmbeddedInput {
+  name: String!
+  users: [UserNonEmbeddedInput!]
+  tenantBilling: TenantBillingNonEmbeddedInput
+  tenantBillingId: String
+}
+
+type Query {
+  tenant(
+    """The id of the record to find."""
+    id: ID!
+  ): Tenant!
+  tenants(
+    """Limit or page results."""
+    paging: OffsetPaging! = {limit: 10}
+
+    """Specify to filter the records returned."""
+    filter: TenantFilter! = {}
+
+    """Specify to sort results."""
+    sorting: [TenantSort!]! = []
+  ): TenantConnection!
+}
+
+input TenantFilter {
+  and: [TenantFilter!]
+  or: [TenantFilter!]
+  id: IDFilterComparison
+  name: StringFieldComparison
+  tenantBilling: TenantFilterTenantBillingFilter
+  users: TenantFilterUserFilter
+}
+
+input TenantFilterTenantBillingFilter {
+  and: [TenantFilterTenantBillingFilter!]
+  or: [TenantFilterTenantBillingFilter!]
+  id: IDFilterComparison
+  taxNumber: StringFieldComparison
+  phoneNumber: StringFieldComparison
+  tenant: TenantDatoFilterComparison
+  tenantId: StringFieldComparison
+}
+
+input TenantFilterUserFilter {
+  and: [TenantFilterUserFilter!]
+  or: [TenantFilterUserFilter!]
+  id: IDFilterComparison
+  name: StringFieldComparison
+  tenantId: StringFieldComparison
+  tenant: TenantDatoFilterComparison
+  gender: GenderFilterComparison
+  age: NumberFieldComparison
+}
+
+input TenantSort {
+  field: TenantSortFields!
+  direction: SortDirection!
+  nulls: SortNulls
+}
+
+enum TenantSortFields {
+  id
+  name
+}
+
+type Mutation {
+  createOneTenant(input: CreateOneTenantInput!): Tenant!
+  createManyTenants(input: CreateManyTenantsInput!): [Tenant!]!
+  updateOneTenant(input: UpdateOneTenantInput!): Tenant!
+  updateManyTenants(input: UpdateManyTenantsInput!): UpdateManyResponse!
+  deleteOneTenant(input: DeleteOneTenantInput!): TenantDeleteResponse!
+  deleteManyTenants(input: DeleteManyTenantsInput!): DeleteManyResponse!
+}
+
+input CreateOneTenantInput {
+  """The record to create"""
+  tenant: TenantInput!
+}
+
+input TenantInput {
+  name: String!
+}
+
+input CreateManyTenantsInput {
+  """Array of records to create"""
+  tenants: [TenantInput!]!
+}
+
+input UpdateOneTenantInput {
+  """The id of the record to update"""
+  id: ID!
+
+  """The update to apply."""
+  update: TenantUpdate!
+}
+
+input TenantUpdate {
+  name: String
+}
+
+input UpdateManyTenantsInput {
+  """Filter used to find fields to update"""
+  filter: TenantUpdateFilter!
+
+  """The update to apply to all records found using the filter"""
+  update: TenantUpdate!
+}
+
+input TenantUpdateFilter {
+  and: [TenantUpdateFilter!]
+  or: [TenantUpdateFilter!]
+  id: IDFilterComparison
+  name: StringFieldComparison
+}
+
+input DeleteOneTenantInput {
+  """The id of the record to delete."""
+  id: ID!
+}
+
+input DeleteManyTenantsInput {
+  """Filter to find records to delete"""
+  filter: TenantDeleteFilter!
+}
+
+input TenantDeleteFilter {
+  and: [TenantDeleteFilter!]
+  or: [TenantDeleteFilter!]
+  id: IDFilterComparison
+  name: StringFieldComparison
+}
