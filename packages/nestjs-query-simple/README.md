@@ -19,7 +19,7 @@ See [demo-app](https://github.com/choresh/nestjs-query-simple/blob/main/examples
 
 ## Code samples (DATOs/DTOs):
 * Dato class (each single decorator in it hide fiew lower level GraphQL/MongoDb decorators): TBD
-* Passing types (enum, class...) to deecorator: TBD
+* Passing types (enum, class...) to decorator: TBD
 * One-to-one relation: TBD
 * One-to-many relation: TBD
 * Many-to-one relation: TBD
