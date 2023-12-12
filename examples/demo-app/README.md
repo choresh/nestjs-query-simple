@@ -249,7 +249,7 @@ async function down () {
 module.exports = { up, down }
 ```
 
-## How to fix your local MongoDb installation (cvonvert a Standalone to a Replica Set), optional, required only for tests with locks
+## How to fix your local MongoDb installation (convert a Standalone to a Replica Set), optional, required only for tests with locks
 * Run those commands to kill the MongoDB process:
   ```
   pgrep mongo
