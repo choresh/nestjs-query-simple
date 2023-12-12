@@ -1,6 +1,6 @@
 schema: ./generatedSchema.gql
 documents: []
 generates:
-  generated/graphql.ts:
+  generatedGraphql.ts:
     plugins:
       - 'typescript'
