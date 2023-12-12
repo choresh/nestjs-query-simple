@@ -10,26 +10,26 @@ Sample application, demostrate usage of npm pakage [nestjs-query-simple](https:/
 ## Install the app
 Run this command within the app root folder:
 ``` bash
-$ npm install
+npm install
 ```
 
 ## Build the app
-Run this command within the app rootfolder:
+Run this command within the app's root folder:
 ``` bash
-$ npm run build
+npm run build
 ```
 
 ## Running the app
-Run those commands within the app rootfolder:
+Run those commands within the app's root folder:
 ``` bash
 # development
-$ npm run start
+npm run start
 
 # watch mode
-$ npm run start:dev
+npm run start:dev
 
 # production mode
-$ npm run start:prod
+npm run start:prod
 ```
 
 ## Using the app
@@ -38,16 +38,16 @@ Open browser, and navigate to the folowing URLs:
 * Graphql playground: http://localhost:3000/graphql.
 
 ## Test
-Run those commands within the app rootfolder:
+Run those commands within the app's root folder:
 ```bash
 # unit tests
-$ npm run test
+npm run test
 
 # e2e tests
-$ npm run test:e2e
+npm run test:e2e
 
 # test coverage
-$ npm run test:cov
+npm run test:cov
 ```
 
 ## NestJs docs, code and samples
@@ -70,15 +70,15 @@ $ npm run test:cov
 ## How to scaffold a new project
 1. Run this command within the project parent folder:
     ``` bash
-    $ nest new <your-project-name>
+    nest new <your-project-name>
     ```
 2. At file 'tsconfig.json', at 'compilerOptions' object, set `"strictNullChecks": true`.
 3. Fix syntax errors accurding result of the linter.
 4. Another way: invoke the linter - run this command within the app root folder:
     ``` bash
-    $ npm run prettier:write
+    npm run prettier:write
     ```
-5. At app rootfolder, add file '.gitignore', with this content:
+5. At app's root folder, add file '.gitignore', with this content:
     ``` bash
     # Dependency directory
     node_modules
@@ -91,23 +91,19 @@ $ npm run test:cov
     ```
 
 ## How to scaffold a new resource
-1. Run this command within the app rootfolder:
+1. Run this command within the app's root folder:
     ``` bash
-    $ npx nest g resource
+    npx nest g resource
     ```
 2. The CLI will prompt you with a few questions, in order to create the desiared DATOs (Entities), DTOs, Module, Resolver, Service, and Tests.
 * Standard answers:
   - When CLI ask `What transport layer do you use` - you should usally select option `GraphQL (code first)`.
   - When CLI ask `Would you like to generate CRUD entry points?` - you should usally select option `n`.
-3. Create the relevant entity/dto at our `entities` library:
-* Create new root folder (under the `entities` library 'src' folder), its name should be the `singular form` of the new resource.
-* Under it - create `dtos` and `entities` folders.
-* Define new entity/dto classes (take sample from exists classes), main principals:
-  - `The entity` conatains all fields we want to store in DB.
-  - `The main dto` (i.e. not the input/output dto) contains all the field which we want to expose in resuls of from standard CRUD operations (i.e. GraphQL mutation/query), usally it will have the same structure as the entity.
-  - `The input dto` contains all the field which we want to set in creation of new object (usally - all of them will be mandatories).
-  - `The update dto` contains all the field which we want to set in updating of exists object (usally - all of them will be optionals).
-  - Fields at `main dto` and at `entity` - will be markes as `mandatory/optional` accurding the `input dto` (filds will be marked as mandatory if they appear as mandatory at the input dto).
+3. Define new entity/dto classes (take sample from exists classes), main principals:
+  - `The dato` conatains all fields we want to store in DB and/or expose in GraphQL results.
+  - `The input dto` contains all the field we want to set in creation of new object (usally - all of them will be mandatories).
+  - `The update dto` contains all the field we want to set in updating of exists object (usally - all of them will be optionals).
+  - Fields at `dato` - will be markes as `mandatory/optional` accurding the `input dto` (filds will be marked as mandatory if they appear as mandatory at the input dto).
 * Add 'index.ts' file within each folder, include your new root folder (take sample from exists index files, be aware that the one in root folder is a bit diffrent).
 4. Fix your new `service`:
 * Replace entire content of your new `service` file with this content:
@@ -132,12 +128,6 @@ $ npm run test:cov
       }
     }
     ```
-* Use the IDE's commands in order to implement the required inherited methods.
-* Fix the generated methods:
-  - Delete the 'throw' statements.
-  - Add 'async' indication before the metod names.
-  - Move the methods under the constructor,
-  - Wrap the methods with region start/end statements (the start should seen like `// #region DB Event Handlers`).
 5. Fix your new `resolver`:
 * Replace entire content of your new `resolver` file with this content:
     ```
@@ -180,11 +170,11 @@ $ npm run test:cov
 4. Fix syntax errors accurding result of the linter.
 5. Another way: invoke the linter - run this command within the app root folder:
     ``` bash
-    $ npm run prettier:write
+    npm run prettier:write
     ```
 
 ## How to continue development of new resource
-1. Add properties and decortators to entity(ies) and DTOs of your new resource (see samples at other resources).
+1. Add properties and decortators to DATO and DTOs of your new resource (see samples DATOs/DTOs).
 2. Add missing endpoints at 'Resolver' of your new resource (if any).
 2. Validate that your new resource exposed correctly at Graphql playground (http://localhost:3000/graphql).
 3. Add/fix tests for your new resource:
@@ -197,13 +187,13 @@ $ npm run test:cov
       * Fix/test the new testing code.
 
 ## Manage MongoDb migrations
-Run command in this structure within the app rootfolder:
+Run command in this structure within the app's root folder:
 ```
-$ npm run migrate [command] [options]
+npm run migrate [command] [options]
 ```
 Usage:
 ``` bash
-$ npm run migrate [[create|up|down<migration-name>]|list|prune] [optional options]
+npm run migrate [[create|up|down<migration-name>]|list|prune] [optional options]
 ```
 Commands:
 ```
@@ -262,10 +252,10 @@ module.exports = { up, down }
 ## How to fix your local MongoDb installation (cvonvert a Standalone to a Replica Set), optional, required only for tests with locks
 * Run those commands to kill the MongoDB process:
   ```
-  % pgrep mongo
-  % kill <MongoDb Process ID>
+  pgrep mongo
+  kill <MongoDb Process ID>
   ```
-* Run this command within the app rootfolder, to start MongoDb with the required configuration (do it in dedicated terminal, any close of the terminal will delete the DB data):
+* Run this command within the app's root folder, to start MongoDb with the required configuration (do it in dedicated terminal, closing of the terminal will delete the DB data):
   ```
   run-rs npm module
   ```
