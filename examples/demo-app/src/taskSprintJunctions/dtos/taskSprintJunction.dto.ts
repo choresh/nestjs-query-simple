@@ -1,4 +1,4 @@
-import { InputDto, UpdateDto, DtoProp } from 'nestjs-query-simple/dist'
+import { InputDto, UpdateDto, DtoProp } from 'nestjs-query-simple'
 
 @InputDto('TaskSprintJunction')
 export class TaskSprintJunctionInputDto {

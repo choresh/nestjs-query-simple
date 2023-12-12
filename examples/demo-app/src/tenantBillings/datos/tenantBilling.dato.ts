@@ -1,4 +1,4 @@
-import { Dato, DatoProp, IdentifiableDato } from 'nestjs-query-simple/dist'
+import { Dato, DatoProp, IdentifiableDato } from 'nestjs-query-simple'
 import { type Ref } from '@typegoose/typegoose'
 import { TenantDato } from '../../tenants/datos/tenant.dato'
 import { Index } from '@typegoose/typegoose'

@@ -1,6 +1,6 @@
 import { Index, type Ref } from '@typegoose/typegoose'
 import { TaskDato } from '../../tasks/datos/task.dato'
-import { Dato, DatoProp, IdentifiableDato } from 'nestjs-query-simple/dist'
+import { Dato, DatoProp, IdentifiableDato } from 'nestjs-query-simple'
 import { TenantDato } from '../../tenants/datos/tenant.dato'
 import { registerEnumType } from '@nestjs/graphql'
 

@@ -1,4 +1,4 @@
-import { Dato, DatoProp, IdentifiableDato } from 'nestjs-query-simple/dist'
+import { Dato, DatoProp, IdentifiableDato } from 'nestjs-query-simple'
 import { TaskCommentDato } from './embeddeds/task-comment.dato'
 import { TaskDetailsDato } from './embeddeds/task-details.dato'
 import { UserDato } from '../../users/datos/user.dato'

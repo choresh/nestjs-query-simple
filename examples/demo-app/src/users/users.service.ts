@@ -2,7 +2,7 @@ import { ReturnModelType } from '@typegoose/typegoose'
 import { InjectModel } from '@m8a/nestjs-typegoose'
 import { Gender, UserDato } from './datos/user.dato'
 import { QueryService } from '@ptc-org/nestjs-query-core'
-import { Dato, DatoProp, ServiceBase } from 'nestjs-query-simple/dist'
+import { Dato, DatoProp, ServiceBase } from 'nestjs-query-simple'
 
 async function sleep (ms: number): Promise<void> {
   await new Promise((resolve) => setTimeout(resolve, ms))

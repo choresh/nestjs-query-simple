@@ -1,4 +1,4 @@
-import { Dato, DatoProp, IdentifiableDato } from 'nestjs-query-simple/dist'
+import { Dato, DatoProp, IdentifiableDato } from 'nestjs-query-simple'
 
 @Dato({ name: 'TaskDetails' })
 export class TaskDetailsDato extends IdentifiableDato {

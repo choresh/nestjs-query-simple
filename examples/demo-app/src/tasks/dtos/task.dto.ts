@@ -1,4 +1,4 @@
-import { InputDto, UpdateDto, DtoProp } from 'nestjs-query-simple/dist'
+import { InputDto, UpdateDto, DtoProp } from 'nestjs-query-simple'
 import { TaskDetailsInputDto, TaskDetailsUpdateDto } from './embeddeds/task-details.dto'
 import { TaskCommentInputDto, TaskCommentUpdateDto } from './embeddeds/task-comment.dto'
 
