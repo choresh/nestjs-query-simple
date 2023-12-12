@@ -109,7 +109,7 @@ npm run test:cov
 * Replace entire content of your new `service` file with this content:
     ```
     import { ServiceBase } from "nestjs-query-simple";
-    import { <type of the resource dto class>, <type of the resource entity class> } from "<your entities/dtos location>";
+    import { <type of the resource dto class>, <type of the resource dato class> } from "<your entities/dtos location>";
     import {
     QueryService,
     } from "@ptc-org/nestjs-query-core";
@@ -121,7 +121,7 @@ npm run test:cov
       private readonly logger = new Logger(this);
 
       constructor(
-        @InjectModel(<type of the resource entity class>)
+        @InjectModel(<type of the resource dato class>)
         model: ReturnModelType<typeof <type of the resource dto class>>,
       ) {
         super(model);
@@ -153,13 +153,13 @@ npm run test:cov
     import { <type of your service class> } from "<path of your service file>";
     import { <type of your resolver class> } from "<path of your resolver file>";
     import { ResourceHelper } from "nestjs-query-simple";
-    import { <type of the resource dto class>, <type of the resource entity class> } from "<your entities/dtos location>";
+    import { <type of the resource dto class>, <type of the resource dato class> } from "<your entities/dtos location>";
 
     @Module({
       imports: [
         ResourceHelper.forFeature({
           dtos: [{ DTOClass: <type of the resource dto class> }],
-          entities: [<type of the resource entity class>],
+          entities: [<type of the resource dato class>],
         }),
       ],
       providers: [<type of your resolver class>, <type of your service class>],
@@ -223,7 +223,7 @@ Sample of (modified) migration file (in this sample - change property name from 
 ``` javascript
 const mongoose = require('mongoose')
 const typegoose = require('@typegoose/typegoose')
-const userDato = require('./../dist/users/entities/user.entity')
+const userDato = require('./../dist/users/entities/user.dato')
 const userModel = typegoose.getModelForClass(userDato.User)
 
 async function up () {
@@ -232,7 +232,7 @@ async function up () {
     $rename: { department: 'division' }
   }, {
     multi: true,
-    strict: false // The 'strict: false' allows to update keys that currently not exist in the entity class.
+    strict: false // The 'strict: false' allows to update keys that currently not exist in the dato class.
   })
 }
 
@@ -242,7 +242,7 @@ async function down () {
     $rename: { division: 'department' }
   }, {
     multi: true,
-    strict: false // The 'strict: false' allows to update keys that currently not exist in the entity class.
+    strict: false // The 'strict: false' allows to update keys that currently not exist in the dato class.
   })
 }
 
