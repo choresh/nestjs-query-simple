@@ -11,8 +11,8 @@ import * as ts from 'typescript'
 import * as fs from 'fs'
 import * as path from 'path'
 
-const SRC_DIR_PATH = 'src'
-const TAR_FILE_PATH = 'generatedSchema.gql'
+const SRC_DIR_PATH = "./src";
+const TAR_FILE_PATH = "./codeGeneration/generatedSchema.gql";
 
 class SchemaGenerator {
   public static async generate (): Promise<void> {
@@ -53,7 +53,7 @@ class SchemaGenerator {
                     decorator.expression.expression.text === 'Resolver'
             )
     ) {
-      const resolverFilePath = (node.parent as any).fileName.replace(`${srcDirPath}/`, './').replace('.ts', '')
+      const resolverFilePath = path.join('..', (node.parent as any).fileName.replace(".ts", ""));
       const resolverClass = Object.values(require(resolverFilePath))[0] as Function
       resolverClasses.push(resolverClass)
     }

@@ -1,0 +1,6 @@
+schema: ./codeGeneration/generatedSchema.gql # Input file path.
+documents: []
+generates:
+  ./generatedApi.ts: # Output file path.
+    plugins:
+      - 'typescript'
