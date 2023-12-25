@@ -19,7 +19,7 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "migrate": "./node_modules/.bin/migrate",
-    "generate-graphql-ts": "node ./dist/codeGeneration/schemaGenerator.js && npx graphql-codegen --config ./codeGeneration/generatedGraphql.yml"
+    "generate-graphql-ts": "node ./dist/codeGeneration/schemaGenerator.js && npx graphql-codegen --config ./codeGeneration/codegenConfig.yml"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^5.0.0",
