@@ -20,7 +20,6 @@
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "migrate": "./node_modules/.bin/migrate",
     "generate-graphql-ts": "node dist/src/schemaGenerator.js && npx graphql-codegen --config generatedGraphql.yml"
- 
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^5.0.0",

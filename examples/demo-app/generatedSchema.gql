@@ -411,28 +411,20 @@ type SprintTaskSprintJunctionsConnection {
   nodes: [TaskSprintJunction!]!
 }
 
-type TenantDeleteResponse {
+type TaskSprintJunctionDeleteResponse {
   id: ID
-  name: String
-  users: [User!]
-  tenantBilling: TenantBilling
-  tenantBillingId: String
+  taskId: String
+  sprintId: String
+  task: Task
+  sprint: Sprint
 }
 
-type TenantConnection {
+type TaskSprintJunctionConnection {
   """Paging information"""
   pageInfo: OffsetPageInfo!
 
   """Array of nodes."""
-  nodes: [Tenant!]!
-}
-
-type TenantUsersConnection {
-  """Paging information"""
-  pageInfo: OffsetPageInfo!
-
-  """Array of nodes."""
-  nodes: [User!]!
+  nodes: [TaskSprintJunction!]!
 }
 
 type TaskDeleteResponse {
@@ -461,22 +453,6 @@ type TaskTaskSprintJunctionsConnection {
   nodes: [TaskSprintJunction!]!
 }
 
-type TaskSprintJunctionDeleteResponse {
-  id: ID
-  taskId: String
-  sprintId: String
-  task: Task
-  sprint: Sprint
-}
-
-type TaskSprintJunctionConnection {
-  """Paging information"""
-  pageInfo: OffsetPageInfo!
-
-  """Array of nodes."""
-  nodes: [TaskSprintJunction!]!
-}
-
 type TenantBillingDeleteResponse {
   id: ID
   taxNumber: String
@@ -491,6 +467,30 @@ type TenantBillingConnection {
 
   """Array of nodes."""
   nodes: [TenantBilling!]!
+}
+
+type TenantDeleteResponse {
+  id: ID
+  name: String
+  users: [User!]
+  tenantBilling: TenantBilling
+  tenantBillingId: String
+}
+
+type TenantConnection {
+  """Paging information"""
+  pageInfo: OffsetPageInfo!
+
+  """Array of nodes."""
+  nodes: [Tenant!]!
+}
+
+type TenantUsersConnection {
+  """Paging information"""
+  pageInfo: OffsetPageInfo!
+
+  """Array of nodes."""
+  nodes: [User!]!
 }
 
 type GenderInfo {
@@ -583,20 +583,6 @@ input SprintNonEmbeddedInput {
 }
 
 type Query {
-  tenant(
-    """The id of the record to find."""
-    id: ID!
-  ): Tenant!
-  tenants(
-    """Limit or page results."""
-    paging: OffsetPaging! = {limit: 10}
-
-    """Specify to filter the records returned."""
-    filter: TenantFilter! = {}
-
-    """Specify to sort results."""
-    sorting: [TenantSort!]! = []
-  ): TenantConnection!
   sprint(
     """The id of the record to find."""
     id: ID!
@@ -611,20 +597,6 @@ type Query {
     """Specify to sort results."""
     sorting: [SprintSort!]! = []
   ): SprintConnection!
-  task(
-    """The id of the record to find."""
-    id: ID!
-  ): Task!
-  tasks(
-    """Limit or page results."""
-    paging: OffsetPaging! = {limit: 10}
-
-    """Specify to filter the records returned."""
-    filter: TaskFilter! = {}
-
-    """Specify to sort results."""
-    sorting: [TaskSort!]! = []
-  ): TaskConnection!
   taskSprintJunction(
     """The id of the record to find."""
     id: ID!
@@ -639,6 +611,20 @@ type Query {
     """Specify to sort results."""
     sorting: [TaskSprintJunctionSort!]! = []
   ): TaskSprintJunctionConnection!
+  task(
+    """The id of the record to find."""
+    id: ID!
+  ): Task!
+  tasks(
+    """Limit or page results."""
+    paging: OffsetPaging! = {limit: 10}
+
+    """Specify to filter the records returned."""
+    filter: TaskFilter! = {}
+
+    """Specify to sort results."""
+    sorting: [TaskSort!]! = []
+  ): TaskConnection!
   tenantBilling(
     """The id of the record to find."""
     id: ID!
@@ -653,6 +639,20 @@ type Query {
     """Specify to sort results."""
     sorting: [TenantBillingSort!]! = []
   ): TenantBillingConnection!
+  tenant(
+    """The id of the record to find."""
+    id: ID!
+  ): Tenant!
+  tenants(
+    """Limit or page results."""
+    paging: OffsetPaging! = {limit: 10}
+
+    """Specify to filter the records returned."""
+    filter: TenantFilter! = {}
+
+    """Specify to sort results."""
+    sorting: [TenantSort!]! = []
+  ): TenantConnection!
   user(
     """The id of the record to find."""
     id: ID!
@@ -672,47 +672,6 @@ type Query {
   demonstrateTransactionBlock: [User!]!
   demonstrateTransactionFlow: [User!]!
   demonstrateTransactionLock: [User!]!
-}
-
-input TenantFilter {
-  and: [TenantFilter!]
-  or: [TenantFilter!]
-  id: IDFilterComparison
-  name: StringFieldComparison
-  tenantBilling: TenantFilterTenantBillingFilter
-  users: TenantFilterUserFilter
-}
-
-input TenantFilterTenantBillingFilter {
-  and: [TenantFilterTenantBillingFilter!]
-  or: [TenantFilterTenantBillingFilter!]
-  id: IDFilterComparison
-  taxNumber: StringFieldComparison
-  phoneNumber: StringFieldComparison
-  tenant: TenantDatoFilterComparison
-  tenantId: StringFieldComparison
-}
-
-input TenantFilterUserFilter {
-  and: [TenantFilterUserFilter!]
-  or: [TenantFilterUserFilter!]
-  id: IDFilterComparison
-  name: StringFieldComparison
-  tenantId: StringFieldComparison
-  tenant: TenantDatoFilterComparison
-  gender: GenderFilterComparison
-  age: NumberFieldComparison
-}
-
-input TenantSort {
-  field: TenantSortFields!
-  direction: SortDirection!
-  nulls: SortNulls
-}
-
-enum TenantSortFields {
-  id
-  name
 }
 
 input SprintFilter {
@@ -768,101 +727,84 @@ enum TenantBillingSortFields {
   tenantId
 }
 
+input TenantFilter {
+  and: [TenantFilter!]
+  or: [TenantFilter!]
+  id: IDFilterComparison
+  name: StringFieldComparison
+  tenantBilling: TenantFilterTenantBillingFilter
+  users: TenantFilterUserFilter
+}
+
+input TenantFilterTenantBillingFilter {
+  and: [TenantFilterTenantBillingFilter!]
+  or: [TenantFilterTenantBillingFilter!]
+  id: IDFilterComparison
+  taxNumber: StringFieldComparison
+  phoneNumber: StringFieldComparison
+  tenant: TenantDatoFilterComparison
+  tenantId: StringFieldComparison
+}
+
+input TenantFilterUserFilter {
+  and: [TenantFilterUserFilter!]
+  or: [TenantFilterUserFilter!]
+  id: IDFilterComparison
+  name: StringFieldComparison
+  tenantId: StringFieldComparison
+  tenant: TenantDatoFilterComparison
+  gender: GenderFilterComparison
+  age: NumberFieldComparison
+}
+
+input TenantSort {
+  field: TenantSortFields!
+  direction: SortDirection!
+  nulls: SortNulls
+}
+
+enum TenantSortFields {
+  id
+  name
+}
+
 type Mutation {
-  createOneTenant(input: CreateOneTenantInput!): Tenant!
-  createManyTenants(input: CreateManyTenantsInput!): [Tenant!]!
-  updateOneTenant(input: UpdateOneTenantInput!): Tenant!
-  updateManyTenants(input: UpdateManyTenantsInput!): UpdateManyResponse!
-  deleteOneTenant(input: DeleteOneTenantInput!): TenantDeleteResponse!
-  deleteManyTenants(input: DeleteManyTenantsInput!): DeleteManyResponse!
   createOneSprint(input: CreateOneSprintInput!): Sprint!
   createManySprints(input: CreateManySprintsInput!): [Sprint!]!
   updateOneSprint(input: UpdateOneSprintInput!): Sprint!
   updateManySprints(input: UpdateManySprintsInput!): UpdateManyResponse!
   deleteOneSprint(input: DeleteOneSprintInput!): SprintDeleteResponse!
   deleteManySprints(input: DeleteManySprintsInput!): DeleteManyResponse!
-  createOneTask(input: CreateOneTaskInput!): Task!
-  createManyTasks(input: CreateManyTasksInput!): [Task!]!
-  updateOneTask(input: UpdateOneTaskInput!): Task!
-  updateManyTasks(input: UpdateManyTasksInput!): UpdateManyResponse!
-  deleteOneTask(input: DeleteOneTaskInput!): TaskDeleteResponse!
-  deleteManyTasks(input: DeleteManyTasksInput!): DeleteManyResponse!
   createOneTaskSprintJunction(input: CreateOneTaskSprintJunctionInput!): TaskSprintJunction!
   createManyTaskSprintJunctions(input: CreateManyTaskSprintJunctionsInput!): [TaskSprintJunction!]!
   updateOneTaskSprintJunction(input: UpdateOneTaskSprintJunctionInput!): TaskSprintJunction!
   updateManyTaskSprintJunctions(input: UpdateManyTaskSprintJunctionsInput!): UpdateManyResponse!
   deleteOneTaskSprintJunction(input: DeleteOneTaskSprintJunctionInput!): TaskSprintJunctionDeleteResponse!
   deleteManyTaskSprintJunctions(input: DeleteManyTaskSprintJunctionsInput!): DeleteManyResponse!
+  createOneTask(input: CreateOneTaskInput!): Task!
+  createManyTasks(input: CreateManyTasksInput!): [Task!]!
+  updateOneTask(input: UpdateOneTaskInput!): Task!
+  updateManyTasks(input: UpdateManyTasksInput!): UpdateManyResponse!
+  deleteOneTask(input: DeleteOneTaskInput!): TaskDeleteResponse!
+  deleteManyTasks(input: DeleteManyTasksInput!): DeleteManyResponse!
   createOneTenantBilling(input: CreateOneTenantBillingInput!): TenantBilling!
   createManyTenantBillings(input: CreateManyTenantBillingsInput!): [TenantBilling!]!
   updateOneTenantBilling(input: UpdateOneTenantBillingInput!): TenantBilling!
   updateManyTenantBillings(input: UpdateManyTenantBillingsInput!): UpdateManyResponse!
   deleteOneTenantBilling(input: DeleteOneTenantBillingInput!): TenantBillingDeleteResponse!
   deleteManyTenantBillings(input: DeleteManyTenantBillingsInput!): DeleteManyResponse!
+  createOneTenant(input: CreateOneTenantInput!): Tenant!
+  createManyTenants(input: CreateManyTenantsInput!): [Tenant!]!
+  updateOneTenant(input: UpdateOneTenantInput!): Tenant!
+  updateManyTenants(input: UpdateManyTenantsInput!): UpdateManyResponse!
+  deleteOneTenant(input: DeleteOneTenantInput!): TenantDeleteResponse!
+  deleteManyTenants(input: DeleteManyTenantsInput!): DeleteManyResponse!
   createOneUser(input: CreateOneUserInput!): User!
   createManyUsers(input: CreateManyUsersInput!): [User!]!
   updateOneUser(input: UpdateOneUserInput!): User!
   updateManyUsers(input: UpdateManyUsersInput!): UpdateManyResponse!
   deleteOneUser(input: DeleteOneUserInput!): UserDeleteResponse!
   deleteManyUsers(input: DeleteManyUsersInput!): DeleteManyResponse!
-}
-
-input CreateOneTenantInput {
-  """The record to create"""
-  tenant: TenantInput!
-}
-
-input TenantInput {
-  name: String!
-}
-
-input CreateManyTenantsInput {
-  """Array of records to create"""
-  tenants: [TenantInput!]!
-}
-
-input UpdateOneTenantInput {
-  """The id of the record to update"""
-  id: ID!
-
-  """The update to apply."""
-  update: TenantUpdate!
-}
-
-input TenantUpdate {
-  name: String
-}
-
-input UpdateManyTenantsInput {
-  """Filter used to find fields to update"""
-  filter: TenantUpdateFilter!
-
-  """The update to apply to all records found using the filter"""
-  update: TenantUpdate!
-}
-
-input TenantUpdateFilter {
-  and: [TenantUpdateFilter!]
-  or: [TenantUpdateFilter!]
-  id: IDFilterComparison
-  name: StringFieldComparison
-}
-
-input DeleteOneTenantInput {
-  """The id of the record to delete."""
-  id: ID!
-}
-
-input DeleteManyTenantsInput {
-  """Filter to find records to delete"""
-  filter: TenantDeleteFilter!
-}
-
-input TenantDeleteFilter {
-  and: [TenantDeleteFilter!]
-  or: [TenantDeleteFilter!]
-  id: IDFilterComparison
-  name: StringFieldComparison
 }
 
 input CreateOneSprintInput {
@@ -921,6 +863,72 @@ input SprintDeleteFilter {
   or: [SprintDeleteFilter!]
   id: IDFilterComparison
   name: StringFieldComparison
+}
+
+input CreateOneTaskSprintJunctionInput {
+  """The record to create"""
+  taskSprintJunction: TaskSprintJunctionInput!
+}
+
+input TaskSprintJunctionInput {
+  taskId: String!
+  sprintId: String!
+}
+
+input CreateManyTaskSprintJunctionsInput {
+  """Array of records to create"""
+  taskSprintJunctions: [TaskSprintJunctionInput!]!
+}
+
+input UpdateOneTaskSprintJunctionInput {
+  """The id of the record to update"""
+  id: ID!
+
+  """The update to apply."""
+  update: TaskSprintJunctionUpdate!
+}
+
+input TaskSprintJunctionUpdate {
+  taskId: String
+  sprintId: String!
+}
+
+input UpdateManyTaskSprintJunctionsInput {
+  """Filter used to find fields to update"""
+  filter: TaskSprintJunctionUpdateFilter!
+
+  """The update to apply to all records found using the filter"""
+  update: TaskSprintJunctionUpdate!
+}
+
+input TaskSprintJunctionUpdateFilter {
+  and: [TaskSprintJunctionUpdateFilter!]
+  or: [TaskSprintJunctionUpdateFilter!]
+  id: IDFilterComparison
+  taskId: StringFieldComparison
+  sprintId: StringFieldComparison
+  task: TaskDatoFilterComparison
+  sprint: SprintDatoFilterComparison
+}
+
+input DeleteOneTaskSprintJunctionInput {
+  """The id of the record to delete."""
+  id: ID!
+}
+
+input DeleteManyTaskSprintJunctionsInput {
+  """Filter to find records to delete"""
+  filter: TaskSprintJunctionDeleteFilter!
+}
+
+input TaskSprintJunctionDeleteFilter {
+  and: [TaskSprintJunctionDeleteFilter!]
+  or: [TaskSprintJunctionDeleteFilter!]
+  id: IDFilterComparison
+  taskId: StringFieldComparison
+  sprintId: StringFieldComparison
+  task: TaskDatoFilterComparison
+  sprint: SprintDatoFilterComparison
 }
 
 input CreateOneTaskInput {
@@ -1027,72 +1035,6 @@ input TaskDeleteFilterTaskDetailsDeleteFilter {
   description: StringFieldComparison
 }
 
-input CreateOneTaskSprintJunctionInput {
-  """The record to create"""
-  taskSprintJunction: TaskSprintJunctionInput!
-}
-
-input TaskSprintJunctionInput {
-  taskId: String!
-  sprintId: String!
-}
-
-input CreateManyTaskSprintJunctionsInput {
-  """Array of records to create"""
-  taskSprintJunctions: [TaskSprintJunctionInput!]!
-}
-
-input UpdateOneTaskSprintJunctionInput {
-  """The id of the record to update"""
-  id: ID!
-
-  """The update to apply."""
-  update: TaskSprintJunctionUpdate!
-}
-
-input TaskSprintJunctionUpdate {
-  taskId: String
-  sprintId: String!
-}
-
-input UpdateManyTaskSprintJunctionsInput {
-  """Filter used to find fields to update"""
-  filter: TaskSprintJunctionUpdateFilter!
-
-  """The update to apply to all records found using the filter"""
-  update: TaskSprintJunctionUpdate!
-}
-
-input TaskSprintJunctionUpdateFilter {
-  and: [TaskSprintJunctionUpdateFilter!]
-  or: [TaskSprintJunctionUpdateFilter!]
-  id: IDFilterComparison
-  taskId: StringFieldComparison
-  sprintId: StringFieldComparison
-  task: TaskDatoFilterComparison
-  sprint: SprintDatoFilterComparison
-}
-
-input DeleteOneTaskSprintJunctionInput {
-  """The id of the record to delete."""
-  id: ID!
-}
-
-input DeleteManyTaskSprintJunctionsInput {
-  """Filter to find records to delete"""
-  filter: TaskSprintJunctionDeleteFilter!
-}
-
-input TaskSprintJunctionDeleteFilter {
-  and: [TaskSprintJunctionDeleteFilter!]
-  or: [TaskSprintJunctionDeleteFilter!]
-  id: IDFilterComparison
-  taskId: StringFieldComparison
-  sprintId: StringFieldComparison
-  task: TaskDatoFilterComparison
-  sprint: SprintDatoFilterComparison
-}
-
 input CreateOneTenantBillingInput {
   """The record to create"""
   tenantBilling: TenantBillingInput!
@@ -1158,6 +1100,64 @@ input TenantBillingDeleteFilter {
   phoneNumber: StringFieldComparison
   tenant: TenantDatoFilterComparison
   tenantId: StringFieldComparison
+}
+
+input CreateOneTenantInput {
+  """The record to create"""
+  tenant: TenantInput!
+}
+
+input TenantInput {
+  name: String!
+}
+
+input CreateManyTenantsInput {
+  """Array of records to create"""
+  tenants: [TenantInput!]!
+}
+
+input UpdateOneTenantInput {
+  """The id of the record to update"""
+  id: ID!
+
+  """The update to apply."""
+  update: TenantUpdate!
+}
+
+input TenantUpdate {
+  name: String
+}
+
+input UpdateManyTenantsInput {
+  """Filter used to find fields to update"""
+  filter: TenantUpdateFilter!
+
+  """The update to apply to all records found using the filter"""
+  update: TenantUpdate!
+}
+
+input TenantUpdateFilter {
+  and: [TenantUpdateFilter!]
+  or: [TenantUpdateFilter!]
+  id: IDFilterComparison
+  name: StringFieldComparison
+}
+
+input DeleteOneTenantInput {
+  """The id of the record to delete."""
+  id: ID!
+}
+
+input DeleteManyTenantsInput {
+  """Filter to find records to delete"""
+  filter: TenantDeleteFilter!
+}
+
+input TenantDeleteFilter {
+  and: [TenantDeleteFilter!]
+  or: [TenantDeleteFilter!]
+  id: IDFilterComparison
+  name: StringFieldComparison
 }
 
 input CreateOneUserInput {
