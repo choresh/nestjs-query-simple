@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/promise-function-async */
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
 
 import { InjectModel } from '@m8a/nestjs-typegoose'
 import { ReturnModelType, type DocumentType } from '@typegoose/typegoose'

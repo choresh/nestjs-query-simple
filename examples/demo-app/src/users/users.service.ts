@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+
 import { ReturnModelType } from '@typegoose/typegoose'
 import { InjectModel } from '@m8a/nestjs-typegoose'
 import { Gender, UserDato } from './datos/user.dato'

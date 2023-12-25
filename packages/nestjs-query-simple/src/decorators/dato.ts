@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+
 import { ModelOptions } from '@typegoose/typegoose'
 import {
   FilterableOffsetConnection,
