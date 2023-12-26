@@ -1,3 +1,6 @@
+import { GraphQLClient } from 'graphql-request';
+import { GraphQLClientRequestHeaders } from 'graphql-request/build/cjs/types';
+import gql from 'graphql-tag';
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
@@ -1432,3 +1435,3608 @@ export type UsersInfo = {
   females: GenderInfo;
   males: GenderInfo;
 };
+
+export type CreateManySprintsMutationVariables = Exact<{
+  paging: OffsetPaging;
+  filter: TaskSprintJunctionFilter;
+  sorting: Array<TaskSprintJunctionSort> | TaskSprintJunctionSort;
+  input: CreateManySprintsInput;
+}>;
+
+
+export type CreateManySprintsMutation = { __typename?: 'Mutation', createManySprints: Array<{ __typename?: 'Sprint', id: string, name: string, taskSprintJunctions: { __typename?: 'SprintTaskSprintJunctionsConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'TaskSprintJunction', id: string, taskId: string, sprintId: string, task: { __typename?: 'Task', id: string, name: string, userId: string, user: { __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number }, details: { __typename?: 'TaskDetails', id: string, title: string, description: string }, comments?: Array<{ __typename?: 'TaskComment', id: string, text: string }> | null }, sprint: { __typename?: 'Sprint', id: string, name: string } }> } }> };
+
+export type CreateManyTaskSprintJunctionsMutationVariables = Exact<{
+  paging: OffsetPaging;
+  filter: TaskFilter;
+  sorting: Array<TaskSort> | TaskSort;
+  paging1: OffsetPaging;
+  filter1: TaskSprintJunctionFilter;
+  sorting1: Array<TaskSprintJunctionSort> | TaskSprintJunctionSort;
+  input: CreateManyTaskSprintJunctionsInput;
+}>;
+
+
+export type CreateManyTaskSprintJunctionsMutation = { __typename?: 'Mutation', createManyTaskSprintJunctions: Array<{ __typename?: 'TaskSprintJunction', id: string, taskId: string, sprintId: string, task: { __typename?: 'Task', id: string, name: string, userId: string, user: { __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tasks: { __typename?: 'UserTasksConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'Task', id: string, name: string, userId: string }> }, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null, tenantBilling?: { __typename?: 'TenantBilling', id: string, taxNumber: string, phoneNumber: string, tenantId: string } | null } }, details: { __typename?: 'TaskDetails', id: string, title: string, description: string }, comments?: Array<{ __typename?: 'TaskComment', id: string, text: string }> | null, taskSprintJunctions: { __typename?: 'TaskTaskSprintJunctionsConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'TaskSprintJunction', id: string, taskId: string, sprintId: string, task: { __typename?: 'Task', id: string, name: string, userId: string }, sprint: { __typename?: 'Sprint', id: string, name: string } }> } }, sprint: { __typename?: 'Sprint', id: string, name: string } }> };
+
+export type CreateManyTasksMutationVariables = Exact<{
+  paging: OffsetPaging;
+  filter: TaskFilter;
+  sorting: Array<TaskSort> | TaskSort;
+  paging1: OffsetPaging;
+  filter1: UserFilter;
+  sorting1: Array<UserSort> | UserSort;
+  paging2: OffsetPaging;
+  filter2: TaskSprintJunctionFilter;
+  sorting2: Array<TaskSprintJunctionSort> | TaskSprintJunctionSort;
+  input: CreateManyTasksInput;
+}>;
+
+
+export type CreateManyTasksMutation = { __typename?: 'Mutation', createManyTasks: Array<{ __typename?: 'Task', id: string, name: string, userId: string, user: { __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tasks: { __typename?: 'UserTasksConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'Task', id: string, name: string, userId: string, user: { __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number }, details: { __typename?: 'TaskDetails', id: string, title: string, description: string }, comments?: Array<{ __typename?: 'TaskComment', id: string, text: string }> | null }> }, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null, users: { __typename?: 'TenantUsersConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number }> }, tenantBilling?: { __typename?: 'TenantBilling', id: string, taxNumber: string, phoneNumber: string, tenantId: string, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } } | null } }, details: { __typename?: 'TaskDetails', id: string, title: string, description: string }, comments?: Array<{ __typename?: 'TaskComment', id: string, text: string }> | null, taskSprintJunctions: { __typename?: 'TaskTaskSprintJunctionsConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'TaskSprintJunction', id: string, taskId: string, sprintId: string, task: { __typename?: 'Task', id: string, name: string, userId: string, user: { __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number }, details: { __typename?: 'TaskDetails', id: string, title: string, description: string }, comments?: Array<{ __typename?: 'TaskComment', id: string, text: string }> | null }, sprint: { __typename?: 'Sprint', id: string, name: string } }> } }> };
+
+export type CreateManyTenantBillingsMutationVariables = Exact<{
+  paging: OffsetPaging;
+  filter: UserFilter;
+  sorting: Array<UserSort> | UserSort;
+  input: CreateManyTenantBillingsInput;
+}>;
+
+
+export type CreateManyTenantBillingsMutation = { __typename?: 'Mutation', createManyTenantBillings: Array<{ __typename?: 'TenantBilling', id: string, taxNumber: string, phoneNumber: string, tenantId: string, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null, users: { __typename?: 'TenantUsersConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } }> }, tenantBilling?: { __typename?: 'TenantBilling', id: string, taxNumber: string, phoneNumber: string, tenantId: string, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } } | null } }> };
+
+export type CreateManyTenantsMutationVariables = Exact<{
+  paging: OffsetPaging;
+  filter: TaskFilter;
+  sorting: Array<TaskSort> | TaskSort;
+  paging1: OffsetPaging;
+  filter1: UserFilter;
+  sorting1: Array<UserSort> | UserSort;
+  input: CreateManyTenantsInput;
+}>;
+
+
+export type CreateManyTenantsMutation = { __typename?: 'Mutation', createManyTenants: Array<{ __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null, users: { __typename?: 'TenantUsersConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tasks: { __typename?: 'UserTasksConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'Task', id: string, name: string, userId: string }> }, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null, tenantBilling?: { __typename?: 'TenantBilling', id: string, taxNumber: string, phoneNumber: string, tenantId: string } | null } }> }, tenantBilling?: { __typename?: 'TenantBilling', id: string, taxNumber: string, phoneNumber: string, tenantId: string, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } } | null }> };
+
+export type CreateManyUsersMutationVariables = Exact<{
+  paging: OffsetPaging;
+  filter: TaskSprintJunctionFilter;
+  sorting: Array<TaskSprintJunctionSort> | TaskSprintJunctionSort;
+  paging1: OffsetPaging;
+  filter1: TaskFilter;
+  sorting1: Array<TaskSort> | TaskSort;
+  paging2: OffsetPaging;
+  filter2: UserFilter;
+  sorting2: Array<UserSort> | UserSort;
+  input: CreateManyUsersInput;
+}>;
+
+
+export type CreateManyUsersMutation = { __typename?: 'Mutation', createManyUsers: Array<{ __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tasks: { __typename?: 'UserTasksConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'Task', id: string, name: string, userId: string, user: { __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } }, details: { __typename?: 'TaskDetails', id: string, title: string, description: string }, comments?: Array<{ __typename?: 'TaskComment', id: string, text: string }> | null, taskSprintJunctions: { __typename?: 'TaskTaskSprintJunctionsConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'TaskSprintJunction', id: string, taskId: string, sprintId: string }> } }> }, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null, users: { __typename?: 'TenantUsersConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } }> }, tenantBilling?: { __typename?: 'TenantBilling', id: string, taxNumber: string, phoneNumber: string, tenantId: string, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } } | null } }> };
+
+export type CreateOneSprintMutationVariables = Exact<{
+  paging: OffsetPaging;
+  filter: TaskSprintJunctionFilter;
+  sorting: Array<TaskSprintJunctionSort> | TaskSprintJunctionSort;
+  input: CreateOneSprintInput;
+}>;
+
+
+export type CreateOneSprintMutation = { __typename?: 'Mutation', createOneSprint: { __typename?: 'Sprint', id: string, name: string, taskSprintJunctions: { __typename?: 'SprintTaskSprintJunctionsConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'TaskSprintJunction', id: string, taskId: string, sprintId: string, task: { __typename?: 'Task', id: string, name: string, userId: string, user: { __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number }, details: { __typename?: 'TaskDetails', id: string, title: string, description: string }, comments?: Array<{ __typename?: 'TaskComment', id: string, text: string }> | null }, sprint: { __typename?: 'Sprint', id: string, name: string } }> } } };
+
+export type CreateOneTaskMutationVariables = Exact<{
+  paging: OffsetPaging;
+  filter: TaskFilter;
+  sorting: Array<TaskSort> | TaskSort;
+  paging1: OffsetPaging;
+  filter1: UserFilter;
+  sorting1: Array<UserSort> | UserSort;
+  paging2: OffsetPaging;
+  filter2: TaskSprintJunctionFilter;
+  sorting2: Array<TaskSprintJunctionSort> | TaskSprintJunctionSort;
+  input: CreateOneTaskInput;
+}>;
+
+
+export type CreateOneTaskMutation = { __typename?: 'Mutation', createOneTask: { __typename?: 'Task', id: string, name: string, userId: string, user: { __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tasks: { __typename?: 'UserTasksConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'Task', id: string, name: string, userId: string, user: { __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number }, details: { __typename?: 'TaskDetails', id: string, title: string, description: string }, comments?: Array<{ __typename?: 'TaskComment', id: string, text: string }> | null }> }, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null, users: { __typename?: 'TenantUsersConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number }> }, tenantBilling?: { __typename?: 'TenantBilling', id: string, taxNumber: string, phoneNumber: string, tenantId: string, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } } | null } }, details: { __typename?: 'TaskDetails', id: string, title: string, description: string }, comments?: Array<{ __typename?: 'TaskComment', id: string, text: string }> | null, taskSprintJunctions: { __typename?: 'TaskTaskSprintJunctionsConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'TaskSprintJunction', id: string, taskId: string, sprintId: string, task: { __typename?: 'Task', id: string, name: string, userId: string, user: { __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number }, details: { __typename?: 'TaskDetails', id: string, title: string, description: string }, comments?: Array<{ __typename?: 'TaskComment', id: string, text: string }> | null }, sprint: { __typename?: 'Sprint', id: string, name: string } }> } } };
+
+export type CreateOneTaskSprintJunctionMutationVariables = Exact<{
+  paging: OffsetPaging;
+  filter: TaskFilter;
+  sorting: Array<TaskSort> | TaskSort;
+  paging1: OffsetPaging;
+  filter1: TaskSprintJunctionFilter;
+  sorting1: Array<TaskSprintJunctionSort> | TaskSprintJunctionSort;
+  input: CreateOneTaskSprintJunctionInput;
+}>;
+
+
+export type CreateOneTaskSprintJunctionMutation = { __typename?: 'Mutation', createOneTaskSprintJunction: { __typename?: 'TaskSprintJunction', id: string, taskId: string, sprintId: string, task: { __typename?: 'Task', id: string, name: string, userId: string, user: { __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tasks: { __typename?: 'UserTasksConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'Task', id: string, name: string, userId: string }> }, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null, tenantBilling?: { __typename?: 'TenantBilling', id: string, taxNumber: string, phoneNumber: string, tenantId: string } | null } }, details: { __typename?: 'TaskDetails', id: string, title: string, description: string }, comments?: Array<{ __typename?: 'TaskComment', id: string, text: string }> | null, taskSprintJunctions: { __typename?: 'TaskTaskSprintJunctionsConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'TaskSprintJunction', id: string, taskId: string, sprintId: string, task: { __typename?: 'Task', id: string, name: string, userId: string }, sprint: { __typename?: 'Sprint', id: string, name: string } }> } }, sprint: { __typename?: 'Sprint', id: string, name: string } } };
+
+export type CreateOneTenantMutationVariables = Exact<{
+  paging: OffsetPaging;
+  filter: TaskFilter;
+  sorting: Array<TaskSort> | TaskSort;
+  paging1: OffsetPaging;
+  filter1: UserFilter;
+  sorting1: Array<UserSort> | UserSort;
+  input: CreateOneTenantInput;
+}>;
+
+
+export type CreateOneTenantMutation = { __typename?: 'Mutation', createOneTenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null, users: { __typename?: 'TenantUsersConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tasks: { __typename?: 'UserTasksConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'Task', id: string, name: string, userId: string }> }, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null, tenantBilling?: { __typename?: 'TenantBilling', id: string, taxNumber: string, phoneNumber: string, tenantId: string } | null } }> }, tenantBilling?: { __typename?: 'TenantBilling', id: string, taxNumber: string, phoneNumber: string, tenantId: string, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } } | null } };
+
+export type CreateOneTenantBillingMutationVariables = Exact<{
+  paging: OffsetPaging;
+  filter: UserFilter;
+  sorting: Array<UserSort> | UserSort;
+  input: CreateOneTenantBillingInput;
+}>;
+
+
+export type CreateOneTenantBillingMutation = { __typename?: 'Mutation', createOneTenantBilling: { __typename?: 'TenantBilling', id: string, taxNumber: string, phoneNumber: string, tenantId: string, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null, users: { __typename?: 'TenantUsersConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } }> }, tenantBilling?: { __typename?: 'TenantBilling', id: string, taxNumber: string, phoneNumber: string, tenantId: string, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } } | null } } };
+
+export type CreateOneUserMutationVariables = Exact<{
+  paging: OffsetPaging;
+  filter: TaskSprintJunctionFilter;
+  sorting: Array<TaskSprintJunctionSort> | TaskSprintJunctionSort;
+  paging1: OffsetPaging;
+  filter1: TaskFilter;
+  sorting1: Array<TaskSort> | TaskSort;
+  paging2: OffsetPaging;
+  filter2: UserFilter;
+  sorting2: Array<UserSort> | UserSort;
+  input: CreateOneUserInput;
+}>;
+
+
+export type CreateOneUserMutation = { __typename?: 'Mutation', createOneUser: { __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tasks: { __typename?: 'UserTasksConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'Task', id: string, name: string, userId: string, user: { __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } }, details: { __typename?: 'TaskDetails', id: string, title: string, description: string }, comments?: Array<{ __typename?: 'TaskComment', id: string, text: string }> | null, taskSprintJunctions: { __typename?: 'TaskTaskSprintJunctionsConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'TaskSprintJunction', id: string, taskId: string, sprintId: string }> } }> }, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null, users: { __typename?: 'TenantUsersConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } }> }, tenantBilling?: { __typename?: 'TenantBilling', id: string, taxNumber: string, phoneNumber: string, tenantId: string, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } } | null } } };
+
+export type DeleteManySprintsMutationVariables = Exact<{
+  input: DeleteManySprintsInput;
+}>;
+
+
+export type DeleteManySprintsMutation = { __typename?: 'Mutation', deleteManySprints: { __typename?: 'DeleteManyResponse', deletedCount: number } };
+
+export type DeleteManyTaskSprintJunctionsMutationVariables = Exact<{
+  input: DeleteManyTaskSprintJunctionsInput;
+}>;
+
+
+export type DeleteManyTaskSprintJunctionsMutation = { __typename?: 'Mutation', deleteManyTaskSprintJunctions: { __typename?: 'DeleteManyResponse', deletedCount: number } };
+
+export type DeleteManyTasksMutationVariables = Exact<{
+  input: DeleteManyTasksInput;
+}>;
+
+
+export type DeleteManyTasksMutation = { __typename?: 'Mutation', deleteManyTasks: { __typename?: 'DeleteManyResponse', deletedCount: number } };
+
+export type DeleteManyTenantBillingsMutationVariables = Exact<{
+  input: DeleteManyTenantBillingsInput;
+}>;
+
+
+export type DeleteManyTenantBillingsMutation = { __typename?: 'Mutation', deleteManyTenantBillings: { __typename?: 'DeleteManyResponse', deletedCount: number } };
+
+export type DeleteManyTenantsMutationVariables = Exact<{
+  input: DeleteManyTenantsInput;
+}>;
+
+
+export type DeleteManyTenantsMutation = { __typename?: 'Mutation', deleteManyTenants: { __typename?: 'DeleteManyResponse', deletedCount: number } };
+
+export type DeleteManyUsersMutationVariables = Exact<{
+  input: DeleteManyUsersInput;
+}>;
+
+
+export type DeleteManyUsersMutation = { __typename?: 'Mutation', deleteManyUsers: { __typename?: 'DeleteManyResponse', deletedCount: number } };
+
+export type DeleteOneSprintMutationVariables = Exact<{
+  paging: OffsetPaging;
+  filter: TaskSprintJunctionFilter;
+  sorting: Array<TaskSprintJunctionSort> | TaskSprintJunctionSort;
+  input: DeleteOneSprintInput;
+}>;
+
+
+export type DeleteOneSprintMutation = { __typename?: 'Mutation', deleteOneSprint: { __typename?: 'SprintDeleteResponse', id?: string | null, name?: string | null, taskSprintJunctions?: Array<{ __typename?: 'TaskSprintJunction', id: string, taskId: string, sprintId: string, task: { __typename?: 'Task', id: string, name: string, userId: string, user: { __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } }, details: { __typename?: 'TaskDetails', id: string, title: string, description: string }, comments?: Array<{ __typename?: 'TaskComment', id: string, text: string }> | null, taskSprintJunctions: { __typename?: 'TaskTaskSprintJunctionsConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'TaskSprintJunction', id: string, taskId: string, sprintId: string }> } }, sprint: { __typename?: 'Sprint', id: string, name: string } }> | null } };
+
+export type DeleteOneTaskMutationVariables = Exact<{
+  paging: OffsetPaging;
+  filter: TaskFilter;
+  sorting: Array<TaskSort> | TaskSort;
+  paging1: OffsetPaging;
+  filter1: UserFilter;
+  sorting1: Array<UserSort> | UserSort;
+  paging2: OffsetPaging;
+  filter2: TaskSprintJunctionFilter;
+  sorting2: Array<TaskSprintJunctionSort> | TaskSprintJunctionSort;
+  input: DeleteOneTaskInput;
+}>;
+
+
+export type DeleteOneTaskMutation = { __typename?: 'Mutation', deleteOneTask: { __typename?: 'TaskDeleteResponse', id?: string | null, name?: string | null, userId?: string | null, user?: { __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tasks: { __typename?: 'UserTasksConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'Task', id: string, name: string, userId: string, user: { __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number }, details: { __typename?: 'TaskDetails', id: string, title: string, description: string }, comments?: Array<{ __typename?: 'TaskComment', id: string, text: string }> | null }> }, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null, users: { __typename?: 'TenantUsersConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number }> }, tenantBilling?: { __typename?: 'TenantBilling', id: string, taxNumber: string, phoneNumber: string, tenantId: string, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } } | null } } | null, details?: { __typename?: 'TaskDetails', id: string, title: string, description: string } | null, comments?: Array<{ __typename?: 'TaskComment', id: string, text: string }> | null, taskSprintJunctions?: Array<{ __typename?: 'TaskSprintJunction', id: string, taskId: string, sprintId: string, task: { __typename?: 'Task', id: string, name: string, userId: string, user: { __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number }, details: { __typename?: 'TaskDetails', id: string, title: string, description: string }, comments?: Array<{ __typename?: 'TaskComment', id: string, text: string }> | null, taskSprintJunctions: { __typename?: 'TaskTaskSprintJunctionsConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'TaskSprintJunction', id: string, taskId: string, sprintId: string }> } }, sprint: { __typename?: 'Sprint', id: string, name: string } }> | null } };
+
+export type DeleteOneTaskSprintJunctionMutationVariables = Exact<{
+  paging: OffsetPaging;
+  filter: TaskFilter;
+  sorting: Array<TaskSort> | TaskSort;
+  paging1: OffsetPaging;
+  filter1: TaskSprintJunctionFilter;
+  sorting1: Array<TaskSprintJunctionSort> | TaskSprintJunctionSort;
+  input: DeleteOneTaskSprintJunctionInput;
+}>;
+
+
+export type DeleteOneTaskSprintJunctionMutation = { __typename?: 'Mutation', deleteOneTaskSprintJunction: { __typename?: 'TaskSprintJunctionDeleteResponse', id?: string | null, taskId?: string | null, sprintId?: string | null, task?: { __typename?: 'Task', id: string, name: string, userId: string, user: { __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tasks: { __typename?: 'UserTasksConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'Task', id: string, name: string, userId: string }> }, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null, tenantBilling?: { __typename?: 'TenantBilling', id: string, taxNumber: string, phoneNumber: string, tenantId: string } | null } }, details: { __typename?: 'TaskDetails', id: string, title: string, description: string }, comments?: Array<{ __typename?: 'TaskComment', id: string, text: string }> | null, taskSprintJunctions: { __typename?: 'TaskTaskSprintJunctionsConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'TaskSprintJunction', id: string, taskId: string, sprintId: string, task: { __typename?: 'Task', id: string, name: string, userId: string }, sprint: { __typename?: 'Sprint', id: string, name: string } }> } } | null, sprint?: { __typename?: 'Sprint', id: string, name: string } | null } };
+
+export type DeleteOneTenantMutationVariables = Exact<{
+  paging: OffsetPaging;
+  filter: TaskFilter;
+  sorting: Array<TaskSort> | TaskSort;
+  paging1: OffsetPaging;
+  filter1: UserFilter;
+  sorting1: Array<UserSort> | UserSort;
+  input: DeleteOneTenantInput;
+}>;
+
+
+export type DeleteOneTenantMutation = { __typename?: 'Mutation', deleteOneTenant: { __typename?: 'TenantDeleteResponse', id?: string | null, name?: string | null, tenantBillingId?: string | null, users?: Array<{ __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tasks: { __typename?: 'UserTasksConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'Task', id: string, name: string, userId: string, user: { __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number }, details: { __typename?: 'TaskDetails', id: string, title: string, description: string }, comments?: Array<{ __typename?: 'TaskComment', id: string, text: string }> | null }> }, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null, users: { __typename?: 'TenantUsersConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number }> }, tenantBilling?: { __typename?: 'TenantBilling', id: string, taxNumber: string, phoneNumber: string, tenantId: string, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } } | null } }> | null, tenantBilling?: { __typename?: 'TenantBilling', id: string, taxNumber: string, phoneNumber: string, tenantId: string } | null } };
+
+export type DeleteOneTenantBillingMutationVariables = Exact<{
+  paging: OffsetPaging;
+  filter: UserFilter;
+  sorting: Array<UserSort> | UserSort;
+  input: DeleteOneTenantBillingInput;
+}>;
+
+
+export type DeleteOneTenantBillingMutation = { __typename?: 'Mutation', deleteOneTenantBilling: { __typename?: 'TenantBillingDeleteResponse', id?: string | null, taxNumber?: string | null, phoneNumber?: string | null, tenantId?: string | null, tenant?: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null, users: { __typename?: 'TenantUsersConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } }> }, tenantBilling?: { __typename?: 'TenantBilling', id: string, taxNumber: string, phoneNumber: string, tenantId: string, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } } | null } | null } };
+
+export type DeleteOneUserMutationVariables = Exact<{
+  paging: OffsetPaging;
+  filter: TaskFilter;
+  sorting: Array<TaskSort> | TaskSort;
+  paging1: OffsetPaging;
+  filter1: TaskSprintJunctionFilter;
+  sorting1: Array<TaskSprintJunctionSort> | TaskSprintJunctionSort;
+  input: DeleteOneUserInput;
+}>;
+
+
+export type DeleteOneUserMutation = { __typename?: 'Mutation', deleteOneUser: { __typename?: 'UserDeleteResponse', id?: string | null, name?: string | null, tenantId?: string | null, gender?: Gender | null, age?: number | null, tasks?: Array<{ __typename?: 'Task', id: string, name: string, userId: string, user: { __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tasks: { __typename?: 'UserTasksConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'Task', id: string, name: string, userId: string }> }, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null, tenantBilling?: { __typename?: 'TenantBilling', id: string, taxNumber: string, phoneNumber: string, tenantId: string } | null } }, details: { __typename?: 'TaskDetails', id: string, title: string, description: string }, comments?: Array<{ __typename?: 'TaskComment', id: string, text: string }> | null, taskSprintJunctions: { __typename?: 'TaskTaskSprintJunctionsConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'TaskSprintJunction', id: string, taskId: string, sprintId: string, task: { __typename?: 'Task', id: string, name: string, userId: string }, sprint: { __typename?: 'Sprint', id: string, name: string } }> } }> | null, tenant?: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } | null } };
+
+export type UpdateManySprintsMutationVariables = Exact<{
+  input: UpdateManySprintsInput;
+}>;
+
+
+export type UpdateManySprintsMutation = { __typename?: 'Mutation', updateManySprints: { __typename?: 'UpdateManyResponse', updatedCount: number } };
+
+export type UpdateManyTaskSprintJunctionsMutationVariables = Exact<{
+  input: UpdateManyTaskSprintJunctionsInput;
+}>;
+
+
+export type UpdateManyTaskSprintJunctionsMutation = { __typename?: 'Mutation', updateManyTaskSprintJunctions: { __typename?: 'UpdateManyResponse', updatedCount: number } };
+
+export type UpdateManyTasksMutationVariables = Exact<{
+  input: UpdateManyTasksInput;
+}>;
+
+
+export type UpdateManyTasksMutation = { __typename?: 'Mutation', updateManyTasks: { __typename?: 'UpdateManyResponse', updatedCount: number } };
+
+export type UpdateManyTenantBillingsMutationVariables = Exact<{
+  input: UpdateManyTenantBillingsInput;
+}>;
+
+
+export type UpdateManyTenantBillingsMutation = { __typename?: 'Mutation', updateManyTenantBillings: { __typename?: 'UpdateManyResponse', updatedCount: number } };
+
+export type UpdateManyTenantsMutationVariables = Exact<{
+  input: UpdateManyTenantsInput;
+}>;
+
+
+export type UpdateManyTenantsMutation = { __typename?: 'Mutation', updateManyTenants: { __typename?: 'UpdateManyResponse', updatedCount: number } };
+
+export type UpdateManyUsersMutationVariables = Exact<{
+  input: UpdateManyUsersInput;
+}>;
+
+
+export type UpdateManyUsersMutation = { __typename?: 'Mutation', updateManyUsers: { __typename?: 'UpdateManyResponse', updatedCount: number } };
+
+export type UpdateOneSprintMutationVariables = Exact<{
+  paging: OffsetPaging;
+  filter: TaskSprintJunctionFilter;
+  sorting: Array<TaskSprintJunctionSort> | TaskSprintJunctionSort;
+  input: UpdateOneSprintInput;
+}>;
+
+
+export type UpdateOneSprintMutation = { __typename?: 'Mutation', updateOneSprint: { __typename?: 'Sprint', id: string, name: string, taskSprintJunctions: { __typename?: 'SprintTaskSprintJunctionsConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'TaskSprintJunction', id: string, taskId: string, sprintId: string, task: { __typename?: 'Task', id: string, name: string, userId: string, user: { __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number }, details: { __typename?: 'TaskDetails', id: string, title: string, description: string }, comments?: Array<{ __typename?: 'TaskComment', id: string, text: string }> | null }, sprint: { __typename?: 'Sprint', id: string, name: string } }> } } };
+
+export type UpdateOneTaskMutationVariables = Exact<{
+  paging: OffsetPaging;
+  filter: TaskFilter;
+  sorting: Array<TaskSort> | TaskSort;
+  paging1: OffsetPaging;
+  filter1: UserFilter;
+  sorting1: Array<UserSort> | UserSort;
+  paging2: OffsetPaging;
+  filter2: TaskSprintJunctionFilter;
+  sorting2: Array<TaskSprintJunctionSort> | TaskSprintJunctionSort;
+  input: UpdateOneTaskInput;
+}>;
+
+
+export type UpdateOneTaskMutation = { __typename?: 'Mutation', updateOneTask: { __typename?: 'Task', id: string, name: string, userId: string, user: { __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tasks: { __typename?: 'UserTasksConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'Task', id: string, name: string, userId: string, user: { __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number }, details: { __typename?: 'TaskDetails', id: string, title: string, description: string }, comments?: Array<{ __typename?: 'TaskComment', id: string, text: string }> | null }> }, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null, users: { __typename?: 'TenantUsersConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number }> }, tenantBilling?: { __typename?: 'TenantBilling', id: string, taxNumber: string, phoneNumber: string, tenantId: string, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } } | null } }, details: { __typename?: 'TaskDetails', id: string, title: string, description: string }, comments?: Array<{ __typename?: 'TaskComment', id: string, text: string }> | null, taskSprintJunctions: { __typename?: 'TaskTaskSprintJunctionsConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'TaskSprintJunction', id: string, taskId: string, sprintId: string, task: { __typename?: 'Task', id: string, name: string, userId: string, user: { __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number }, details: { __typename?: 'TaskDetails', id: string, title: string, description: string }, comments?: Array<{ __typename?: 'TaskComment', id: string, text: string }> | null }, sprint: { __typename?: 'Sprint', id: string, name: string } }> } } };
+
+export type UpdateOneTaskSprintJunctionMutationVariables = Exact<{
+  paging: OffsetPaging;
+  filter: TaskFilter;
+  sorting: Array<TaskSort> | TaskSort;
+  paging1: OffsetPaging;
+  filter1: TaskSprintJunctionFilter;
+  sorting1: Array<TaskSprintJunctionSort> | TaskSprintJunctionSort;
+  input: UpdateOneTaskSprintJunctionInput;
+}>;
+
+
+export type UpdateOneTaskSprintJunctionMutation = { __typename?: 'Mutation', updateOneTaskSprintJunction: { __typename?: 'TaskSprintJunction', id: string, taskId: string, sprintId: string, task: { __typename?: 'Task', id: string, name: string, userId: string, user: { __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tasks: { __typename?: 'UserTasksConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'Task', id: string, name: string, userId: string }> }, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null, tenantBilling?: { __typename?: 'TenantBilling', id: string, taxNumber: string, phoneNumber: string, tenantId: string } | null } }, details: { __typename?: 'TaskDetails', id: string, title: string, description: string }, comments?: Array<{ __typename?: 'TaskComment', id: string, text: string }> | null, taskSprintJunctions: { __typename?: 'TaskTaskSprintJunctionsConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'TaskSprintJunction', id: string, taskId: string, sprintId: string, task: { __typename?: 'Task', id: string, name: string, userId: string }, sprint: { __typename?: 'Sprint', id: string, name: string } }> } }, sprint: { __typename?: 'Sprint', id: string, name: string } } };
+
+export type UpdateOneTenantMutationVariables = Exact<{
+  paging: OffsetPaging;
+  filter: TaskFilter;
+  sorting: Array<TaskSort> | TaskSort;
+  paging1: OffsetPaging;
+  filter1: UserFilter;
+  sorting1: Array<UserSort> | UserSort;
+  input: UpdateOneTenantInput;
+}>;
+
+
+export type UpdateOneTenantMutation = { __typename?: 'Mutation', updateOneTenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null, users: { __typename?: 'TenantUsersConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tasks: { __typename?: 'UserTasksConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'Task', id: string, name: string, userId: string }> }, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null, tenantBilling?: { __typename?: 'TenantBilling', id: string, taxNumber: string, phoneNumber: string, tenantId: string } | null } }> }, tenantBilling?: { __typename?: 'TenantBilling', id: string, taxNumber: string, phoneNumber: string, tenantId: string, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } } | null } };
+
+export type UpdateOneTenantBillingMutationVariables = Exact<{
+  paging: OffsetPaging;
+  filter: UserFilter;
+  sorting: Array<UserSort> | UserSort;
+  input: UpdateOneTenantBillingInput;
+}>;
+
+
+export type UpdateOneTenantBillingMutation = { __typename?: 'Mutation', updateOneTenantBilling: { __typename?: 'TenantBilling', id: string, taxNumber: string, phoneNumber: string, tenantId: string, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null, users: { __typename?: 'TenantUsersConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } }> }, tenantBilling?: { __typename?: 'TenantBilling', id: string, taxNumber: string, phoneNumber: string, tenantId: string, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } } | null } } };
+
+export type UpdateOneUserMutationVariables = Exact<{
+  paging: OffsetPaging;
+  filter: TaskSprintJunctionFilter;
+  sorting: Array<TaskSprintJunctionSort> | TaskSprintJunctionSort;
+  paging1: OffsetPaging;
+  filter1: TaskFilter;
+  sorting1: Array<TaskSort> | TaskSort;
+  paging2: OffsetPaging;
+  filter2: UserFilter;
+  sorting2: Array<UserSort> | UserSort;
+  input: UpdateOneUserInput;
+}>;
+
+
+export type UpdateOneUserMutation = { __typename?: 'Mutation', updateOneUser: { __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tasks: { __typename?: 'UserTasksConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'Task', id: string, name: string, userId: string, user: { __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } }, details: { __typename?: 'TaskDetails', id: string, title: string, description: string }, comments?: Array<{ __typename?: 'TaskComment', id: string, text: string }> | null, taskSprintJunctions: { __typename?: 'TaskTaskSprintJunctionsConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'TaskSprintJunction', id: string, taskId: string, sprintId: string }> } }> }, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null, users: { __typename?: 'TenantUsersConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } }> }, tenantBilling?: { __typename?: 'TenantBilling', id: string, taxNumber: string, phoneNumber: string, tenantId: string, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } } | null } } };
+
+export type DemonstrateComplexQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type DemonstrateComplexQueryQuery = { __typename?: 'Query', demonstrateComplexQuery: { __typename?: 'UsersInfo', females: { __typename?: 'GenderInfo', count: number, avgAge: number }, males: { __typename?: 'GenderInfo', count: number, avgAge: number } } };
+
+export type DemonstrateTransactionBlockQueryVariables = Exact<{
+  paging: OffsetPaging;
+  filter: TaskSprintJunctionFilter;
+  sorting: Array<TaskSprintJunctionSort> | TaskSprintJunctionSort;
+  paging1: OffsetPaging;
+  filter1: TaskFilter;
+  sorting1: Array<TaskSort> | TaskSort;
+  paging2: OffsetPaging;
+  filter2: UserFilter;
+  sorting2: Array<UserSort> | UserSort;
+}>;
+
+
+export type DemonstrateTransactionBlockQuery = { __typename?: 'Query', demonstrateTransactionBlock: Array<{ __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tasks: { __typename?: 'UserTasksConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'Task', id: string, name: string, userId: string, user: { __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } }, details: { __typename?: 'TaskDetails', id: string, title: string, description: string }, comments?: Array<{ __typename?: 'TaskComment', id: string, text: string }> | null, taskSprintJunctions: { __typename?: 'TaskTaskSprintJunctionsConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'TaskSprintJunction', id: string, taskId: string, sprintId: string }> } }> }, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null, users: { __typename?: 'TenantUsersConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } }> }, tenantBilling?: { __typename?: 'TenantBilling', id: string, taxNumber: string, phoneNumber: string, tenantId: string, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } } | null } }> };
+
+export type DemonstrateTransactionFlowQueryVariables = Exact<{
+  paging: OffsetPaging;
+  filter: TaskSprintJunctionFilter;
+  sorting: Array<TaskSprintJunctionSort> | TaskSprintJunctionSort;
+  paging1: OffsetPaging;
+  filter1: TaskFilter;
+  sorting1: Array<TaskSort> | TaskSort;
+  paging2: OffsetPaging;
+  filter2: UserFilter;
+  sorting2: Array<UserSort> | UserSort;
+}>;
+
+
+export type DemonstrateTransactionFlowQuery = { __typename?: 'Query', demonstrateTransactionFlow: Array<{ __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tasks: { __typename?: 'UserTasksConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'Task', id: string, name: string, userId: string, user: { __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } }, details: { __typename?: 'TaskDetails', id: string, title: string, description: string }, comments?: Array<{ __typename?: 'TaskComment', id: string, text: string }> | null, taskSprintJunctions: { __typename?: 'TaskTaskSprintJunctionsConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'TaskSprintJunction', id: string, taskId: string, sprintId: string }> } }> }, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null, users: { __typename?: 'TenantUsersConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } }> }, tenantBilling?: { __typename?: 'TenantBilling', id: string, taxNumber: string, phoneNumber: string, tenantId: string, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } } | null } }> };
+
+export type DemonstrateTransactionLockQueryVariables = Exact<{
+  paging: OffsetPaging;
+  filter: TaskSprintJunctionFilter;
+  sorting: Array<TaskSprintJunctionSort> | TaskSprintJunctionSort;
+  paging1: OffsetPaging;
+  filter1: TaskFilter;
+  sorting1: Array<TaskSort> | TaskSort;
+  paging2: OffsetPaging;
+  filter2: UserFilter;
+  sorting2: Array<UserSort> | UserSort;
+}>;
+
+
+export type DemonstrateTransactionLockQuery = { __typename?: 'Query', demonstrateTransactionLock: Array<{ __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tasks: { __typename?: 'UserTasksConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'Task', id: string, name: string, userId: string, user: { __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } }, details: { __typename?: 'TaskDetails', id: string, title: string, description: string }, comments?: Array<{ __typename?: 'TaskComment', id: string, text: string }> | null, taskSprintJunctions: { __typename?: 'TaskTaskSprintJunctionsConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'TaskSprintJunction', id: string, taskId: string, sprintId: string }> } }> }, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null, users: { __typename?: 'TenantUsersConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } }> }, tenantBilling?: { __typename?: 'TenantBilling', id: string, taxNumber: string, phoneNumber: string, tenantId: string, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } } | null } }> };
+
+export type SprintQueryVariables = Exact<{
+  paging: OffsetPaging;
+  filter: TaskSprintJunctionFilter;
+  sorting: Array<TaskSprintJunctionSort> | TaskSprintJunctionSort;
+  id: Scalars['ID']['input'];
+}>;
+
+
+export type SprintQuery = { __typename?: 'Query', sprint: { __typename?: 'Sprint', id: string, name: string, taskSprintJunctions: { __typename?: 'SprintTaskSprintJunctionsConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'TaskSprintJunction', id: string, taskId: string, sprintId: string, task: { __typename?: 'Task', id: string, name: string, userId: string, user: { __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number }, details: { __typename?: 'TaskDetails', id: string, title: string, description: string }, comments?: Array<{ __typename?: 'TaskComment', id: string, text: string }> | null }, sprint: { __typename?: 'Sprint', id: string, name: string } }> } } };
+
+export type SprintsQueryVariables = Exact<{
+  paging: OffsetPaging;
+  filter: TaskSprintJunctionFilter;
+  sorting: Array<TaskSprintJunctionSort> | TaskSprintJunctionSort;
+  paging1: OffsetPaging;
+  filter1: SprintFilter;
+  sorting1: Array<SprintSort> | SprintSort;
+}>;
+
+
+export type SprintsQuery = { __typename?: 'Query', sprints: { __typename?: 'SprintConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'Sprint', id: string, name: string, taskSprintJunctions: { __typename?: 'SprintTaskSprintJunctionsConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'TaskSprintJunction', id: string, taskId: string, sprintId: string, task: { __typename?: 'Task', id: string, name: string, userId: string }, sprint: { __typename?: 'Sprint', id: string, name: string } }> } }> } };
+
+export type TaskQueryVariables = Exact<{
+  paging: OffsetPaging;
+  filter: TaskFilter;
+  sorting: Array<TaskSort> | TaskSort;
+  paging1: OffsetPaging;
+  filter1: UserFilter;
+  sorting1: Array<UserSort> | UserSort;
+  paging2: OffsetPaging;
+  filter2: TaskSprintJunctionFilter;
+  sorting2: Array<TaskSprintJunctionSort> | TaskSprintJunctionSort;
+  id: Scalars['ID']['input'];
+}>;
+
+
+export type TaskQuery = { __typename?: 'Query', task: { __typename?: 'Task', id: string, name: string, userId: string, user: { __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tasks: { __typename?: 'UserTasksConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'Task', id: string, name: string, userId: string, user: { __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number }, details: { __typename?: 'TaskDetails', id: string, title: string, description: string }, comments?: Array<{ __typename?: 'TaskComment', id: string, text: string }> | null }> }, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null, users: { __typename?: 'TenantUsersConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number }> }, tenantBilling?: { __typename?: 'TenantBilling', id: string, taxNumber: string, phoneNumber: string, tenantId: string, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } } | null } }, details: { __typename?: 'TaskDetails', id: string, title: string, description: string }, comments?: Array<{ __typename?: 'TaskComment', id: string, text: string }> | null, taskSprintJunctions: { __typename?: 'TaskTaskSprintJunctionsConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'TaskSprintJunction', id: string, taskId: string, sprintId: string, task: { __typename?: 'Task', id: string, name: string, userId: string }, sprint: { __typename?: 'Sprint', id: string, name: string } }> } } };
+
+export type TaskSprintJunctionQueryVariables = Exact<{
+  paging: OffsetPaging;
+  filter: TaskFilter;
+  sorting: Array<TaskSort> | TaskSort;
+  paging1: OffsetPaging;
+  filter1: TaskSprintJunctionFilter;
+  sorting1: Array<TaskSprintJunctionSort> | TaskSprintJunctionSort;
+  id: Scalars['ID']['input'];
+}>;
+
+
+export type TaskSprintJunctionQuery = { __typename?: 'Query', taskSprintJunction: { __typename?: 'TaskSprintJunction', id: string, taskId: string, sprintId: string, task: { __typename?: 'Task', id: string, name: string, userId: string, user: { __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tasks: { __typename?: 'UserTasksConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'Task', id: string, name: string, userId: string }> }, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null, tenantBilling?: { __typename?: 'TenantBilling', id: string, taxNumber: string, phoneNumber: string, tenantId: string } | null } }, details: { __typename?: 'TaskDetails', id: string, title: string, description: string }, comments?: Array<{ __typename?: 'TaskComment', id: string, text: string }> | null, taskSprintJunctions: { __typename?: 'TaskTaskSprintJunctionsConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'TaskSprintJunction', id: string, taskId: string, sprintId: string, task: { __typename?: 'Task', id: string, name: string, userId: string }, sprint: { __typename?: 'Sprint', id: string, name: string } }> } }, sprint: { __typename?: 'Sprint', id: string, name: string } } };
+
+export type TaskSprintJunctionsQueryVariables = Exact<{
+  paging: OffsetPaging;
+  filter: TaskSprintJunctionFilter;
+  sorting: Array<TaskSprintJunctionSort> | TaskSprintJunctionSort;
+}>;
+
+
+export type TaskSprintJunctionsQuery = { __typename?: 'Query', taskSprintJunctions: { __typename?: 'TaskSprintJunctionConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'TaskSprintJunction', id: string, taskId: string, sprintId: string, task: { __typename?: 'Task', id: string, name: string, userId: string, user: { __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } }, details: { __typename?: 'TaskDetails', id: string, title: string, description: string }, comments?: Array<{ __typename?: 'TaskComment', id: string, text: string }> | null }, sprint: { __typename?: 'Sprint', id: string, name: string } }> } };
+
+export type TasksQueryVariables = Exact<{
+  paging: OffsetPaging;
+  filter: TaskSprintJunctionFilter;
+  sorting: Array<TaskSprintJunctionSort> | TaskSprintJunctionSort;
+  paging1: OffsetPaging;
+  filter1: TaskFilter;
+  sorting1: Array<TaskSort> | TaskSort;
+}>;
+
+
+export type TasksQuery = { __typename?: 'Query', tasks: { __typename?: 'TaskConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'Task', id: string, name: string, userId: string, user: { __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null, tenantBilling?: { __typename?: 'TenantBilling', id: string, taxNumber: string, phoneNumber: string, tenantId: string } | null } }, details: { __typename?: 'TaskDetails', id: string, title: string, description: string }, comments?: Array<{ __typename?: 'TaskComment', id: string, text: string }> | null, taskSprintJunctions: { __typename?: 'TaskTaskSprintJunctionsConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'TaskSprintJunction', id: string, taskId: string, sprintId: string, task: { __typename?: 'Task', id: string, name: string, userId: string }, sprint: { __typename?: 'Sprint', id: string, name: string } }> } }> } };
+
+export type TenantQueryVariables = Exact<{
+  paging: OffsetPaging;
+  filter: TaskFilter;
+  sorting: Array<TaskSort> | TaskSort;
+  paging1: OffsetPaging;
+  filter1: UserFilter;
+  sorting1: Array<UserSort> | UserSort;
+  id: Scalars['ID']['input'];
+}>;
+
+
+export type TenantQuery = { __typename?: 'Query', tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null, users: { __typename?: 'TenantUsersConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tasks: { __typename?: 'UserTasksConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'Task', id: string, name: string, userId: string }> }, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null, tenantBilling?: { __typename?: 'TenantBilling', id: string, taxNumber: string, phoneNumber: string, tenantId: string } | null } }> } } };
+
+export type TenantBillingQueryVariables = Exact<{
+  paging: OffsetPaging;
+  filter: UserFilter;
+  sorting: Array<UserSort> | UserSort;
+  id: Scalars['ID']['input'];
+}>;
+
+
+export type TenantBillingQuery = { __typename?: 'Query', tenantBilling: { __typename?: 'TenantBilling', id: string, taxNumber: string, phoneNumber: string, tenantId: string, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null, users: { __typename?: 'TenantUsersConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } }> }, tenantBilling?: { __typename?: 'TenantBilling', id: string, taxNumber: string, phoneNumber: string, tenantId: string } | null } } };
+
+export type TenantBillingsQueryVariables = Exact<{
+  paging: OffsetPaging;
+  filter: UserFilter;
+  sorting: Array<UserSort> | UserSort;
+  paging1: OffsetPaging;
+  filter1: TenantBillingFilter;
+  sorting1: Array<TenantBillingSort> | TenantBillingSort;
+}>;
+
+
+export type TenantBillingsQuery = { __typename?: 'Query', tenantBillings: { __typename?: 'TenantBillingConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'TenantBilling', id: string, taxNumber: string, phoneNumber: string, tenantId: string, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null, users: { __typename?: 'TenantUsersConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number }> }, tenantBilling?: { __typename?: 'TenantBilling', id: string, taxNumber: string, phoneNumber: string, tenantId: string, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } } | null } }> } };
+
+export type TenantsQueryVariables = Exact<{
+  paging: OffsetPaging;
+  filter: UserFilter;
+  sorting: Array<UserSort> | UserSort;
+  paging1: OffsetPaging;
+  filter1: TenantFilter;
+  sorting1: Array<TenantSort> | TenantSort;
+}>;
+
+
+export type TenantsQuery = { __typename?: 'Query', tenants: { __typename?: 'TenantConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null, users: { __typename?: 'TenantUsersConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } }> }, tenantBilling?: { __typename?: 'TenantBilling', id: string, taxNumber: string, phoneNumber: string, tenantId: string, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null, tenantBilling?: { __typename?: 'TenantBilling', id: string, taxNumber: string, phoneNumber: string, tenantId: string } | null } } | null }> } };
+
+export type UserQueryVariables = Exact<{
+  paging: OffsetPaging;
+  filter: TaskSprintJunctionFilter;
+  sorting: Array<TaskSprintJunctionSort> | TaskSprintJunctionSort;
+  paging1: OffsetPaging;
+  filter1: TaskFilter;
+  sorting1: Array<TaskSort> | TaskSort;
+  id: Scalars['ID']['input'];
+}>;
+
+
+export type UserQuery = { __typename?: 'Query', user: { __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tasks: { __typename?: 'UserTasksConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'Task', id: string, name: string, userId: string, user: { __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } }, details: { __typename?: 'TaskDetails', id: string, title: string, description: string }, comments?: Array<{ __typename?: 'TaskComment', id: string, text: string }> | null, taskSprintJunctions: { __typename?: 'TaskTaskSprintJunctionsConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'TaskSprintJunction', id: string, taskId: string, sprintId: string }> } }> } } };
+
+export type UserByIndexQueryVariables = Exact<{
+  paging: OffsetPaging;
+  filter: TaskSprintJunctionFilter;
+  sorting: Array<TaskSprintJunctionSort> | TaskSprintJunctionSort;
+  paging1: OffsetPaging;
+  filter1: TaskFilter;
+  sorting1: Array<TaskSort> | TaskSort;
+  paging2: OffsetPaging;
+  filter2: UserFilter;
+  sorting2: Array<UserSort> | UserSort;
+  tenanId: Scalars['String']['input'];
+  name: Scalars['String']['input'];
+}>;
+
+
+export type UserByIndexQuery = { __typename?: 'Query', userByIndex: { __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tasks: { __typename?: 'UserTasksConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'Task', id: string, name: string, userId: string, user: { __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } }, details: { __typename?: 'TaskDetails', id: string, title: string, description: string }, comments?: Array<{ __typename?: 'TaskComment', id: string, text: string }> | null, taskSprintJunctions: { __typename?: 'TaskTaskSprintJunctionsConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'TaskSprintJunction', id: string, taskId: string, sprintId: string }> } }> }, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null, users: { __typename?: 'TenantUsersConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } }> }, tenantBilling?: { __typename?: 'TenantBilling', id: string, taxNumber: string, phoneNumber: string, tenantId: string, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } } | null } } };
+
+export type UsersQueryVariables = Exact<{
+  paging: OffsetPaging;
+  filter: TaskFilter;
+  sorting: Array<TaskSort> | TaskSort;
+  paging1: OffsetPaging;
+  filter1: UserFilter;
+  sorting1: Array<UserSort> | UserSort;
+}>;
+
+
+export type UsersQuery = { __typename?: 'Query', users: { __typename?: 'UserConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tasks: { __typename?: 'UserTasksConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'Task', id: string, name: string, userId: string, user: { __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number }, details: { __typename?: 'TaskDetails', id: string, title: string, description: string }, comments?: Array<{ __typename?: 'TaskComment', id: string, text: string }> | null }> }, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null, tenantBilling?: { __typename?: 'TenantBilling', id: string, taxNumber: string, phoneNumber: string, tenantId: string, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } } | null } }> } };
+
+
+export const CreateManySprintsDocument = gql`
+    mutation createManySprints($paging: OffsetPaging!, $filter: TaskSprintJunctionFilter!, $sorting: [TaskSprintJunctionSort!]!, $input: CreateManySprintsInput!) {
+  createManySprints(input: $input) {
+    id
+    name
+    taskSprintJunctions(paging: $paging, filter: $filter, sorting: $sorting) {
+      pageInfo {
+        hasNextPage
+        hasPreviousPage
+      }
+      nodes {
+        id
+        taskId
+        sprintId
+        task {
+          id
+          name
+          userId
+          user {
+            id
+            name
+            tenantId
+            gender
+            age
+          }
+          details {
+            id
+            title
+            description
+          }
+          comments {
+            id
+            text
+          }
+        }
+        sprint {
+          id
+          name
+        }
+      }
+    }
+  }
+}
+    `;
+export const CreateManyTaskSprintJunctionsDocument = gql`
+    mutation createManyTaskSprintJunctions($paging: OffsetPaging!, $filter: TaskFilter!, $sorting: [TaskSort!]!, $paging1: OffsetPaging!, $filter1: TaskSprintJunctionFilter!, $sorting1: [TaskSprintJunctionSort!]!, $input: CreateManyTaskSprintJunctionsInput!) {
+  createManyTaskSprintJunctions(input: $input) {
+    id
+    taskId
+    sprintId
+    task {
+      id
+      name
+      userId
+      user {
+        id
+        name
+        tasks(paging: $paging, filter: $filter, sorting: $sorting) {
+          pageInfo {
+            hasNextPage
+            hasPreviousPage
+          }
+          nodes {
+            id
+            name
+            userId
+          }
+        }
+        tenantId
+        tenant {
+          id
+          name
+          tenantBilling {
+            id
+            taxNumber
+            phoneNumber
+            tenantId
+          }
+          tenantBillingId
+        }
+        gender
+        age
+      }
+      details {
+        id
+        title
+        description
+      }
+      comments {
+        id
+        text
+      }
+      taskSprintJunctions(paging: $paging1, filter: $filter1, sorting: $sorting1) {
+        pageInfo {
+          hasNextPage
+          hasPreviousPage
+        }
+        nodes {
+          id
+          taskId
+          sprintId
+          task {
+            id
+            name
+            userId
+          }
+          sprint {
+            id
+            name
+          }
+        }
+      }
+    }
+    sprint {
+      id
+      name
+    }
+  }
+}
+    `;
+export const CreateManyTasksDocument = gql`
+    mutation createManyTasks($paging: OffsetPaging!, $filter: TaskFilter!, $sorting: [TaskSort!]!, $paging1: OffsetPaging!, $filter1: UserFilter!, $sorting1: [UserSort!]!, $paging2: OffsetPaging!, $filter2: TaskSprintJunctionFilter!, $sorting2: [TaskSprintJunctionSort!]!, $input: CreateManyTasksInput!) {
+  createManyTasks(input: $input) {
+    id
+    name
+    userId
+    user {
+      id
+      name
+      tasks(paging: $paging, filter: $filter, sorting: $sorting) {
+        pageInfo {
+          hasNextPage
+          hasPreviousPage
+        }
+        nodes {
+          id
+          name
+          userId
+          user {
+            id
+            name
+            tenantId
+            gender
+            age
+          }
+          details {
+            id
+            title
+            description
+          }
+          comments {
+            id
+            text
+          }
+        }
+      }
+      tenantId
+      tenant {
+        id
+        name
+        users(paging: $paging1, filter: $filter1, sorting: $sorting1) {
+          pageInfo {
+            hasNextPage
+            hasPreviousPage
+          }
+          nodes {
+            id
+            name
+            tenantId
+            gender
+            age
+          }
+        }
+        tenantBilling {
+          id
+          taxNumber
+          phoneNumber
+          tenant {
+            id
+            name
+            tenantBillingId
+          }
+          tenantId
+        }
+        tenantBillingId
+      }
+      gender
+      age
+    }
+    details {
+      id
+      title
+      description
+    }
+    comments {
+      id
+      text
+    }
+    taskSprintJunctions(paging: $paging2, filter: $filter2, sorting: $sorting2) {
+      pageInfo {
+        hasNextPage
+        hasPreviousPage
+      }
+      nodes {
+        id
+        taskId
+        sprintId
+        task {
+          id
+          name
+          userId
+          user {
+            id
+            name
+            tenantId
+            gender
+            age
+          }
+          details {
+            id
+            title
+            description
+          }
+          comments {
+            id
+            text
+          }
+        }
+        sprint {
+          id
+          name
+        }
+      }
+    }
+  }
+}
+    `;
+export const CreateManyTenantBillingsDocument = gql`
+    mutation createManyTenantBillings($paging: OffsetPaging!, $filter: UserFilter!, $sorting: [UserSort!]!, $input: CreateManyTenantBillingsInput!) {
+  createManyTenantBillings(input: $input) {
+    id
+    taxNumber
+    phoneNumber
+    tenant {
+      id
+      name
+      users(paging: $paging, filter: $filter, sorting: $sorting) {
+        pageInfo {
+          hasNextPage
+          hasPreviousPage
+        }
+        nodes {
+          id
+          name
+          tenantId
+          tenant {
+            id
+            name
+            tenantBillingId
+          }
+          gender
+          age
+        }
+      }
+      tenantBilling {
+        id
+        taxNumber
+        phoneNumber
+        tenant {
+          id
+          name
+          tenantBillingId
+        }
+        tenantId
+      }
+      tenantBillingId
+    }
+    tenantId
+  }
+}
+    `;
+export const CreateManyTenantsDocument = gql`
+    mutation createManyTenants($paging: OffsetPaging!, $filter: TaskFilter!, $sorting: [TaskSort!]!, $paging1: OffsetPaging!, $filter1: UserFilter!, $sorting1: [UserSort!]!, $input: CreateManyTenantsInput!) {
+  createManyTenants(input: $input) {
+    id
+    name
+    users(paging: $paging1, filter: $filter1, sorting: $sorting1) {
+      pageInfo {
+        hasNextPage
+        hasPreviousPage
+      }
+      nodes {
+        id
+        name
+        tasks(paging: $paging, filter: $filter, sorting: $sorting) {
+          pageInfo {
+            hasNextPage
+            hasPreviousPage
+          }
+          nodes {
+            id
+            name
+            userId
+          }
+        }
+        tenantId
+        tenant {
+          id
+          name
+          tenantBilling {
+            id
+            taxNumber
+            phoneNumber
+            tenantId
+          }
+          tenantBillingId
+        }
+        gender
+        age
+      }
+    }
+    tenantBilling {
+      id
+      taxNumber
+      phoneNumber
+      tenant {
+        id
+        name
+        tenantBillingId
+      }
+      tenantId
+    }
+    tenantBillingId
+  }
+}
+    `;
+export const CreateManyUsersDocument = gql`
+    mutation createManyUsers($paging: OffsetPaging!, $filter: TaskSprintJunctionFilter!, $sorting: [TaskSprintJunctionSort!]!, $paging1: OffsetPaging!, $filter1: TaskFilter!, $sorting1: [TaskSort!]!, $paging2: OffsetPaging!, $filter2: UserFilter!, $sorting2: [UserSort!]!, $input: CreateManyUsersInput!) {
+  createManyUsers(input: $input) {
+    id
+    name
+    tasks(paging: $paging1, filter: $filter1, sorting: $sorting1) {
+      pageInfo {
+        hasNextPage
+        hasPreviousPage
+      }
+      nodes {
+        id
+        name
+        userId
+        user {
+          id
+          name
+          tenantId
+          tenant {
+            id
+            name
+            tenantBillingId
+          }
+          gender
+          age
+        }
+        details {
+          id
+          title
+          description
+        }
+        comments {
+          id
+          text
+        }
+        taskSprintJunctions(paging: $paging, filter: $filter, sorting: $sorting) {
+          pageInfo {
+            hasNextPage
+            hasPreviousPage
+          }
+          nodes {
+            id
+            taskId
+            sprintId
+          }
+        }
+      }
+    }
+    tenantId
+    tenant {
+      id
+      name
+      users(paging: $paging2, filter: $filter2, sorting: $sorting2) {
+        pageInfo {
+          hasNextPage
+          hasPreviousPage
+        }
+        nodes {
+          id
+          name
+          tenantId
+          tenant {
+            id
+            name
+            tenantBillingId
+          }
+          gender
+          age
+        }
+      }
+      tenantBilling {
+        id
+        taxNumber
+        phoneNumber
+        tenant {
+          id
+          name
+          tenantBillingId
+        }
+        tenantId
+      }
+      tenantBillingId
+    }
+    gender
+    age
+  }
+}
+    `;
+export const CreateOneSprintDocument = gql`
+    mutation createOneSprint($paging: OffsetPaging!, $filter: TaskSprintJunctionFilter!, $sorting: [TaskSprintJunctionSort!]!, $input: CreateOneSprintInput!) {
+  createOneSprint(input: $input) {
+    id
+    name
+    taskSprintJunctions(paging: $paging, filter: $filter, sorting: $sorting) {
+      pageInfo {
+        hasNextPage
+        hasPreviousPage
+      }
+      nodes {
+        id
+        taskId
+        sprintId
+        task {
+          id
+          name
+          userId
+          user {
+            id
+            name
+            tenantId
+            gender
+            age
+          }
+          details {
+            id
+            title
+            description
+          }
+          comments {
+            id
+            text
+          }
+        }
+        sprint {
+          id
+          name
+        }
+      }
+    }
+  }
+}
+    `;
+export const CreateOneTaskDocument = gql`
+    mutation createOneTask($paging: OffsetPaging!, $filter: TaskFilter!, $sorting: [TaskSort!]!, $paging1: OffsetPaging!, $filter1: UserFilter!, $sorting1: [UserSort!]!, $paging2: OffsetPaging!, $filter2: TaskSprintJunctionFilter!, $sorting2: [TaskSprintJunctionSort!]!, $input: CreateOneTaskInput!) {
+  createOneTask(input: $input) {
+    id
+    name
+    userId
+    user {
+      id
+      name
+      tasks(paging: $paging, filter: $filter, sorting: $sorting) {
+        pageInfo {
+          hasNextPage
+          hasPreviousPage
+        }
+        nodes {
+          id
+          name
+          userId
+          user {
+            id
+            name
+            tenantId
+            gender
+            age
+          }
+          details {
+            id
+            title
+            description
+          }
+          comments {
+            id
+            text
+          }
+        }
+      }
+      tenantId
+      tenant {
+        id
+        name
+        users(paging: $paging1, filter: $filter1, sorting: $sorting1) {
+          pageInfo {
+            hasNextPage
+            hasPreviousPage
+          }
+          nodes {
+            id
+            name
+            tenantId
+            gender
+            age
+          }
+        }
+        tenantBilling {
+          id
+          taxNumber
+          phoneNumber
+          tenant {
+            id
+            name
+            tenantBillingId
+          }
+          tenantId
+        }
+        tenantBillingId
+      }
+      gender
+      age
+    }
+    details {
+      id
+      title
+      description
+    }
+    comments {
+      id
+      text
+    }
+    taskSprintJunctions(paging: $paging2, filter: $filter2, sorting: $sorting2) {
+      pageInfo {
+        hasNextPage
+        hasPreviousPage
+      }
+      nodes {
+        id
+        taskId
+        sprintId
+        task {
+          id
+          name
+          userId
+          user {
+            id
+            name
+            tenantId
+            gender
+            age
+          }
+          details {
+            id
+            title
+            description
+          }
+          comments {
+            id
+            text
+          }
+        }
+        sprint {
+          id
+          name
+        }
+      }
+    }
+  }
+}
+    `;
+export const CreateOneTaskSprintJunctionDocument = gql`
+    mutation createOneTaskSprintJunction($paging: OffsetPaging!, $filter: TaskFilter!, $sorting: [TaskSort!]!, $paging1: OffsetPaging!, $filter1: TaskSprintJunctionFilter!, $sorting1: [TaskSprintJunctionSort!]!, $input: CreateOneTaskSprintJunctionInput!) {
+  createOneTaskSprintJunction(input: $input) {
+    id
+    taskId
+    sprintId
+    task {
+      id
+      name
+      userId
+      user {
+        id
+        name
+        tasks(paging: $paging, filter: $filter, sorting: $sorting) {
+          pageInfo {
+            hasNextPage
+            hasPreviousPage
+          }
+          nodes {
+            id
+            name
+            userId
+          }
+        }
+        tenantId
+        tenant {
+          id
+          name
+          tenantBilling {
+            id
+            taxNumber
+            phoneNumber
+            tenantId
+          }
+          tenantBillingId
+        }
+        gender
+        age
+      }
+      details {
+        id
+        title
+        description
+      }
+      comments {
+        id
+        text
+      }
+      taskSprintJunctions(paging: $paging1, filter: $filter1, sorting: $sorting1) {
+        pageInfo {
+          hasNextPage
+          hasPreviousPage
+        }
+        nodes {
+          id
+          taskId
+          sprintId
+          task {
+            id
+            name
+            userId
+          }
+          sprint {
+            id
+            name
+          }
+        }
+      }
+    }
+    sprint {
+      id
+      name
+    }
+  }
+}
+    `;
+export const CreateOneTenantDocument = gql`
+    mutation createOneTenant($paging: OffsetPaging!, $filter: TaskFilter!, $sorting: [TaskSort!]!, $paging1: OffsetPaging!, $filter1: UserFilter!, $sorting1: [UserSort!]!, $input: CreateOneTenantInput!) {
+  createOneTenant(input: $input) {
+    id
+    name
+    users(paging: $paging1, filter: $filter1, sorting: $sorting1) {
+      pageInfo {
+        hasNextPage
+        hasPreviousPage
+      }
+      nodes {
+        id
+        name
+        tasks(paging: $paging, filter: $filter, sorting: $sorting) {
+          pageInfo {
+            hasNextPage
+            hasPreviousPage
+          }
+          nodes {
+            id
+            name
+            userId
+          }
+        }
+        tenantId
+        tenant {
+          id
+          name
+          tenantBilling {
+            id
+            taxNumber
+            phoneNumber
+            tenantId
+          }
+          tenantBillingId
+        }
+        gender
+        age
+      }
+    }
+    tenantBilling {
+      id
+      taxNumber
+      phoneNumber
+      tenant {
+        id
+        name
+        tenantBillingId
+      }
+      tenantId
+    }
+    tenantBillingId
+  }
+}
+    `;
+export const CreateOneTenantBillingDocument = gql`
+    mutation createOneTenantBilling($paging: OffsetPaging!, $filter: UserFilter!, $sorting: [UserSort!]!, $input: CreateOneTenantBillingInput!) {
+  createOneTenantBilling(input: $input) {
+    id
+    taxNumber
+    phoneNumber
+    tenant {
+      id
+      name
+      users(paging: $paging, filter: $filter, sorting: $sorting) {
+        pageInfo {
+          hasNextPage
+          hasPreviousPage
+        }
+        nodes {
+          id
+          name
+          tenantId
+          tenant {
+            id
+            name
+            tenantBillingId
+          }
+          gender
+          age
+        }
+      }
+      tenantBilling {
+        id
+        taxNumber
+        phoneNumber
+        tenant {
+          id
+          name
+          tenantBillingId
+        }
+        tenantId
+      }
+      tenantBillingId
+    }
+    tenantId
+  }
+}
+    `;
+export const CreateOneUserDocument = gql`
+    mutation createOneUser($paging: OffsetPaging!, $filter: TaskSprintJunctionFilter!, $sorting: [TaskSprintJunctionSort!]!, $paging1: OffsetPaging!, $filter1: TaskFilter!, $sorting1: [TaskSort!]!, $paging2: OffsetPaging!, $filter2: UserFilter!, $sorting2: [UserSort!]!, $input: CreateOneUserInput!) {
+  createOneUser(input: $input) {
+    id
+    name
+    tasks(paging: $paging1, filter: $filter1, sorting: $sorting1) {
+      pageInfo {
+        hasNextPage
+        hasPreviousPage
+      }
+      nodes {
+        id
+        name
+        userId
+        user {
+          id
+          name
+          tenantId
+          tenant {
+            id
+            name
+            tenantBillingId
+          }
+          gender
+          age
+        }
+        details {
+          id
+          title
+          description
+        }
+        comments {
+          id
+          text
+        }
+        taskSprintJunctions(paging: $paging, filter: $filter, sorting: $sorting) {
+          pageInfo {
+            hasNextPage
+            hasPreviousPage
+          }
+          nodes {
+            id
+            taskId
+            sprintId
+          }
+        }
+      }
+    }
+    tenantId
+    tenant {
+      id
+      name
+      users(paging: $paging2, filter: $filter2, sorting: $sorting2) {
+        pageInfo {
+          hasNextPage
+          hasPreviousPage
+        }
+        nodes {
+          id
+          name
+          tenantId
+          tenant {
+            id
+            name
+            tenantBillingId
+          }
+          gender
+          age
+        }
+      }
+      tenantBilling {
+        id
+        taxNumber
+        phoneNumber
+        tenant {
+          id
+          name
+          tenantBillingId
+        }
+        tenantId
+      }
+      tenantBillingId
+    }
+    gender
+    age
+  }
+}
+    `;
+export const DeleteManySprintsDocument = gql`
+    mutation deleteManySprints($input: DeleteManySprintsInput!) {
+  deleteManySprints(input: $input) {
+    deletedCount
+  }
+}
+    `;
+export const DeleteManyTaskSprintJunctionsDocument = gql`
+    mutation deleteManyTaskSprintJunctions($input: DeleteManyTaskSprintJunctionsInput!) {
+  deleteManyTaskSprintJunctions(input: $input) {
+    deletedCount
+  }
+}
+    `;
+export const DeleteManyTasksDocument = gql`
+    mutation deleteManyTasks($input: DeleteManyTasksInput!) {
+  deleteManyTasks(input: $input) {
+    deletedCount
+  }
+}
+    `;
+export const DeleteManyTenantBillingsDocument = gql`
+    mutation deleteManyTenantBillings($input: DeleteManyTenantBillingsInput!) {
+  deleteManyTenantBillings(input: $input) {
+    deletedCount
+  }
+}
+    `;
+export const DeleteManyTenantsDocument = gql`
+    mutation deleteManyTenants($input: DeleteManyTenantsInput!) {
+  deleteManyTenants(input: $input) {
+    deletedCount
+  }
+}
+    `;
+export const DeleteManyUsersDocument = gql`
+    mutation deleteManyUsers($input: DeleteManyUsersInput!) {
+  deleteManyUsers(input: $input) {
+    deletedCount
+  }
+}
+    `;
+export const DeleteOneSprintDocument = gql`
+    mutation deleteOneSprint($paging: OffsetPaging!, $filter: TaskSprintJunctionFilter!, $sorting: [TaskSprintJunctionSort!]!, $input: DeleteOneSprintInput!) {
+  deleteOneSprint(input: $input) {
+    id
+    name
+    taskSprintJunctions {
+      id
+      taskId
+      sprintId
+      task {
+        id
+        name
+        userId
+        user {
+          id
+          name
+          tenantId
+          tenant {
+            id
+            name
+            tenantBillingId
+          }
+          gender
+          age
+        }
+        details {
+          id
+          title
+          description
+        }
+        comments {
+          id
+          text
+        }
+        taskSprintJunctions(paging: $paging, filter: $filter, sorting: $sorting) {
+          pageInfo {
+            hasNextPage
+            hasPreviousPage
+          }
+          nodes {
+            id
+            taskId
+            sprintId
+          }
+        }
+      }
+      sprint {
+        id
+        name
+      }
+    }
+  }
+}
+    `;
+export const DeleteOneTaskDocument = gql`
+    mutation deleteOneTask($paging: OffsetPaging!, $filter: TaskFilter!, $sorting: [TaskSort!]!, $paging1: OffsetPaging!, $filter1: UserFilter!, $sorting1: [UserSort!]!, $paging2: OffsetPaging!, $filter2: TaskSprintJunctionFilter!, $sorting2: [TaskSprintJunctionSort!]!, $input: DeleteOneTaskInput!) {
+  deleteOneTask(input: $input) {
+    id
+    name
+    userId
+    user {
+      id
+      name
+      tasks(paging: $paging, filter: $filter, sorting: $sorting) {
+        pageInfo {
+          hasNextPage
+          hasPreviousPage
+        }
+        nodes {
+          id
+          name
+          userId
+          user {
+            id
+            name
+            tenantId
+            gender
+            age
+          }
+          details {
+            id
+            title
+            description
+          }
+          comments {
+            id
+            text
+          }
+        }
+      }
+      tenantId
+      tenant {
+        id
+        name
+        users(paging: $paging1, filter: $filter1, sorting: $sorting1) {
+          pageInfo {
+            hasNextPage
+            hasPreviousPage
+          }
+          nodes {
+            id
+            name
+            tenantId
+            gender
+            age
+          }
+        }
+        tenantBilling {
+          id
+          taxNumber
+          phoneNumber
+          tenant {
+            id
+            name
+            tenantBillingId
+          }
+          tenantId
+        }
+        tenantBillingId
+      }
+      gender
+      age
+    }
+    details {
+      id
+      title
+      description
+    }
+    comments {
+      id
+      text
+    }
+    taskSprintJunctions {
+      id
+      taskId
+      sprintId
+      task {
+        id
+        name
+        userId
+        user {
+          id
+          name
+          tenantId
+          gender
+          age
+        }
+        details {
+          id
+          title
+          description
+        }
+        comments {
+          id
+          text
+        }
+        taskSprintJunctions(paging: $paging2, filter: $filter2, sorting: $sorting2) {
+          pageInfo {
+            hasNextPage
+            hasPreviousPage
+          }
+          nodes {
+            id
+            taskId
+            sprintId
+          }
+        }
+      }
+      sprint {
+        id
+        name
+      }
+    }
+  }
+}
+    `;
+export const DeleteOneTaskSprintJunctionDocument = gql`
+    mutation deleteOneTaskSprintJunction($paging: OffsetPaging!, $filter: TaskFilter!, $sorting: [TaskSort!]!, $paging1: OffsetPaging!, $filter1: TaskSprintJunctionFilter!, $sorting1: [TaskSprintJunctionSort!]!, $input: DeleteOneTaskSprintJunctionInput!) {
+  deleteOneTaskSprintJunction(input: $input) {
+    id
+    taskId
+    sprintId
+    task {
+      id
+      name
+      userId
+      user {
+        id
+        name
+        tasks(paging: $paging, filter: $filter, sorting: $sorting) {
+          pageInfo {
+            hasNextPage
+            hasPreviousPage
+          }
+          nodes {
+            id
+            name
+            userId
+          }
+        }
+        tenantId
+        tenant {
+          id
+          name
+          tenantBilling {
+            id
+            taxNumber
+            phoneNumber
+            tenantId
+          }
+          tenantBillingId
+        }
+        gender
+        age
+      }
+      details {
+        id
+        title
+        description
+      }
+      comments {
+        id
+        text
+      }
+      taskSprintJunctions(paging: $paging1, filter: $filter1, sorting: $sorting1) {
+        pageInfo {
+          hasNextPage
+          hasPreviousPage
+        }
+        nodes {
+          id
+          taskId
+          sprintId
+          task {
+            id
+            name
+            userId
+          }
+          sprint {
+            id
+            name
+          }
+        }
+      }
+    }
+    sprint {
+      id
+      name
+    }
+  }
+}
+    `;
+export const DeleteOneTenantDocument = gql`
+    mutation deleteOneTenant($paging: OffsetPaging!, $filter: TaskFilter!, $sorting: [TaskSort!]!, $paging1: OffsetPaging!, $filter1: UserFilter!, $sorting1: [UserSort!]!, $input: DeleteOneTenantInput!) {
+  deleteOneTenant(input: $input) {
+    id
+    name
+    users {
+      id
+      name
+      tasks(paging: $paging, filter: $filter, sorting: $sorting) {
+        pageInfo {
+          hasNextPage
+          hasPreviousPage
+        }
+        nodes {
+          id
+          name
+          userId
+          user {
+            id
+            name
+            tenantId
+            gender
+            age
+          }
+          details {
+            id
+            title
+            description
+          }
+          comments {
+            id
+            text
+          }
+        }
+      }
+      tenantId
+      tenant {
+        id
+        name
+        users(paging: $paging1, filter: $filter1, sorting: $sorting1) {
+          pageInfo {
+            hasNextPage
+            hasPreviousPage
+          }
+          nodes {
+            id
+            name
+            tenantId
+            gender
+            age
+          }
+        }
+        tenantBilling {
+          id
+          taxNumber
+          phoneNumber
+          tenant {
+            id
+            name
+            tenantBillingId
+          }
+          tenantId
+        }
+        tenantBillingId
+      }
+      gender
+      age
+    }
+    tenantBilling {
+      id
+      taxNumber
+      phoneNumber
+      tenantId
+    }
+    tenantBillingId
+  }
+}
+    `;
+export const DeleteOneTenantBillingDocument = gql`
+    mutation deleteOneTenantBilling($paging: OffsetPaging!, $filter: UserFilter!, $sorting: [UserSort!]!, $input: DeleteOneTenantBillingInput!) {
+  deleteOneTenantBilling(input: $input) {
+    id
+    taxNumber
+    phoneNumber
+    tenant {
+      id
+      name
+      users(paging: $paging, filter: $filter, sorting: $sorting) {
+        pageInfo {
+          hasNextPage
+          hasPreviousPage
+        }
+        nodes {
+          id
+          name
+          tenantId
+          tenant {
+            id
+            name
+            tenantBillingId
+          }
+          gender
+          age
+        }
+      }
+      tenantBilling {
+        id
+        taxNumber
+        phoneNumber
+        tenant {
+          id
+          name
+          tenantBillingId
+        }
+        tenantId
+      }
+      tenantBillingId
+    }
+    tenantId
+  }
+}
+    `;
+export const DeleteOneUserDocument = gql`
+    mutation deleteOneUser($paging: OffsetPaging!, $filter: TaskFilter!, $sorting: [TaskSort!]!, $paging1: OffsetPaging!, $filter1: TaskSprintJunctionFilter!, $sorting1: [TaskSprintJunctionSort!]!, $input: DeleteOneUserInput!) {
+  deleteOneUser(input: $input) {
+    id
+    name
+    tasks {
+      id
+      name
+      userId
+      user {
+        id
+        name
+        tasks(paging: $paging, filter: $filter, sorting: $sorting) {
+          pageInfo {
+            hasNextPage
+            hasPreviousPage
+          }
+          nodes {
+            id
+            name
+            userId
+          }
+        }
+        tenantId
+        tenant {
+          id
+          name
+          tenantBilling {
+            id
+            taxNumber
+            phoneNumber
+            tenantId
+          }
+          tenantBillingId
+        }
+        gender
+        age
+      }
+      details {
+        id
+        title
+        description
+      }
+      comments {
+        id
+        text
+      }
+      taskSprintJunctions(paging: $paging1, filter: $filter1, sorting: $sorting1) {
+        pageInfo {
+          hasNextPage
+          hasPreviousPage
+        }
+        nodes {
+          id
+          taskId
+          sprintId
+          task {
+            id
+            name
+            userId
+          }
+          sprint {
+            id
+            name
+          }
+        }
+      }
+    }
+    tenantId
+    tenant {
+      id
+      name
+      tenantBillingId
+    }
+    gender
+    age
+  }
+}
+    `;
+export const UpdateManySprintsDocument = gql`
+    mutation updateManySprints($input: UpdateManySprintsInput!) {
+  updateManySprints(input: $input) {
+    updatedCount
+  }
+}
+    `;
+export const UpdateManyTaskSprintJunctionsDocument = gql`
+    mutation updateManyTaskSprintJunctions($input: UpdateManyTaskSprintJunctionsInput!) {
+  updateManyTaskSprintJunctions(input: $input) {
+    updatedCount
+  }
+}
+    `;
+export const UpdateManyTasksDocument = gql`
+    mutation updateManyTasks($input: UpdateManyTasksInput!) {
+  updateManyTasks(input: $input) {
+    updatedCount
+  }
+}
+    `;
+export const UpdateManyTenantBillingsDocument = gql`
+    mutation updateManyTenantBillings($input: UpdateManyTenantBillingsInput!) {
+  updateManyTenantBillings(input: $input) {
+    updatedCount
+  }
+}
+    `;
+export const UpdateManyTenantsDocument = gql`
+    mutation updateManyTenants($input: UpdateManyTenantsInput!) {
+  updateManyTenants(input: $input) {
+    updatedCount
+  }
+}
+    `;
+export const UpdateManyUsersDocument = gql`
+    mutation updateManyUsers($input: UpdateManyUsersInput!) {
+  updateManyUsers(input: $input) {
+    updatedCount
+  }
+}
+    `;
+export const UpdateOneSprintDocument = gql`
+    mutation updateOneSprint($paging: OffsetPaging!, $filter: TaskSprintJunctionFilter!, $sorting: [TaskSprintJunctionSort!]!, $input: UpdateOneSprintInput!) {
+  updateOneSprint(input: $input) {
+    id
+    name
+    taskSprintJunctions(paging: $paging, filter: $filter, sorting: $sorting) {
+      pageInfo {
+        hasNextPage
+        hasPreviousPage
+      }
+      nodes {
+        id
+        taskId
+        sprintId
+        task {
+          id
+          name
+          userId
+          user {
+            id
+            name
+            tenantId
+            gender
+            age
+          }
+          details {
+            id
+            title
+            description
+          }
+          comments {
+            id
+            text
+          }
+        }
+        sprint {
+          id
+          name
+        }
+      }
+    }
+  }
+}
+    `;
+export const UpdateOneTaskDocument = gql`
+    mutation updateOneTask($paging: OffsetPaging!, $filter: TaskFilter!, $sorting: [TaskSort!]!, $paging1: OffsetPaging!, $filter1: UserFilter!, $sorting1: [UserSort!]!, $paging2: OffsetPaging!, $filter2: TaskSprintJunctionFilter!, $sorting2: [TaskSprintJunctionSort!]!, $input: UpdateOneTaskInput!) {
+  updateOneTask(input: $input) {
+    id
+    name
+    userId
+    user {
+      id
+      name
+      tasks(paging: $paging, filter: $filter, sorting: $sorting) {
+        pageInfo {
+          hasNextPage
+          hasPreviousPage
+        }
+        nodes {
+          id
+          name
+          userId
+          user {
+            id
+            name
+            tenantId
+            gender
+            age
+          }
+          details {
+            id
+            title
+            description
+          }
+          comments {
+            id
+            text
+          }
+        }
+      }
+      tenantId
+      tenant {
+        id
+        name
+        users(paging: $paging1, filter: $filter1, sorting: $sorting1) {
+          pageInfo {
+            hasNextPage
+            hasPreviousPage
+          }
+          nodes {
+            id
+            name
+            tenantId
+            gender
+            age
+          }
+        }
+        tenantBilling {
+          id
+          taxNumber
+          phoneNumber
+          tenant {
+            id
+            name
+            tenantBillingId
+          }
+          tenantId
+        }
+        tenantBillingId
+      }
+      gender
+      age
+    }
+    details {
+      id
+      title
+      description
+    }
+    comments {
+      id
+      text
+    }
+    taskSprintJunctions(paging: $paging2, filter: $filter2, sorting: $sorting2) {
+      pageInfo {
+        hasNextPage
+        hasPreviousPage
+      }
+      nodes {
+        id
+        taskId
+        sprintId
+        task {
+          id
+          name
+          userId
+          user {
+            id
+            name
+            tenantId
+            gender
+            age
+          }
+          details {
+            id
+            title
+            description
+          }
+          comments {
+            id
+            text
+          }
+        }
+        sprint {
+          id
+          name
+        }
+      }
+    }
+  }
+}
+    `;
+export const UpdateOneTaskSprintJunctionDocument = gql`
+    mutation updateOneTaskSprintJunction($paging: OffsetPaging!, $filter: TaskFilter!, $sorting: [TaskSort!]!, $paging1: OffsetPaging!, $filter1: TaskSprintJunctionFilter!, $sorting1: [TaskSprintJunctionSort!]!, $input: UpdateOneTaskSprintJunctionInput!) {
+  updateOneTaskSprintJunction(input: $input) {
+    id
+    taskId
+    sprintId
+    task {
+      id
+      name
+      userId
+      user {
+        id
+        name
+        tasks(paging: $paging, filter: $filter, sorting: $sorting) {
+          pageInfo {
+            hasNextPage
+            hasPreviousPage
+          }
+          nodes {
+            id
+            name
+            userId
+          }
+        }
+        tenantId
+        tenant {
+          id
+          name
+          tenantBilling {
+            id
+            taxNumber
+            phoneNumber
+            tenantId
+          }
+          tenantBillingId
+        }
+        gender
+        age
+      }
+      details {
+        id
+        title
+        description
+      }
+      comments {
+        id
+        text
+      }
+      taskSprintJunctions(paging: $paging1, filter: $filter1, sorting: $sorting1) {
+        pageInfo {
+          hasNextPage
+          hasPreviousPage
+        }
+        nodes {
+          id
+          taskId
+          sprintId
+          task {
+            id
+            name
+            userId
+          }
+          sprint {
+            id
+            name
+          }
+        }
+      }
+    }
+    sprint {
+      id
+      name
+    }
+  }
+}
+    `;
+export const UpdateOneTenantDocument = gql`
+    mutation updateOneTenant($paging: OffsetPaging!, $filter: TaskFilter!, $sorting: [TaskSort!]!, $paging1: OffsetPaging!, $filter1: UserFilter!, $sorting1: [UserSort!]!, $input: UpdateOneTenantInput!) {
+  updateOneTenant(input: $input) {
+    id
+    name
+    users(paging: $paging1, filter: $filter1, sorting: $sorting1) {
+      pageInfo {
+        hasNextPage
+        hasPreviousPage
+      }
+      nodes {
+        id
+        name
+        tasks(paging: $paging, filter: $filter, sorting: $sorting) {
+          pageInfo {
+            hasNextPage
+            hasPreviousPage
+          }
+          nodes {
+            id
+            name
+            userId
+          }
+        }
+        tenantId
+        tenant {
+          id
+          name
+          tenantBilling {
+            id
+            taxNumber
+            phoneNumber
+            tenantId
+          }
+          tenantBillingId
+        }
+        gender
+        age
+      }
+    }
+    tenantBilling {
+      id
+      taxNumber
+      phoneNumber
+      tenant {
+        id
+        name
+        tenantBillingId
+      }
+      tenantId
+    }
+    tenantBillingId
+  }
+}
+    `;
+export const UpdateOneTenantBillingDocument = gql`
+    mutation updateOneTenantBilling($paging: OffsetPaging!, $filter: UserFilter!, $sorting: [UserSort!]!, $input: UpdateOneTenantBillingInput!) {
+  updateOneTenantBilling(input: $input) {
+    id
+    taxNumber
+    phoneNumber
+    tenant {
+      id
+      name
+      users(paging: $paging, filter: $filter, sorting: $sorting) {
+        pageInfo {
+          hasNextPage
+          hasPreviousPage
+        }
+        nodes {
+          id
+          name
+          tenantId
+          tenant {
+            id
+            name
+            tenantBillingId
+          }
+          gender
+          age
+        }
+      }
+      tenantBilling {
+        id
+        taxNumber
+        phoneNumber
+        tenant {
+          id
+          name
+          tenantBillingId
+        }
+        tenantId
+      }
+      tenantBillingId
+    }
+    tenantId
+  }
+}
+    `;
+export const UpdateOneUserDocument = gql`
+    mutation updateOneUser($paging: OffsetPaging!, $filter: TaskSprintJunctionFilter!, $sorting: [TaskSprintJunctionSort!]!, $paging1: OffsetPaging!, $filter1: TaskFilter!, $sorting1: [TaskSort!]!, $paging2: OffsetPaging!, $filter2: UserFilter!, $sorting2: [UserSort!]!, $input: UpdateOneUserInput!) {
+  updateOneUser(input: $input) {
+    id
+    name
+    tasks(paging: $paging1, filter: $filter1, sorting: $sorting1) {
+      pageInfo {
+        hasNextPage
+        hasPreviousPage
+      }
+      nodes {
+        id
+        name
+        userId
+        user {
+          id
+          name
+          tenantId
+          tenant {
+            id
+            name
+            tenantBillingId
+          }
+          gender
+          age
+        }
+        details {
+          id
+          title
+          description
+        }
+        comments {
+          id
+          text
+        }
+        taskSprintJunctions(paging: $paging, filter: $filter, sorting: $sorting) {
+          pageInfo {
+            hasNextPage
+            hasPreviousPage
+          }
+          nodes {
+            id
+            taskId
+            sprintId
+          }
+        }
+      }
+    }
+    tenantId
+    tenant {
+      id
+      name
+      users(paging: $paging2, filter: $filter2, sorting: $sorting2) {
+        pageInfo {
+          hasNextPage
+          hasPreviousPage
+        }
+        nodes {
+          id
+          name
+          tenantId
+          tenant {
+            id
+            name
+            tenantBillingId
+          }
+          gender
+          age
+        }
+      }
+      tenantBilling {
+        id
+        taxNumber
+        phoneNumber
+        tenant {
+          id
+          name
+          tenantBillingId
+        }
+        tenantId
+      }
+      tenantBillingId
+    }
+    gender
+    age
+  }
+}
+    `;
+export const DemonstrateComplexQueryDocument = gql`
+    query demonstrateComplexQuery {
+  demonstrateComplexQuery {
+    females {
+      count
+      avgAge
+    }
+    males {
+      count
+      avgAge
+    }
+  }
+}
+    `;
+export const DemonstrateTransactionBlockDocument = gql`
+    query demonstrateTransactionBlock($paging: OffsetPaging!, $filter: TaskSprintJunctionFilter!, $sorting: [TaskSprintJunctionSort!]!, $paging1: OffsetPaging!, $filter1: TaskFilter!, $sorting1: [TaskSort!]!, $paging2: OffsetPaging!, $filter2: UserFilter!, $sorting2: [UserSort!]!) {
+  demonstrateTransactionBlock {
+    id
+    name
+    tasks(paging: $paging1, filter: $filter1, sorting: $sorting1) {
+      pageInfo {
+        hasNextPage
+        hasPreviousPage
+      }
+      nodes {
+        id
+        name
+        userId
+        user {
+          id
+          name
+          tenantId
+          tenant {
+            id
+            name
+            tenantBillingId
+          }
+          gender
+          age
+        }
+        details {
+          id
+          title
+          description
+        }
+        comments {
+          id
+          text
+        }
+        taskSprintJunctions(paging: $paging, filter: $filter, sorting: $sorting) {
+          pageInfo {
+            hasNextPage
+            hasPreviousPage
+          }
+          nodes {
+            id
+            taskId
+            sprintId
+          }
+        }
+      }
+    }
+    tenantId
+    tenant {
+      id
+      name
+      users(paging: $paging2, filter: $filter2, sorting: $sorting2) {
+        pageInfo {
+          hasNextPage
+          hasPreviousPage
+        }
+        nodes {
+          id
+          name
+          tenantId
+          tenant {
+            id
+            name
+            tenantBillingId
+          }
+          gender
+          age
+        }
+      }
+      tenantBilling {
+        id
+        taxNumber
+        phoneNumber
+        tenant {
+          id
+          name
+          tenantBillingId
+        }
+        tenantId
+      }
+      tenantBillingId
+    }
+    gender
+    age
+  }
+}
+    `;
+export const DemonstrateTransactionFlowDocument = gql`
+    query demonstrateTransactionFlow($paging: OffsetPaging!, $filter: TaskSprintJunctionFilter!, $sorting: [TaskSprintJunctionSort!]!, $paging1: OffsetPaging!, $filter1: TaskFilter!, $sorting1: [TaskSort!]!, $paging2: OffsetPaging!, $filter2: UserFilter!, $sorting2: [UserSort!]!) {
+  demonstrateTransactionFlow {
+    id
+    name
+    tasks(paging: $paging1, filter: $filter1, sorting: $sorting1) {
+      pageInfo {
+        hasNextPage
+        hasPreviousPage
+      }
+      nodes {
+        id
+        name
+        userId
+        user {
+          id
+          name
+          tenantId
+          tenant {
+            id
+            name
+            tenantBillingId
+          }
+          gender
+          age
+        }
+        details {
+          id
+          title
+          description
+        }
+        comments {
+          id
+          text
+        }
+        taskSprintJunctions(paging: $paging, filter: $filter, sorting: $sorting) {
+          pageInfo {
+            hasNextPage
+            hasPreviousPage
+          }
+          nodes {
+            id
+            taskId
+            sprintId
+          }
+        }
+      }
+    }
+    tenantId
+    tenant {
+      id
+      name
+      users(paging: $paging2, filter: $filter2, sorting: $sorting2) {
+        pageInfo {
+          hasNextPage
+          hasPreviousPage
+        }
+        nodes {
+          id
+          name
+          tenantId
+          tenant {
+            id
+            name
+            tenantBillingId
+          }
+          gender
+          age
+        }
+      }
+      tenantBilling {
+        id
+        taxNumber
+        phoneNumber
+        tenant {
+          id
+          name
+          tenantBillingId
+        }
+        tenantId
+      }
+      tenantBillingId
+    }
+    gender
+    age
+  }
+}
+    `;
+export const DemonstrateTransactionLockDocument = gql`
+    query demonstrateTransactionLock($paging: OffsetPaging!, $filter: TaskSprintJunctionFilter!, $sorting: [TaskSprintJunctionSort!]!, $paging1: OffsetPaging!, $filter1: TaskFilter!, $sorting1: [TaskSort!]!, $paging2: OffsetPaging!, $filter2: UserFilter!, $sorting2: [UserSort!]!) {
+  demonstrateTransactionLock {
+    id
+    name
+    tasks(paging: $paging1, filter: $filter1, sorting: $sorting1) {
+      pageInfo {
+        hasNextPage
+        hasPreviousPage
+      }
+      nodes {
+        id
+        name
+        userId
+        user {
+          id
+          name
+          tenantId
+          tenant {
+            id
+            name
+            tenantBillingId
+          }
+          gender
+          age
+        }
+        details {
+          id
+          title
+          description
+        }
+        comments {
+          id
+          text
+        }
+        taskSprintJunctions(paging: $paging, filter: $filter, sorting: $sorting) {
+          pageInfo {
+            hasNextPage
+            hasPreviousPage
+          }
+          nodes {
+            id
+            taskId
+            sprintId
+          }
+        }
+      }
+    }
+    tenantId
+    tenant {
+      id
+      name
+      users(paging: $paging2, filter: $filter2, sorting: $sorting2) {
+        pageInfo {
+          hasNextPage
+          hasPreviousPage
+        }
+        nodes {
+          id
+          name
+          tenantId
+          tenant {
+            id
+            name
+            tenantBillingId
+          }
+          gender
+          age
+        }
+      }
+      tenantBilling {
+        id
+        taxNumber
+        phoneNumber
+        tenant {
+          id
+          name
+          tenantBillingId
+        }
+        tenantId
+      }
+      tenantBillingId
+    }
+    gender
+    age
+  }
+}
+    `;
+export const SprintDocument = gql`
+    query sprint($paging: OffsetPaging!, $filter: TaskSprintJunctionFilter!, $sorting: [TaskSprintJunctionSort!]!, $id: ID!) {
+  sprint(id: $id) {
+    id
+    name
+    taskSprintJunctions(paging: $paging, filter: $filter, sorting: $sorting) {
+      pageInfo {
+        hasNextPage
+        hasPreviousPage
+      }
+      nodes {
+        id
+        taskId
+        sprintId
+        task {
+          id
+          name
+          userId
+          user {
+            id
+            name
+            tenantId
+            gender
+            age
+          }
+          details {
+            id
+            title
+            description
+          }
+          comments {
+            id
+            text
+          }
+        }
+        sprint {
+          id
+          name
+        }
+      }
+    }
+  }
+}
+    `;
+export const SprintsDocument = gql`
+    query sprints($paging: OffsetPaging!, $filter: TaskSprintJunctionFilter!, $sorting: [TaskSprintJunctionSort!]!, $paging1: OffsetPaging!, $filter1: SprintFilter!, $sorting1: [SprintSort!]!) {
+  sprints(paging: $paging1, filter: $filter1, sorting: $sorting1) {
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+    }
+    nodes {
+      id
+      name
+      taskSprintJunctions(paging: $paging, filter: $filter, sorting: $sorting) {
+        pageInfo {
+          hasNextPage
+          hasPreviousPage
+        }
+        nodes {
+          id
+          taskId
+          sprintId
+          task {
+            id
+            name
+            userId
+          }
+          sprint {
+            id
+            name
+          }
+        }
+      }
+    }
+  }
+}
+    `;
+export const TaskDocument = gql`
+    query task($paging: OffsetPaging!, $filter: TaskFilter!, $sorting: [TaskSort!]!, $paging1: OffsetPaging!, $filter1: UserFilter!, $sorting1: [UserSort!]!, $paging2: OffsetPaging!, $filter2: TaskSprintJunctionFilter!, $sorting2: [TaskSprintJunctionSort!]!, $id: ID!) {
+  task(id: $id) {
+    id
+    name
+    userId
+    user {
+      id
+      name
+      tasks(paging: $paging, filter: $filter, sorting: $sorting) {
+        pageInfo {
+          hasNextPage
+          hasPreviousPage
+        }
+        nodes {
+          id
+          name
+          userId
+          user {
+            id
+            name
+            tenantId
+            gender
+            age
+          }
+          details {
+            id
+            title
+            description
+          }
+          comments {
+            id
+            text
+          }
+        }
+      }
+      tenantId
+      tenant {
+        id
+        name
+        users(paging: $paging1, filter: $filter1, sorting: $sorting1) {
+          pageInfo {
+            hasNextPage
+            hasPreviousPage
+          }
+          nodes {
+            id
+            name
+            tenantId
+            gender
+            age
+          }
+        }
+        tenantBilling {
+          id
+          taxNumber
+          phoneNumber
+          tenant {
+            id
+            name
+            tenantBillingId
+          }
+          tenantId
+        }
+        tenantBillingId
+      }
+      gender
+      age
+    }
+    details {
+      id
+      title
+      description
+    }
+    comments {
+      id
+      text
+    }
+    taskSprintJunctions(paging: $paging2, filter: $filter2, sorting: $sorting2) {
+      pageInfo {
+        hasNextPage
+        hasPreviousPage
+      }
+      nodes {
+        id
+        taskId
+        sprintId
+        task {
+          id
+          name
+          userId
+        }
+        sprint {
+          id
+          name
+        }
+      }
+    }
+  }
+}
+    `;
+export const TaskSprintJunctionDocument = gql`
+    query taskSprintJunction($paging: OffsetPaging!, $filter: TaskFilter!, $sorting: [TaskSort!]!, $paging1: OffsetPaging!, $filter1: TaskSprintJunctionFilter!, $sorting1: [TaskSprintJunctionSort!]!, $id: ID!) {
+  taskSprintJunction(id: $id) {
+    id
+    taskId
+    sprintId
+    task {
+      id
+      name
+      userId
+      user {
+        id
+        name
+        tasks(paging: $paging, filter: $filter, sorting: $sorting) {
+          pageInfo {
+            hasNextPage
+            hasPreviousPage
+          }
+          nodes {
+            id
+            name
+            userId
+          }
+        }
+        tenantId
+        tenant {
+          id
+          name
+          tenantBilling {
+            id
+            taxNumber
+            phoneNumber
+            tenantId
+          }
+          tenantBillingId
+        }
+        gender
+        age
+      }
+      details {
+        id
+        title
+        description
+      }
+      comments {
+        id
+        text
+      }
+      taskSprintJunctions(paging: $paging1, filter: $filter1, sorting: $sorting1) {
+        pageInfo {
+          hasNextPage
+          hasPreviousPage
+        }
+        nodes {
+          id
+          taskId
+          sprintId
+          task {
+            id
+            name
+            userId
+          }
+          sprint {
+            id
+            name
+          }
+        }
+      }
+    }
+    sprint {
+      id
+      name
+    }
+  }
+}
+    `;
+export const TaskSprintJunctionsDocument = gql`
+    query taskSprintJunctions($paging: OffsetPaging!, $filter: TaskSprintJunctionFilter!, $sorting: [TaskSprintJunctionSort!]!) {
+  taskSprintJunctions(paging: $paging, filter: $filter, sorting: $sorting) {
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+    }
+    nodes {
+      id
+      taskId
+      sprintId
+      task {
+        id
+        name
+        userId
+        user {
+          id
+          name
+          tenantId
+          tenant {
+            id
+            name
+            tenantBillingId
+          }
+          gender
+          age
+        }
+        details {
+          id
+          title
+          description
+        }
+        comments {
+          id
+          text
+        }
+      }
+      sprint {
+        id
+        name
+      }
+    }
+  }
+}
+    `;
+export const TasksDocument = gql`
+    query tasks($paging: OffsetPaging!, $filter: TaskSprintJunctionFilter!, $sorting: [TaskSprintJunctionSort!]!, $paging1: OffsetPaging!, $filter1: TaskFilter!, $sorting1: [TaskSort!]!) {
+  tasks(paging: $paging1, filter: $filter1, sorting: $sorting1) {
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+    }
+    nodes {
+      id
+      name
+      userId
+      user {
+        id
+        name
+        tenantId
+        tenant {
+          id
+          name
+          tenantBilling {
+            id
+            taxNumber
+            phoneNumber
+            tenantId
+          }
+          tenantBillingId
+        }
+        gender
+        age
+      }
+      details {
+        id
+        title
+        description
+      }
+      comments {
+        id
+        text
+      }
+      taskSprintJunctions(paging: $paging, filter: $filter, sorting: $sorting) {
+        pageInfo {
+          hasNextPage
+          hasPreviousPage
+        }
+        nodes {
+          id
+          taskId
+          sprintId
+          task {
+            id
+            name
+            userId
+          }
+          sprint {
+            id
+            name
+          }
+        }
+      }
+    }
+  }
+}
+    `;
+export const TenantDocument = gql`
+    query tenant($paging: OffsetPaging!, $filter: TaskFilter!, $sorting: [TaskSort!]!, $paging1: OffsetPaging!, $filter1: UserFilter!, $sorting1: [UserSort!]!, $id: ID!) {
+  tenant(id: $id) {
+    id
+    name
+    users(paging: $paging1, filter: $filter1, sorting: $sorting1) {
+      pageInfo {
+        hasNextPage
+        hasPreviousPage
+      }
+      nodes {
+        id
+        name
+        tasks(paging: $paging, filter: $filter, sorting: $sorting) {
+          pageInfo {
+            hasNextPage
+            hasPreviousPage
+          }
+          nodes {
+            id
+            name
+            userId
+          }
+        }
+        tenantId
+        tenant {
+          id
+          name
+          tenantBilling {
+            id
+            taxNumber
+            phoneNumber
+            tenantId
+          }
+          tenantBillingId
+        }
+        gender
+        age
+      }
+    }
+    tenantBillingId
+  }
+}
+    `;
+export const TenantBillingDocument = gql`
+    query tenantBilling($paging: OffsetPaging!, $filter: UserFilter!, $sorting: [UserSort!]!, $id: ID!) {
+  tenantBilling(id: $id) {
+    id
+    taxNumber
+    phoneNumber
+    tenant {
+      id
+      name
+      users(paging: $paging, filter: $filter, sorting: $sorting) {
+        pageInfo {
+          hasNextPage
+          hasPreviousPage
+        }
+        nodes {
+          id
+          name
+          tenantId
+          tenant {
+            id
+            name
+            tenantBillingId
+          }
+          gender
+          age
+        }
+      }
+      tenantBilling {
+        id
+        taxNumber
+        phoneNumber
+        tenantId
+      }
+      tenantBillingId
+    }
+    tenantId
+  }
+}
+    `;
+export const TenantBillingsDocument = gql`
+    query tenantBillings($paging: OffsetPaging!, $filter: UserFilter!, $sorting: [UserSort!]!, $paging1: OffsetPaging!, $filter1: TenantBillingFilter!, $sorting1: [TenantBillingSort!]!) {
+  tenantBillings(paging: $paging1, filter: $filter1, sorting: $sorting1) {
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+    }
+    nodes {
+      id
+      taxNumber
+      phoneNumber
+      tenant {
+        id
+        name
+        users(paging: $paging, filter: $filter, sorting: $sorting) {
+          pageInfo {
+            hasNextPage
+            hasPreviousPage
+          }
+          nodes {
+            id
+            name
+            tenantId
+            gender
+            age
+          }
+        }
+        tenantBilling {
+          id
+          taxNumber
+          phoneNumber
+          tenant {
+            id
+            name
+            tenantBillingId
+          }
+          tenantId
+        }
+        tenantBillingId
+      }
+      tenantId
+    }
+  }
+}
+    `;
+export const TenantsDocument = gql`
+    query tenants($paging: OffsetPaging!, $filter: UserFilter!, $sorting: [UserSort!]!, $paging1: OffsetPaging!, $filter1: TenantFilter!, $sorting1: [TenantSort!]!) {
+  tenants(paging: $paging1, filter: $filter1, sorting: $sorting1) {
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+    }
+    nodes {
+      id
+      name
+      users(paging: $paging, filter: $filter, sorting: $sorting) {
+        pageInfo {
+          hasNextPage
+          hasPreviousPage
+        }
+        nodes {
+          id
+          name
+          tenantId
+          tenant {
+            id
+            name
+            tenantBillingId
+          }
+          gender
+          age
+        }
+      }
+      tenantBilling {
+        id
+        taxNumber
+        phoneNumber
+        tenant {
+          id
+          name
+          tenantBilling {
+            id
+            taxNumber
+            phoneNumber
+            tenantId
+          }
+          tenantBillingId
+        }
+        tenantId
+      }
+      tenantBillingId
+    }
+  }
+}
+    `;
+export const UserDocument = gql`
+    query user($paging: OffsetPaging!, $filter: TaskSprintJunctionFilter!, $sorting: [TaskSprintJunctionSort!]!, $paging1: OffsetPaging!, $filter1: TaskFilter!, $sorting1: [TaskSort!]!, $id: ID!) {
+  user(id: $id) {
+    id
+    name
+    tasks(paging: $paging1, filter: $filter1, sorting: $sorting1) {
+      pageInfo {
+        hasNextPage
+        hasPreviousPage
+      }
+      nodes {
+        id
+        name
+        userId
+        user {
+          id
+          name
+          tenantId
+          tenant {
+            id
+            name
+            tenantBillingId
+          }
+          gender
+          age
+        }
+        details {
+          id
+          title
+          description
+        }
+        comments {
+          id
+          text
+        }
+        taskSprintJunctions(paging: $paging, filter: $filter, sorting: $sorting) {
+          pageInfo {
+            hasNextPage
+            hasPreviousPage
+          }
+          nodes {
+            id
+            taskId
+            sprintId
+          }
+        }
+      }
+    }
+    tenantId
+    gender
+    age
+  }
+}
+    `;
+export const UserByIndexDocument = gql`
+    query userByIndex($paging: OffsetPaging!, $filter: TaskSprintJunctionFilter!, $sorting: [TaskSprintJunctionSort!]!, $paging1: OffsetPaging!, $filter1: TaskFilter!, $sorting1: [TaskSort!]!, $paging2: OffsetPaging!, $filter2: UserFilter!, $sorting2: [UserSort!]!, $tenanId: String!, $name: String!) {
+  userByIndex(tenanId: $tenanId, name: $name) {
+    id
+    name
+    tasks(paging: $paging1, filter: $filter1, sorting: $sorting1) {
+      pageInfo {
+        hasNextPage
+        hasPreviousPage
+      }
+      nodes {
+        id
+        name
+        userId
+        user {
+          id
+          name
+          tenantId
+          tenant {
+            id
+            name
+            tenantBillingId
+          }
+          gender
+          age
+        }
+        details {
+          id
+          title
+          description
+        }
+        comments {
+          id
+          text
+        }
+        taskSprintJunctions(paging: $paging, filter: $filter, sorting: $sorting) {
+          pageInfo {
+            hasNextPage
+            hasPreviousPage
+          }
+          nodes {
+            id
+            taskId
+            sprintId
+          }
+        }
+      }
+    }
+    tenantId
+    tenant {
+      id
+      name
+      users(paging: $paging2, filter: $filter2, sorting: $sorting2) {
+        pageInfo {
+          hasNextPage
+          hasPreviousPage
+        }
+        nodes {
+          id
+          name
+          tenantId
+          tenant {
+            id
+            name
+            tenantBillingId
+          }
+          gender
+          age
+        }
+      }
+      tenantBilling {
+        id
+        taxNumber
+        phoneNumber
+        tenant {
+          id
+          name
+          tenantBillingId
+        }
+        tenantId
+      }
+      tenantBillingId
+    }
+    gender
+    age
+  }
+}
+    `;
+export const UsersDocument = gql`
+    query users($paging: OffsetPaging!, $filter: TaskFilter!, $sorting: [TaskSort!]!, $paging1: OffsetPaging!, $filter1: UserFilter!, $sorting1: [UserSort!]!) {
+  users(paging: $paging1, filter: $filter1, sorting: $sorting1) {
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+    }
+    nodes {
+      id
+      name
+      tasks(paging: $paging, filter: $filter, sorting: $sorting) {
+        pageInfo {
+          hasNextPage
+          hasPreviousPage
+        }
+        nodes {
+          id
+          name
+          userId
+          user {
+            id
+            name
+            tenantId
+            gender
+            age
+          }
+          details {
+            id
+            title
+            description
+          }
+          comments {
+            id
+            text
+          }
+        }
+      }
+      tenantId
+      tenant {
+        id
+        name
+        tenantBilling {
+          id
+          taxNumber
+          phoneNumber
+          tenant {
+            id
+            name
+            tenantBillingId
+          }
+          tenantId
+        }
+        tenantBillingId
+      }
+      gender
+      age
+    }
+  }
+}
+    `;
+
+export type SdkFunctionWrapper = <T>(action: (requestHeaders?:Record<string, string>) => Promise<T>, operationName: string, operationType?: string, variables?: any) => Promise<T>;
+
+
+const defaultWrapper: SdkFunctionWrapper = (action, _operationName, _operationType, variables) => action();
+
+export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = defaultWrapper) {
+  return {
+    createManySprints(variables: CreateManySprintsMutationVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<CreateManySprintsMutation> {
+      return withWrapper((wrappedRequestHeaders) => client.request<CreateManySprintsMutation>(CreateManySprintsDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'createManySprints', 'mutation', variables);
+    },
+    createManyTaskSprintJunctions(variables: CreateManyTaskSprintJunctionsMutationVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<CreateManyTaskSprintJunctionsMutation> {
+      return withWrapper((wrappedRequestHeaders) => client.request<CreateManyTaskSprintJunctionsMutation>(CreateManyTaskSprintJunctionsDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'createManyTaskSprintJunctions', 'mutation', variables);
+    },
+    createManyTasks(variables: CreateManyTasksMutationVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<CreateManyTasksMutation> {
+      return withWrapper((wrappedRequestHeaders) => client.request<CreateManyTasksMutation>(CreateManyTasksDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'createManyTasks', 'mutation', variables);
+    },
+    createManyTenantBillings(variables: CreateManyTenantBillingsMutationVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<CreateManyTenantBillingsMutation> {
+      return withWrapper((wrappedRequestHeaders) => client.request<CreateManyTenantBillingsMutation>(CreateManyTenantBillingsDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'createManyTenantBillings', 'mutation', variables);
+    },
+    createManyTenants(variables: CreateManyTenantsMutationVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<CreateManyTenantsMutation> {
+      return withWrapper((wrappedRequestHeaders) => client.request<CreateManyTenantsMutation>(CreateManyTenantsDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'createManyTenants', 'mutation', variables);
+    },
+    createManyUsers(variables: CreateManyUsersMutationVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<CreateManyUsersMutation> {
+      return withWrapper((wrappedRequestHeaders) => client.request<CreateManyUsersMutation>(CreateManyUsersDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'createManyUsers', 'mutation', variables);
+    },
+    createOneSprint(variables: CreateOneSprintMutationVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<CreateOneSprintMutation> {
+      return withWrapper((wrappedRequestHeaders) => client.request<CreateOneSprintMutation>(CreateOneSprintDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'createOneSprint', 'mutation', variables);
+    },
+    createOneTask(variables: CreateOneTaskMutationVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<CreateOneTaskMutation> {
+      return withWrapper((wrappedRequestHeaders) => client.request<CreateOneTaskMutation>(CreateOneTaskDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'createOneTask', 'mutation', variables);
+    },
+    createOneTaskSprintJunction(variables: CreateOneTaskSprintJunctionMutationVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<CreateOneTaskSprintJunctionMutation> {
+      return withWrapper((wrappedRequestHeaders) => client.request<CreateOneTaskSprintJunctionMutation>(CreateOneTaskSprintJunctionDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'createOneTaskSprintJunction', 'mutation', variables);
+    },
+    createOneTenant(variables: CreateOneTenantMutationVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<CreateOneTenantMutation> {
+      return withWrapper((wrappedRequestHeaders) => client.request<CreateOneTenantMutation>(CreateOneTenantDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'createOneTenant', 'mutation', variables);
+    },
+    createOneTenantBilling(variables: CreateOneTenantBillingMutationVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<CreateOneTenantBillingMutation> {
+      return withWrapper((wrappedRequestHeaders) => client.request<CreateOneTenantBillingMutation>(CreateOneTenantBillingDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'createOneTenantBilling', 'mutation', variables);
+    },
+    createOneUser(variables: CreateOneUserMutationVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<CreateOneUserMutation> {
+      return withWrapper((wrappedRequestHeaders) => client.request<CreateOneUserMutation>(CreateOneUserDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'createOneUser', 'mutation', variables);
+    },
+    deleteManySprints(variables: DeleteManySprintsMutationVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<DeleteManySprintsMutation> {
+      return withWrapper((wrappedRequestHeaders) => client.request<DeleteManySprintsMutation>(DeleteManySprintsDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'deleteManySprints', 'mutation', variables);
+    },
+    deleteManyTaskSprintJunctions(variables: DeleteManyTaskSprintJunctionsMutationVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<DeleteManyTaskSprintJunctionsMutation> {
+      return withWrapper((wrappedRequestHeaders) => client.request<DeleteManyTaskSprintJunctionsMutation>(DeleteManyTaskSprintJunctionsDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'deleteManyTaskSprintJunctions', 'mutation', variables);
+    },
+    deleteManyTasks(variables: DeleteManyTasksMutationVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<DeleteManyTasksMutation> {
+      return withWrapper((wrappedRequestHeaders) => client.request<DeleteManyTasksMutation>(DeleteManyTasksDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'deleteManyTasks', 'mutation', variables);
+    },
+    deleteManyTenantBillings(variables: DeleteManyTenantBillingsMutationVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<DeleteManyTenantBillingsMutation> {
+      return withWrapper((wrappedRequestHeaders) => client.request<DeleteManyTenantBillingsMutation>(DeleteManyTenantBillingsDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'deleteManyTenantBillings', 'mutation', variables);
+    },
+    deleteManyTenants(variables: DeleteManyTenantsMutationVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<DeleteManyTenantsMutation> {
+      return withWrapper((wrappedRequestHeaders) => client.request<DeleteManyTenantsMutation>(DeleteManyTenantsDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'deleteManyTenants', 'mutation', variables);
+    },
+    deleteManyUsers(variables: DeleteManyUsersMutationVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<DeleteManyUsersMutation> {
+      return withWrapper((wrappedRequestHeaders) => client.request<DeleteManyUsersMutation>(DeleteManyUsersDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'deleteManyUsers', 'mutation', variables);
+    },
+    deleteOneSprint(variables: DeleteOneSprintMutationVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<DeleteOneSprintMutation> {
+      return withWrapper((wrappedRequestHeaders) => client.request<DeleteOneSprintMutation>(DeleteOneSprintDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'deleteOneSprint', 'mutation', variables);
+    },
+    deleteOneTask(variables: DeleteOneTaskMutationVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<DeleteOneTaskMutation> {
+      return withWrapper((wrappedRequestHeaders) => client.request<DeleteOneTaskMutation>(DeleteOneTaskDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'deleteOneTask', 'mutation', variables);
+    },
+    deleteOneTaskSprintJunction(variables: DeleteOneTaskSprintJunctionMutationVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<DeleteOneTaskSprintJunctionMutation> {
+      return withWrapper((wrappedRequestHeaders) => client.request<DeleteOneTaskSprintJunctionMutation>(DeleteOneTaskSprintJunctionDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'deleteOneTaskSprintJunction', 'mutation', variables);
+    },
+    deleteOneTenant(variables: DeleteOneTenantMutationVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<DeleteOneTenantMutation> {
+      return withWrapper((wrappedRequestHeaders) => client.request<DeleteOneTenantMutation>(DeleteOneTenantDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'deleteOneTenant', 'mutation', variables);
+    },
+    deleteOneTenantBilling(variables: DeleteOneTenantBillingMutationVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<DeleteOneTenantBillingMutation> {
+      return withWrapper((wrappedRequestHeaders) => client.request<DeleteOneTenantBillingMutation>(DeleteOneTenantBillingDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'deleteOneTenantBilling', 'mutation', variables);
+    },
+    deleteOneUser(variables: DeleteOneUserMutationVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<DeleteOneUserMutation> {
+      return withWrapper((wrappedRequestHeaders) => client.request<DeleteOneUserMutation>(DeleteOneUserDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'deleteOneUser', 'mutation', variables);
+    },
+    updateManySprints(variables: UpdateManySprintsMutationVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<UpdateManySprintsMutation> {
+      return withWrapper((wrappedRequestHeaders) => client.request<UpdateManySprintsMutation>(UpdateManySprintsDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'updateManySprints', 'mutation', variables);
+    },
+    updateManyTaskSprintJunctions(variables: UpdateManyTaskSprintJunctionsMutationVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<UpdateManyTaskSprintJunctionsMutation> {
+      return withWrapper((wrappedRequestHeaders) => client.request<UpdateManyTaskSprintJunctionsMutation>(UpdateManyTaskSprintJunctionsDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'updateManyTaskSprintJunctions', 'mutation', variables);
+    },
+    updateManyTasks(variables: UpdateManyTasksMutationVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<UpdateManyTasksMutation> {
+      return withWrapper((wrappedRequestHeaders) => client.request<UpdateManyTasksMutation>(UpdateManyTasksDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'updateManyTasks', 'mutation', variables);
+    },
+    updateManyTenantBillings(variables: UpdateManyTenantBillingsMutationVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<UpdateManyTenantBillingsMutation> {
+      return withWrapper((wrappedRequestHeaders) => client.request<UpdateManyTenantBillingsMutation>(UpdateManyTenantBillingsDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'updateManyTenantBillings', 'mutation', variables);
+    },
+    updateManyTenants(variables: UpdateManyTenantsMutationVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<UpdateManyTenantsMutation> {
+      return withWrapper((wrappedRequestHeaders) => client.request<UpdateManyTenantsMutation>(UpdateManyTenantsDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'updateManyTenants', 'mutation', variables);
+    },
+    updateManyUsers(variables: UpdateManyUsersMutationVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<UpdateManyUsersMutation> {
+      return withWrapper((wrappedRequestHeaders) => client.request<UpdateManyUsersMutation>(UpdateManyUsersDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'updateManyUsers', 'mutation', variables);
+    },
+    updateOneSprint(variables: UpdateOneSprintMutationVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<UpdateOneSprintMutation> {
+      return withWrapper((wrappedRequestHeaders) => client.request<UpdateOneSprintMutation>(UpdateOneSprintDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'updateOneSprint', 'mutation', variables);
+    },
+    updateOneTask(variables: UpdateOneTaskMutationVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<UpdateOneTaskMutation> {
+      return withWrapper((wrappedRequestHeaders) => client.request<UpdateOneTaskMutation>(UpdateOneTaskDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'updateOneTask', 'mutation', variables);
+    },
+    updateOneTaskSprintJunction(variables: UpdateOneTaskSprintJunctionMutationVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<UpdateOneTaskSprintJunctionMutation> {
+      return withWrapper((wrappedRequestHeaders) => client.request<UpdateOneTaskSprintJunctionMutation>(UpdateOneTaskSprintJunctionDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'updateOneTaskSprintJunction', 'mutation', variables);
+    },
+    updateOneTenant(variables: UpdateOneTenantMutationVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<UpdateOneTenantMutation> {
+      return withWrapper((wrappedRequestHeaders) => client.request<UpdateOneTenantMutation>(UpdateOneTenantDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'updateOneTenant', 'mutation', variables);
+    },
+    updateOneTenantBilling(variables: UpdateOneTenantBillingMutationVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<UpdateOneTenantBillingMutation> {
+      return withWrapper((wrappedRequestHeaders) => client.request<UpdateOneTenantBillingMutation>(UpdateOneTenantBillingDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'updateOneTenantBilling', 'mutation', variables);
+    },
+    updateOneUser(variables: UpdateOneUserMutationVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<UpdateOneUserMutation> {
+      return withWrapper((wrappedRequestHeaders) => client.request<UpdateOneUserMutation>(UpdateOneUserDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'updateOneUser', 'mutation', variables);
+    },
+    demonstrateComplexQuery(variables?: DemonstrateComplexQueryQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<DemonstrateComplexQueryQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<DemonstrateComplexQueryQuery>(DemonstrateComplexQueryDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'demonstrateComplexQuery', 'query', variables);
+    },
+    demonstrateTransactionBlock(variables: DemonstrateTransactionBlockQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<DemonstrateTransactionBlockQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<DemonstrateTransactionBlockQuery>(DemonstrateTransactionBlockDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'demonstrateTransactionBlock', 'query', variables);
+    },
+    demonstrateTransactionFlow(variables: DemonstrateTransactionFlowQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<DemonstrateTransactionFlowQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<DemonstrateTransactionFlowQuery>(DemonstrateTransactionFlowDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'demonstrateTransactionFlow', 'query', variables);
+    },
+    demonstrateTransactionLock(variables: DemonstrateTransactionLockQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<DemonstrateTransactionLockQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<DemonstrateTransactionLockQuery>(DemonstrateTransactionLockDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'demonstrateTransactionLock', 'query', variables);
+    },
+    sprint(variables: SprintQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<SprintQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<SprintQuery>(SprintDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'sprint', 'query', variables);
+    },
+    sprints(variables: SprintsQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<SprintsQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<SprintsQuery>(SprintsDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'sprints', 'query', variables);
+    },
+    task(variables: TaskQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<TaskQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<TaskQuery>(TaskDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'task', 'query', variables);
+    },
+    taskSprintJunction(variables: TaskSprintJunctionQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<TaskSprintJunctionQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<TaskSprintJunctionQuery>(TaskSprintJunctionDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'taskSprintJunction', 'query', variables);
+    },
+    taskSprintJunctions(variables: TaskSprintJunctionsQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<TaskSprintJunctionsQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<TaskSprintJunctionsQuery>(TaskSprintJunctionsDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'taskSprintJunctions', 'query', variables);
+    },
+    tasks(variables: TasksQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<TasksQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<TasksQuery>(TasksDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'tasks', 'query', variables);
+    },
+    tenant(variables: TenantQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<TenantQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<TenantQuery>(TenantDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'tenant', 'query', variables);
+    },
+    tenantBilling(variables: TenantBillingQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<TenantBillingQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<TenantBillingQuery>(TenantBillingDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'tenantBilling', 'query', variables);
+    },
+    tenantBillings(variables: TenantBillingsQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<TenantBillingsQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<TenantBillingsQuery>(TenantBillingsDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'tenantBillings', 'query', variables);
+    },
+    tenants(variables: TenantsQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<TenantsQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<TenantsQuery>(TenantsDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'tenants', 'query', variables);
+    },
+    user(variables: UserQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<UserQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<UserQuery>(UserDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'user', 'query', variables);
+    },
+    userByIndex(variables: UserByIndexQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<UserByIndexQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<UserByIndexQuery>(UserByIndexDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'userByIndex', 'query', variables);
+    },
+    users(variables: UsersQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<UsersQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<UsersQuery>(UsersDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'users', 'query', variables);
+    }
+  };
+}
+export type Sdk = ReturnType<typeof getSdk>;

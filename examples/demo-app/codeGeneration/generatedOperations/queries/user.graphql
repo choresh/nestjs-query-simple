@@ -1,0 +1,52 @@
+query user($paging: OffsetPaging!, $filter: TaskSprintJunctionFilter!, $sorting: [TaskSprintJunctionSort!]!, $paging1: OffsetPaging!, $filter1: TaskFilter!, $sorting1: [TaskSort!]!, $id: ID!){
+    user(id: $id){
+        id
+        name
+        tasks(paging: $paging1, filter: $filter1, sorting: $sorting1){
+            pageInfo{
+                hasNextPage
+                hasPreviousPage
+            }
+            nodes{
+                id
+                name
+                userId
+                user{
+                    id
+                    name
+                    tenantId
+                    tenant{
+                        id
+                        name
+                        tenantBillingId
+                    }
+                    gender
+                    age
+                }
+                details{
+                    id
+                    title
+                    description
+                }
+                comments{
+                    id
+                    text
+                }
+                taskSprintJunctions(paging: $paging, filter: $filter, sorting: $sorting){
+                    pageInfo{
+                        hasNextPage
+                        hasPreviousPage
+                    }
+                    nodes{
+                        id
+                        taskId
+                        sprintId
+                    }
+                }
+            }
+        }
+        tenantId
+        gender
+        age
+    }
+}

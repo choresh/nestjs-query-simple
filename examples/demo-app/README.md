@@ -260,3 +260,10 @@ module.exports = { up, down }
   run-rs npm module
   ```
 * More info see [Convert a Standalone to a Replica Set](https://www.mongodb.com/docs/manual/tutorial/convert-standalone-to-replica-set).
+
+## How to generate/update TS SDK
+Run command in this structure within the app's root folder:
+```
+$ npm run generate-graphql-ts
+```
+The generated code will be file 'generatedApi.ts', within the app's root folder.

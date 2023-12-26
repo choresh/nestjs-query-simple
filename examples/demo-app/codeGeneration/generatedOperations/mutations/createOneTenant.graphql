@@ -1,0 +1,53 @@
+mutation createOneTenant($paging: OffsetPaging!, $filter: TaskFilter!, $sorting: [TaskSort!]!, $paging1: OffsetPaging!, $filter1: UserFilter!, $sorting1: [UserSort!]!, $input: CreateOneTenantInput!){
+    createOneTenant(input: $input){
+        id
+        name
+        users(paging: $paging1, filter: $filter1, sorting: $sorting1){
+            pageInfo{
+                hasNextPage
+                hasPreviousPage
+            }
+            nodes{
+                id
+                name
+                tasks(paging: $paging, filter: $filter, sorting: $sorting){
+                    pageInfo{
+                        hasNextPage
+                        hasPreviousPage
+                    }
+                    nodes{
+                        id
+                        name
+                        userId
+                    }
+                }
+                tenantId
+                tenant{
+                    id
+                    name
+                    tenantBilling{
+                        id
+                        taxNumber
+                        phoneNumber
+                        tenantId
+                    }
+                    tenantBillingId
+                }
+                gender
+                age
+            }
+        }
+        tenantBilling{
+            id
+            taxNumber
+            phoneNumber
+            tenant{
+                id
+                name
+                tenantBillingId
+            }
+            tenantId
+        }
+        tenantBillingId
+    }
+}

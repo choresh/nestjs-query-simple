@@ -1,0 +1,42 @@
+query sprint($paging: OffsetPaging!, $filter: TaskSprintJunctionFilter!, $sorting: [TaskSprintJunctionSort!]!, $id: ID!){
+    sprint(id: $id){
+        id
+        name
+        taskSprintJunctions(paging: $paging, filter: $filter, sorting: $sorting){
+            pageInfo{
+                hasNextPage
+                hasPreviousPage
+            }
+            nodes{
+                id
+                taskId
+                sprintId
+                task{
+                    id
+                    name
+                    userId
+                    user{
+                        id
+                        name
+                        tenantId
+                        gender
+                        age
+                    }
+                    details{
+                        id
+                        title
+                        description
+                    }
+                    comments{
+                        id
+                        text
+                    }
+                }
+                sprint{
+                    id
+                    name
+                }
+            }
+        }
+    }
+}

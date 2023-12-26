@@ -33,7 +33,7 @@ interface Options {
  */
 function setLogger (logger: Logger): void {
   set('debug', (collection: string, method: string, query: any, doc: any): void => {
-    logger.info('Mongoose log message:', { collection, method, query, doc })
+    logger.info('Mongoose log message:', JSON.stringify({ collection, method, query, doc }, null, 4))
   })
 }
 

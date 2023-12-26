@@ -1,0 +1,5 @@
+mutation updateManySprints($input: UpdateManySprintsInput!){
+    updateManySprints(input: $input){
+        updatedCount
+    }
+}

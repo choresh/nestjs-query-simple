@@ -1,0 +1,42 @@
+mutation updateOneTenantBilling($paging: OffsetPaging!, $filter: UserFilter!, $sorting: [UserSort!]!, $input: UpdateOneTenantBillingInput!){
+    updateOneTenantBilling(input: $input){
+        id
+        taxNumber
+        phoneNumber
+        tenant{
+            id
+            name
+            users(paging: $paging, filter: $filter, sorting: $sorting){
+                pageInfo{
+                    hasNextPage
+                    hasPreviousPage
+                }
+                nodes{
+                    id
+                    name
+                    tenantId
+                    tenant{
+                        id
+                        name
+                        tenantBillingId
+                    }
+                    gender
+                    age
+                }
+            }
+            tenantBilling{
+                id
+                taxNumber
+                phoneNumber
+                tenant{
+                    id
+                    name
+                    tenantBillingId
+                }
+                tenantId
+            }
+            tenantBillingId
+        }
+        tenantId
+    }
+}

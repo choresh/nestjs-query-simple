@@ -1,0 +1,5 @@
+mutation deleteManyUsers($input: DeleteManyUsersInput!){
+    deleteManyUsers(input: $input){
+        deletedCount
+    }
+}

@@ -1,0 +1,5 @@
+mutation deleteManySprints($input: DeleteManySprintsInput!){
+    deleteManySprints(input: $input){
+        deletedCount
+    }
+}

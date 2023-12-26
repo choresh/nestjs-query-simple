@@ -1,0 +1,5 @@
+mutation updateManyUsers($input: UpdateManyUsersInput!){
+    updateManyUsers(input: $input){
+        updatedCount
+    }
+}

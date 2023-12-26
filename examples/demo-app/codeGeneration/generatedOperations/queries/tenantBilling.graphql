@@ -1,0 +1,37 @@
+query tenantBilling($paging: OffsetPaging!, $filter: UserFilter!, $sorting: [UserSort!]!, $id: ID!){
+    tenantBilling(id: $id){
+        id
+        taxNumber
+        phoneNumber
+        tenant{
+            id
+            name
+            users(paging: $paging, filter: $filter, sorting: $sorting){
+                pageInfo{
+                    hasNextPage
+                    hasPreviousPage
+                }
+                nodes{
+                    id
+                    name
+                    tenantId
+                    tenant{
+                        id
+                        name
+                        tenantBillingId
+                    }
+                    gender
+                    age
+                }
+            }
+            tenantBilling{
+                id
+                taxNumber
+                phoneNumber
+                tenantId
+            }
+            tenantBillingId
+        }
+        tenantId
+    }
+}

@@ -1,0 +1,5 @@
+mutation deleteManyTenantBillings($input: DeleteManyTenantBillingsInput!){
+    deleteManyTenantBillings(input: $input){
+        deletedCount
+    }
+}

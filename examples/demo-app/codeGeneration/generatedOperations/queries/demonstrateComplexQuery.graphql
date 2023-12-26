@@ -1,0 +1,12 @@
+query demonstrateComplexQuery{
+    demonstrateComplexQuery{
+        females{
+            count
+            avgAge
+        }
+        males{
+            count
+            avgAge
+        }
+    }
+}

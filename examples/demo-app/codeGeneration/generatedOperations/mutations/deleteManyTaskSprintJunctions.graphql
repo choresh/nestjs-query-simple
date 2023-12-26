@@ -1,0 +1,5 @@
+mutation deleteManyTaskSprintJunctions($input: DeleteManyTaskSprintJunctionsInput!){
+    deleteManyTaskSprintJunctions(input: $input){
+        deletedCount
+    }
+}

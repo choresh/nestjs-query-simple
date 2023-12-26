@@ -1,7 +1,12 @@
-schema: ./codeGeneration/generatedSchema.gql # Input file path.
-documents: [
-]
+schema: ./codeGeneration/generatedSchema.graphql # File path, input for generation of 'types' section in the output file.
+documents: # Inputs (file paths) for generation of 'operations' section in the generated TS file.
+  - './codeGeneration/generatedOperations/mutations/*.graphql' # Default mutations, generated TS by 'operationsGenerator.ts'.
+  - './codeGeneration/generatedOperations/queries/*.graphql' # Default queries, generated TS by 'operationsGenerator.ts'.
+  - './codeGeneration/customOperations/mutations/*.graphql' # Custom mutations, written manually.
+  - './codeGeneration/customOperations/queries/*.graphql' # Custom queries, written manually.
 generates:
-  ./generatedApi.ts: # Output file path.
+  ./generatedApi.ts: # File path, of the generated TS file.
     plugins:
-      - 'typescript'
+      - 'typescript' # Generate the 'types' section in the generated TS file.
+      - 'typescript-operations' # Generate the 'operations' section in the generated TS file.
+      - 'typescript-graphql-request' # Generate the 'sdk' section in the generated TS file.

@@ -1,0 +1,5 @@
+mutation updateManyTenants($input: UpdateManyTenantsInput!){
+    updateManyTenants(input: $input){
+        updatedCount
+    }
+}

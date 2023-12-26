@@ -1,0 +1,5 @@
+mutation updateManyTaskSprintJunctions($input: UpdateManyTaskSprintJunctionsInput!){
+    updateManyTaskSprintJunctions(input: $input){
+        updatedCount
+    }
+}

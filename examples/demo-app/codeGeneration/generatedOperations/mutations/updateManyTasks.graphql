@@ -1,0 +1,5 @@
+mutation updateManyTasks($input: UpdateManyTasksInput!){
+    updateManyTasks(input: $input){
+        updatedCount
+    }
+}

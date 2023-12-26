@@ -1,0 +1,5 @@
+mutation deleteManyTasks($input: DeleteManyTasksInput!){
+    deleteManyTasks(input: $input){
+        deletedCount
+    }
+}
