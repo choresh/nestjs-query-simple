@@ -179,3 +179,28 @@ query GetExampleItems {
   }
 }
 ```
+
+Get a paginated list of example items with specific filter, sorting, and paging settings
+```graphql
+query GetFilteredAndSortedExampleItems {
+  exampleItems(
+    paging: { limit: 10, offset: 0 } # Adjust limit and offset as needed
+    filter: {
+      exampleProperty1: { neq: "SomeValue" } # Adjust filter criteria
+    }
+    sorting: [
+      { field: exampleProperty1, direction: ASC } # Adjust sorting field and direction
+    ]
+  ) {
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+    }
+    nodes {
+      id
+      exampleProperty1
+      exampleProperty2
+    }
+  }
+}
+```
