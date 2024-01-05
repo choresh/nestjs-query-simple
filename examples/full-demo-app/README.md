@@ -22,6 +22,19 @@ Run this command within the app's root folder:
 npm run build
 ```
 
+## Test
+Run those commands within the app's root folder:
+```bash
+# unit tests
+npm run test
+
+# e2e tests
+npm run test:e2e
+
+# test coverage
+npm run test:cov
+```
+
 ## Running the app
 Run those commands within the app's root folder:
 ``` bash
@@ -37,16 +50,3 @@ npm run start:prod
 
 ## Using the app
 Open browser, and navigate to: http://localhost:3000/graphql.
-
-## Test
-Run those commands within the app's root folder:
-```bash
-# unit tests
-npm run test
-
-# e2e tests
-npm run test:e2e
-
-# test coverage
-npm run test:cov
-```

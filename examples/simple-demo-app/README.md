@@ -22,6 +22,19 @@ Run this command within the app's root folder:
 npm run build
 ```
 
+## Test
+Run those commands within the app's root folder:
+```bash
+# unit tests
+npm run test
+
+# e2e tests
+npm run test:e2e
+
+# test coverage
+npm run test:cov
+```
+
 ## Running the app
 Run those commands within the app's root folder:
 ``` bash
@@ -38,22 +51,9 @@ npm run start:prod
 ## Using the app
 Open browser, and navigate to: http://localhost:3000/graphql.
 
-## Test
-Run those commands within the app's root folder:
-```bash
-# unit tests
-npm run test
-
-# e2e tests
-npm run test:e2e
-
-# test coverage
-npm run test:cov
-```
-
 ## GraphQL mutations/queries examples
 
-Some mutations and queries examples you can use in the GraphQL playground (http://localhost:3000/graphql):
+Some mutations and queries examples you can use in this app's GraphQL playground (http://localhost:3000/graphql):
 
 Create a single example item:
 ```graphql
