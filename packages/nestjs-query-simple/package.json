@@ -10,15 +10,21 @@
   "files": [
     "/dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://www.npmjs.com/package/nestjs-query-simple"
+  },
+  "homepage": "https://nestjs-query-simple-website.vercel.app",
+  "keywords": [
+    "NestJs",
+    "TypeScript",
+    "GraphQL",
+    "MongoDb",
+    "Nestjs-query"
+  ],
   "scripts": {
     "build": "nest build",
-    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
-    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
-    "test": "jest --ci --force-exit --detectOpenHandles",
-    "test:watch": "jest --watch --detectOpenHandles",
-    "test:cov": "jest --coverage --force-exit --detectOpenHandles",
-    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix"
   },
   "devDependencies": {
     "@nestjs/cli": "^10.2.1",
