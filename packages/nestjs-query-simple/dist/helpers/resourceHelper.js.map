@@ -1,1 +1,0 @@
-{"version":3,"file":"resourceHelper.js","sourceRoot":"","sources":["../../src/helpers/resourceHelper.ts"],"names":[],"mappings":";;;AACA,wEAAwE;AACxE,4EAA4E;AA2C5E,MAAa,cAAc;IAOzB,MAAM,CAAC,UAAU,CAAE,IAAgB;QACjC,OAAO,+CAAwB,CAAC,UAAU,CAAC;YACzC,OAAO,EAAE,CAAC,mDAA0B,CAAC,UAAU,CAAC,IAAI,CAAC,QAAQ,CAAC,CAAC;YAC/D,IAAI,EAAE,IAAI,CAAC,IAAI;SAChB,CAAC,CAAA;IACJ,CAAC;CACF;AAbD,wCAaC"}
