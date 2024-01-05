@@ -16,10 +16,10 @@
   },
   "homepage": "https://nestjs-query-simple-website.vercel.app",
   "keywords": [
-    "NestJs",
+    "NestJS",
     "TypeScript",
     "GraphQL",
-    "MongoDb",
+    "MongoDB",
     "Nestjs-query"
   ],
   "scripts": {
