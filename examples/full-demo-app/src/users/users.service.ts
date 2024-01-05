@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
-
 import { ReturnModelType } from '@typegoose/typegoose'
 import { InjectModel } from '@m8a/nestjs-typegoose'
 import { Gender, UserDato } from './datos/user.dato'
@@ -151,7 +149,7 @@ export class UsersService extends ServiceBase<UserDato> {
         throw new Error('Oops!')
       })
       .catch((err) => {
-        throw new Error(err)
+        throw new Error(err.message as string)
       })
 
     return await this.model.find().exec()
@@ -189,7 +187,7 @@ export class UsersService extends ServiceBase<UserDato> {
       await session.commitTransaction()
     } catch (err) {
       await session.abortTransaction()
-      throw new Error(err)
+      throw new Error(err.message as string)
     }
 
     // eslint-disable-next-line no-unreachable

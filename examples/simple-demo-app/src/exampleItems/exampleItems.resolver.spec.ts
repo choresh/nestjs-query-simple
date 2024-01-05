@@ -81,8 +81,8 @@ describe('ExampleItemsResolver', () => {
   it('Should update a dato', async () => {
     expect(datoId).toBeDefined()
     const update: ExampleItemUpdateDto = {
-     exampleProperty1: 'val-b',
-     exampleProperty2: 'val-c'
+      exampleProperty1: 'val-b',
+      exampleProperty2: 'val-c'
     }
     const args: MutationArgsType<UpdateOneInputType<ExampleItemUpdateDto>> = {
       input: {

@@ -1,6 +1,4 @@
 import { Module } from '@nestjs/common'
-import { AppController } from './app.controller'
-import { AppService } from './app.service'
 import { GraphQLModule } from '@nestjs/graphql'
 import { ApolloDriver, type ApolloDriverConfig } from '@nestjs/apollo'
 import { UsersModule } from './users/users.module'
@@ -25,7 +23,7 @@ import { TenantBillingsModule } from './tenantBillings/tenantBillings.module'
     TenantBillingsModule,
     TaskSprintJunctionsModule
   ],
-  controllers: [AppController],
-  providers: [AppService]
+  controllers: [],
+  providers: []
 })
 export class AppModule {}

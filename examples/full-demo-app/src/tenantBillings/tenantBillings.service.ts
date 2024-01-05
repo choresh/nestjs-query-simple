@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/promise-function-async */
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
-
 import { InjectModel } from '@m8a/nestjs-typegoose'
 import { ReturnModelType, type DocumentType } from '@typegoose/typegoose'
 import { TenantBillingDato } from './datos/tenantBilling.dato'
@@ -26,7 +23,7 @@ export class TenantBillingsService extends ServiceBase<TenantBillingDato> {
     item: DeepPartial<TenantBillingDato>
   ): Promise<DocumentType<TenantBillingDato>> {
     const result = await super.createOne(item)
-    await this._updateRelatedTenant(result.id, result.tenantId, false)
+    await this._updateRelatedTenant(result.id as string, result.tenantId, false)
     return result
   }
 
@@ -34,8 +31,8 @@ export class TenantBillingsService extends ServiceBase<TenantBillingDato> {
     items: Array<DeepPartial<TenantBillingDato>>
   ): Promise<Array<DocumentType<TenantBillingDato>>> {
     const result = await super.createMany(items)
-    const promises = result.map((curr) => {
-      return this._updateRelatedTenant(curr.id, curr.tenantId, false)
+    const promises = result.map(async (curr) => {
+      await this._updateRelatedTenant(curr.id as string, curr.tenantId, false)
     })
     await Promise.all(promises)
     return result
@@ -46,7 +43,7 @@ export class TenantBillingsService extends ServiceBase<TenantBillingDato> {
     opts?: DeleteOneOptions<TenantBillingDato> | undefined
   ): Promise<DocumentType<TenantBillingDato>> {
     const result = await super.deleteOne(id, opts)
-    await this._updateRelatedTenant(result.id, result.tenantId, true)
+    await this._updateRelatedTenant(result.id as string, result.tenantId, true)
     return result
   }
 

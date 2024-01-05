@@ -1,11 +1,8 @@
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
-
 import { Test, type TestingModule } from '@nestjs/testing'
 import { type INestApplication } from '@nestjs/common'
-import * as request from 'supertest'
 import { AppModule } from './../src/app.module'
 
-describe('AppController (e2e)', () => {
+describe.skip('AppController (e2e)', () => {
   let app: INestApplication
 
   beforeEach(async () => {
@@ -17,10 +14,8 @@ describe('AppController (e2e)', () => {
     await app.init()
   })
 
-  it.skip('/ (GET)', async () => {
-    return await request(app.getHttpServer())
-      .get('/')
-      .expect(200)
-      .expect('Hello World!')
+  // Add your tests here.
+
+  it('Test placeholder', async () => {
   })
 })

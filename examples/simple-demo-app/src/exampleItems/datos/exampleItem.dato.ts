@@ -5,6 +5,6 @@ export class ExampleItemDato extends IdentifiableDato {
   @DatoProp()
     exampleProperty1: string
 
-  @DatoProp({nullable: true})
+  @DatoProp({ nullable: true })
     exampleProperty2?: string
 }

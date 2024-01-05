@@ -1,6 +1,4 @@
 import { Module } from '@nestjs/common'
-import { AppController } from './app.controller'
-import { AppService } from './app.service'
 import { GraphQLModule } from '@nestjs/graphql'
 import { ApolloDriver, type ApolloDriverConfig } from '@nestjs/apollo'
 import { ExampleItemsModule } from './exampleItems/exampleItems.module'
@@ -15,7 +13,7 @@ import { AppHelper } from 'nestjs-query-simple'
     }),
     ExampleItemsModule
   ],
-  controllers: [AppController],
-  providers: [AppService]
+  controllers: [],
+  providers: []
 })
 export class AppModule {}

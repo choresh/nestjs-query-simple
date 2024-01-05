@@ -36,9 +36,7 @@ npm run start:prod
 ```
 
 ## Using the app
-Open browser, and navigate to the folowing URLs:
-* Main page: http://localhost:3000.
-* Graphql playground: http://localhost:3000/graphql.
+Open browser, and navigate to: http://localhost:3000/graphql.
 
 ## Test
 Run those commands within the app's root folder:
