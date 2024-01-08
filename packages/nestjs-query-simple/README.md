@@ -1,7 +1,7 @@
 # nestjs-query-simple
 
 ## Description
-* A thin layer built on top of [Nestjs-query](https://tripss.github.io/nestjs-query/), enables easy definition of MongoDB/GraphQL asspects within NestJS apps.
+* A thin layer built on top of [Nestjs-query](https://tripss.github.io/nestjs-query/), enables easy definition of MongoDB/GraphQL aspects within NestJS apps.
 
 ## Key Advantages of this Package
 * Provides powerful decorators for Entities/DTOs, abstracting away complexities:
