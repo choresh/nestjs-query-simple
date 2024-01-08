@@ -32,14 +32,6 @@ export class UsersService extends ServiceBase<UserDato> {
     super(model)
   }
 
-  async findOneByIndex (tenantId: string, name: string): Promise<UserDato> {
-    const obj = await this.model.findOne({ tenantId, name })
-    if (obj == null) {
-      throw new Error('Tenant not found')
-    }
-    return obj
-  }
-
   async demonstrateComplexQuery (): Promise<UsersInfo> {
     const result = await this.model.aggregate([
       {
