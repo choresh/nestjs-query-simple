@@ -1,52 +1,7 @@
 # advanced-demo-app
 
 ## Description
-Full example application, demostrate usage of npm pakage [nestjs-query-simple](https://www.npmjs.com/package/nestjs-query-simple).
+Advanced example application, demostrate usage of npm pakage [nestjs-query-simple](https://www.npmjs.com/package/nestjs-query-simple).
 
 ## Docs
-https://nestjs-query-simple-website.vercel.app
-
-## Prerequisites
-* [MongoDB](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/).
-* [Compass](https://www.mongodb.com/products/compass) (recommended).
-
-## Install the app
-Run this command within the app root folder:
-``` bash
-npm install
-```
-
-## Build the app
-Run this command within the app's root folder:
-``` bash
-npm run build
-```
-
-## Test
-Run those commands within the app's root folder:
-```bash
-# unit tests
-npm run test
-
-# e2e tests
-npm run test:e2e
-
-# test coverage
-npm run test:cov
-```
-
-## Running the app
-Run those commands within the app's root folder:
-``` bash
-# development
-npm run start
-
-# watch mode
-npm run start:dev
-
-# production mode
-npm run start:prod
-```
-
-## Using the app
-Open browser, and navigate to: http://localhost:3000/graphql.
+See [Nestjs-query-simple website](https://nestjs-query-simple-website.vercel.app/).
