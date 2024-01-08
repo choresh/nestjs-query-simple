@@ -1,4 +1,4 @@
-# mininal-demo-app
+# minimal-demo-app
 
 ## Description
 Minimal example application, demostrate usage of npm pakage [nestjs-query-simple](https://www.npmjs.com/package/nestjs-query-simple).
