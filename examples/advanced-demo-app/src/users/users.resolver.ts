@@ -12,14 +12,6 @@ export class UsersResolver extends CRUDResolver(UserDato, { CreateDTOClass: User
     super(_service)
   }
 
-  @Query(() => UserDato, { name: 'userByIndex' })
-  async findOneByIndex (
-    @Args('tenanId', { type: () => String }) tenantId: string,
-      @Args('name', { type: () => String }) name: string
-  ): Promise<UserDato> {
-    return await this._service.findOneByIndex(tenantId, name)
-  }
-
   // @Query(() => User)
   // async demonstrateComplexQuery (): Promise<User | null> {
   //   return await this.usersService.demonstrateComplexQuery()
