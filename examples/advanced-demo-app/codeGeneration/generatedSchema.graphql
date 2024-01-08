@@ -667,7 +667,6 @@ type Query {
     """Specify to sort results."""
     sorting: [UserSort!]! = []
   ): UserConnection!
-  userByIndex(tenanId: String!, name: String!): User!
   demonstrateComplexQuery: UsersInfo!
   demonstrateTransactionBlock: [User!]!
   demonstrateTransactionFlow: [User!]!

@@ -13,7 +13,6 @@ module.exports.tenant = fs.readFileSync(path.join(__dirname, 'tenant.graphql'), 
 module.exports.tenants = fs.readFileSync(path.join(__dirname, 'tenants.graphql'), 'utf8');
 module.exports.user = fs.readFileSync(path.join(__dirname, 'user.graphql'), 'utf8');
 module.exports.users = fs.readFileSync(path.join(__dirname, 'users.graphql'), 'utf8');
-module.exports.userByIndex = fs.readFileSync(path.join(__dirname, 'userByIndex.graphql'), 'utf8');
 module.exports.demonstrateComplexQuery = fs.readFileSync(path.join(__dirname, 'demonstrateComplexQuery.graphql'), 'utf8');
 module.exports.demonstrateTransactionBlock = fs.readFileSync(path.join(__dirname, 'demonstrateTransactionBlock.graphql'), 'utf8');
 module.exports.demonstrateTransactionFlow = fs.readFileSync(path.join(__dirname, 'demonstrateTransactionFlow.graphql'), 'utf8');

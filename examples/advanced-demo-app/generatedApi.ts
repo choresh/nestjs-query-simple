@@ -460,7 +460,6 @@ export type Query = {
   tenantBillings: TenantBillingConnection;
   tenants: TenantConnection;
   user: User;
-  userByIndex: User;
   users: UserConnection;
 };
 
@@ -527,12 +526,6 @@ export type QueryTenantsArgs = {
 
 export type QueryUserArgs = {
   id: Scalars['ID']['input'];
-};
-
-
-export type QueryUserByIndexArgs = {
-  name: Scalars['String']['input'];
-  tenanId: Scalars['String']['input'];
 };
 
 
@@ -2010,23 +2003,6 @@ export type UserQueryVariables = Exact<{
 
 
 export type UserQuery = { __typename?: 'Query', user: { __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tasks: { __typename?: 'UserTasksConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'Task', id: string, name: string, userId: string, user: { __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } }, details: { __typename?: 'TaskDetails', id: string, title: string, description: string }, comments?: Array<{ __typename?: 'TaskComment', id: string, text: string }> | null, taskSprintJunctions: { __typename?: 'TaskTaskSprintJunctionsConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'TaskSprintJunction', id: string, taskId: string, sprintId: string }> } }> } } };
-
-export type UserByIndexQueryVariables = Exact<{
-  paging: OffsetPaging;
-  filter: TaskSprintJunctionFilter;
-  sorting: Array<TaskSprintJunctionSort> | TaskSprintJunctionSort;
-  paging1: OffsetPaging;
-  filter1: TaskFilter;
-  sorting1: Array<TaskSort> | TaskSort;
-  paging2: OffsetPaging;
-  filter2: UserFilter;
-  sorting2: Array<UserSort> | UserSort;
-  tenanId: Scalars['String']['input'];
-  name: Scalars['String']['input'];
-}>;
-
-
-export type UserByIndexQuery = { __typename?: 'Query', userByIndex: { __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tasks: { __typename?: 'UserTasksConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'Task', id: string, name: string, userId: string, user: { __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } }, details: { __typename?: 'TaskDetails', id: string, title: string, description: string }, comments?: Array<{ __typename?: 'TaskComment', id: string, text: string }> | null, taskSprintJunctions: { __typename?: 'TaskTaskSprintJunctionsConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'TaskSprintJunction', id: string, taskId: string, sprintId: string }> } }> }, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null, users: { __typename?: 'TenantUsersConnection', pageInfo: { __typename?: 'OffsetPageInfo', hasNextPage?: boolean | null, hasPreviousPage?: boolean | null }, nodes: Array<{ __typename?: 'User', id: string, name: string, tenantId: string, gender: Gender, age: number, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } }> }, tenantBilling?: { __typename?: 'TenantBilling', id: string, taxNumber: string, phoneNumber: string, tenantId: string, tenant: { __typename?: 'Tenant', id: string, name: string, tenantBillingId?: string | null } } | null } } };
 
 export type UsersQueryVariables = Exact<{
   paging: OffsetPaging;
@@ -4722,94 +4698,6 @@ export const UserDocument = gql`
   }
 }
     `;
-export const UserByIndexDocument = gql`
-    query userByIndex($paging: OffsetPaging!, $filter: TaskSprintJunctionFilter!, $sorting: [TaskSprintJunctionSort!]!, $paging1: OffsetPaging!, $filter1: TaskFilter!, $sorting1: [TaskSort!]!, $paging2: OffsetPaging!, $filter2: UserFilter!, $sorting2: [UserSort!]!, $tenanId: String!, $name: String!) {
-  userByIndex(tenanId: $tenanId, name: $name) {
-    id
-    name
-    tasks(paging: $paging1, filter: $filter1, sorting: $sorting1) {
-      pageInfo {
-        hasNextPage
-        hasPreviousPage
-      }
-      nodes {
-        id
-        name
-        userId
-        user {
-          id
-          name
-          tenantId
-          tenant {
-            id
-            name
-            tenantBillingId
-          }
-          gender
-          age
-        }
-        details {
-          id
-          title
-          description
-        }
-        comments {
-          id
-          text
-        }
-        taskSprintJunctions(paging: $paging, filter: $filter, sorting: $sorting) {
-          pageInfo {
-            hasNextPage
-            hasPreviousPage
-          }
-          nodes {
-            id
-            taskId
-            sprintId
-          }
-        }
-      }
-    }
-    tenantId
-    tenant {
-      id
-      name
-      users(paging: $paging2, filter: $filter2, sorting: $sorting2) {
-        pageInfo {
-          hasNextPage
-          hasPreviousPage
-        }
-        nodes {
-          id
-          name
-          tenantId
-          tenant {
-            id
-            name
-            tenantBillingId
-          }
-          gender
-          age
-        }
-      }
-      tenantBilling {
-        id
-        taxNumber
-        phoneNumber
-        tenant {
-          id
-          name
-          tenantBillingId
-        }
-        tenantId
-      }
-      tenantBillingId
-    }
-    gender
-    age
-  }
-}
-    `;
 export const UsersDocument = gql`
     query users($paging: OffsetPaging!, $filter: TaskFilter!, $sorting: [TaskSort!]!, $paging1: OffsetPaging!, $filter1: UserFilter!, $sorting1: [UserSort!]!) {
   users(paging: $paging1, filter: $filter1, sorting: $sorting1) {
@@ -5030,9 +4918,6 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     },
     user(variables: UserQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<UserQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<UserQuery>(UserDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'user', 'query', variables);
-    },
-    userByIndex(variables: UserByIndexQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<UserByIndexQuery> {
-      return withWrapper((wrappedRequestHeaders) => client.request<UserByIndexQuery>(UserByIndexDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'userByIndex', 'query', variables);
     },
     users(variables: UsersQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<UsersQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<UsersQuery>(UsersDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'users', 'query', variables);
