@@ -1,4 +1,4 @@
-# full-demo-app
+# advanced-demo-app
 
 ## Description
 Full example application, demostrate usage of npm pakage [nestjs-query-simple](https://www.npmjs.com/package/nestjs-query-simple).
