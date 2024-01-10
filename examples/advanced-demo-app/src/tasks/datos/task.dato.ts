@@ -21,7 +21,9 @@ export class TaskDato extends IdentifiableDato {
   })
     user: Ref<UserDato>
 
-  @DatoProp()
+  @DatoProp({
+    type: () => TaskDetailsDato
+  })
     details: TaskDetailsDato
 
   @DatoProp({
