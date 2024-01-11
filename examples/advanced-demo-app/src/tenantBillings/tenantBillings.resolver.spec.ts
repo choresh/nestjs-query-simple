@@ -82,7 +82,7 @@ describe('TenantBillingsResolver', () => {
     expect(resolver).toBeDefined()
   })
 
-  it('Should create a dato', async () => {
+  it('Should create a document', async () => {
     const input: TenantBillingInputDto = {
       taxNumber: 'taxNumber-1',
       phoneNumber: 'phoneNumber-1',
@@ -98,7 +98,7 @@ describe('TenantBillingsResolver', () => {
     datoId = result.id
   })
 
-  it('Should update a dato', async () => {
+  it('Should update a document', async () => {
     expect(datoId).toBeDefined()
     const update: TenantBillingUpdateDto = {
       taxNumber: 'taxNumber-2',
@@ -115,7 +115,7 @@ describe('TenantBillingsResolver', () => {
     expect(result.id === datoId).toBeTruthy()
   })
 
-  it('Should get a dato', async () => {
+  it('Should get a document', async () => {
     expect(datoId).toBeDefined()
     const args: FindOneArgsType = {
       id: datoId

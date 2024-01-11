@@ -63,7 +63,7 @@ describe('TasksResolver', () => {
   it('should be defined', () => {
     expect(resolver).toBeDefined()
   })
-  it('Should create a dato', async () => {
+  it('Should create a document', async () => {
     const input: TaskInputDto = {
       name: 'name-1',
       userId: 'userId-1',
@@ -85,7 +85,7 @@ describe('TasksResolver', () => {
     datoId = result.id
   })
 
-  it('Should update a dato', async () => {
+  it('Should update a document', async () => {
     expect(datoId).toBeDefined()
     const update: TaskUpdateDto = {
       name: 'name-2'
@@ -101,7 +101,7 @@ describe('TasksResolver', () => {
     expect(result.id === datoId).toBeTruthy()
   })
 
-  it('Should get a dato', async () => {
+  it('Should get a document', async () => {
     expect(datoId).toBeDefined()
     const args: FindOneArgsType = {
       id: datoId

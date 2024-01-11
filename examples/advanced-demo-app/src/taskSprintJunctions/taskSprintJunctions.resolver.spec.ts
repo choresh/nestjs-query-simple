@@ -64,7 +64,7 @@ describe('TaskSprintJunctionsResolver', () => {
     expect(resolver).toBeDefined()
   })
 
-  it('Should create a dato', async () => {
+  it('Should create a document', async () => {
     const input: TaskSprintJunctionInputDto = {
       taskId: 'taskId-1',
       sprintId: 'sprintId-1'
@@ -79,7 +79,7 @@ describe('TaskSprintJunctionsResolver', () => {
     datoId = result.id
   })
 
-  it('Should update a dato', async () => {
+  it('Should update a document', async () => {
     expect(datoId).toBeDefined()
     const update: TaskSprintJunctionUpdateDto = {
       taskId: 'taskId-2'
@@ -95,7 +95,7 @@ describe('TaskSprintJunctionsResolver', () => {
     expect(result.id === datoId).toBeTruthy()
   })
 
-  it('Should get a dato', async () => {
+  it('Should get a document', async () => {
     expect(datoId).toBeDefined()
     const args: FindOneArgsType = {
       id: datoId

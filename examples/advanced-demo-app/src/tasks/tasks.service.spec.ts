@@ -53,7 +53,7 @@ describe('TasksService', () => {
     expect(service).toBeDefined()
   })
 
-  it('Should create a dato', async () => {
+  it('Should create a document', async () => {
     const input: TaskInputDto = {
       name: 'name-1',
       userId: 'userId-1',
@@ -70,7 +70,7 @@ describe('TasksService', () => {
     datoId = result.id
   })
 
-  it('Should update a dato', async () => {
+  it('Should update a document', async () => {
     expect(datoId).toBeDefined()
     const update: TaskUpdateDto = {
       name: 'name-2'
@@ -80,7 +80,7 @@ describe('TasksService', () => {
     expect(result.id === datoId).toBeTruthy()
   })
 
-  it('Should get a dato', async () => {
+  it('Should get a document', async () => {
     expect(datoId).toBeDefined()
     const result = await service.getById(datoId)
     expect(result.id).toBeDefined()

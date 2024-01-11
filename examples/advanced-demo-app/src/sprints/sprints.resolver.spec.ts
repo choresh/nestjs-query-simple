@@ -64,7 +64,7 @@ describe('SprintsResolver', () => {
     expect(resolver).toBeDefined()
   })
 
-  it('Should create a dato', async () => {
+  it('Should create a document', async () => {
     const input: SprintInputDto = {
       name: 'name-1'
     }
@@ -78,7 +78,7 @@ describe('SprintsResolver', () => {
     datoId = result.id
   })
 
-  it('Should update a dato', async () => {
+  it('Should update a document', async () => {
     expect(datoId).toBeDefined()
     const update: SprintUpdateDto = {
       name: 'name-2'
@@ -94,7 +94,7 @@ describe('SprintsResolver', () => {
     expect(result.id === datoId).toBeTruthy()
   })
 
-  it('Should get a dato', async () => {
+  it('Should get a document', async () => {
     expect(datoId).toBeDefined()
     const args: FindOneArgsType = {
       id: datoId

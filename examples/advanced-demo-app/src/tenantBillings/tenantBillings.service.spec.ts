@@ -71,7 +71,7 @@ describe('TenantBillingsService', () => {
     expect(service).toBeDefined()
   })
 
-  it('Should create a dato', async () => {
+  it('Should create a document', async () => {
     const input: TenantBillingInputDto = {
       taxNumber: 'taxNumber-1',
       phoneNumber: 'phoneNumber-1',
@@ -82,7 +82,7 @@ describe('TenantBillingsService', () => {
     datoId = result.id
   })
 
-  it('Should update a dato', async () => {
+  it('Should update a document', async () => {
     expect(datoId).toBeDefined()
     const update: TenantBillingUpdateDto = {
       taxNumber: 'taxNumber-2',
@@ -93,7 +93,7 @@ describe('TenantBillingsService', () => {
     expect(result.id === datoId).toBeTruthy()
   })
 
-  it('Should get a dato', async () => {
+  it('Should get a document', async () => {
     expect(datoId).toBeDefined()
     const result = await service.getById(datoId)
     expect(result.id).toBeDefined()

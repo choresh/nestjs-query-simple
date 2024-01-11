@@ -53,7 +53,7 @@ describe('TenantsService', () => {
     expect(service).toBeDefined()
   })
 
-  it('Should create a dato', async () => {
+  it('Should create a document', async () => {
     const input: TenantInputDto = {
       name: 'name-1'
     }
@@ -62,7 +62,7 @@ describe('TenantsService', () => {
     datoId = result.id
   })
 
-  it('Should update a dato', async () => {
+  it('Should update a document', async () => {
     expect(datoId).toBeDefined()
     const update: TenantUpdateDto = {
       name: 'name-2'
@@ -72,7 +72,7 @@ describe('TenantsService', () => {
     expect(result.id === datoId).toBeTruthy()
   })
 
-  it('Should get a dato', async () => {
+  it('Should get a document', async () => {
     expect(datoId).toBeDefined()
     const result = await service.getById(datoId)
     expect(result.id).toBeDefined()
