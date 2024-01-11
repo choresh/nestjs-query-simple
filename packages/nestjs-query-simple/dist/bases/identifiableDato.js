@@ -16,6 +16,7 @@ const nestjs_query_graphql_1 = require("@ptc-org/nestjs-query-graphql");
 const graphql_1 = require("@nestjs/graphql");
 let IdentifiableDato = class IdentifiableDato {
 };
+exports.IdentifiableDato = IdentifiableDato;
 __decorate([
     (0, datoProp_1.DatoProp)({ primaryKey: true, propScope: 'internal' }),
     __metadata("design:type", mongoose_1.Types.ObjectId)
@@ -24,9 +25,8 @@ __decorate([
     (0, datoProp_1.DatoProp)({ primaryKey: true, propScope: 'external' }),
     __metadata("design:type", String)
 ], IdentifiableDato.prototype, "id", void 0);
-IdentifiableDato = __decorate([
+exports.IdentifiableDato = IdentifiableDato = __decorate([
     (0, graphql_1.ObjectType)(),
     (0, nestjs_query_graphql_1.KeySet)(['id'])
 ], IdentifiableDato);
-exports.IdentifiableDato = IdentifiableDato;
 //# sourceMappingURL=identifiableDato.js.map
