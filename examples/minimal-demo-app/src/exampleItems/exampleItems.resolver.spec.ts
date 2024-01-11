@@ -18,7 +18,7 @@ describe('ExampleItemsResolver', () => {
 
   beforeAll(async () => {
     mongoDb = await MongoMemoryServer.create()
-    const uri = mongoDb.getUri()
+    const uri: string = mongoDb.getUri()
     mongoConnection = (await connect(uri)).connection
 
     const module = await Test.createTestingModule({

@@ -10,7 +10,7 @@ export class TaskInputDto {
   @DtoProp()
     userId!: string
 
-  @DtoProp({type: () => TaskDetailsInputDto})
+  @DtoProp({ type: () => TaskDetailsInputDto })
     details!: TaskDetailsInputDto
 
   @DtoProp({ type: () => TaskCommentInputDto })

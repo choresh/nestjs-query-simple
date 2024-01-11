@@ -72,47 +72,6 @@ export class UsersService extends ServiceBase<UserDato> {
     return usersInfo
   }
 
-  // async demonstrateComplexQuery (): Promise<User | null> {
-  //   const result = await this._model
-  //     .aggregate([
-  //       {
-  //         $lookup: {
-  //           from: 'tasks',
-  //           localField: '_id',
-  //           foreignField: 'userId',
-  //           as: 'tasks'
-  //         }
-  //       }/*,
-  //       {
-  //         $addFields: {
-  //           numTasks: { $size: '$tasks' }
-  //         }
-  //       }/*,
-  //       {
-  //         $sort: {
-  //           numTasks: -1
-  //         }
-  //       },
-  //       {
-  //         $limit: 100
-  //       },
-  //       {
-  //         $project: {
-  //           _id: 1,
-  //           name: 1,
-  //           numTasks: 1
-  //         }
-  //       } */
-  //     ]).exec()
-
-  //   if (result.length > 1) {
-  //     throw new Error('Internal error')
-  //   }
-  //   return (result.length === 1)
-  //     ? result[0] as User
-  //     : null
-  // }
-
   async demonstrateTransactionBlock (): Promise<UserDato[]> {
     await this.model.db
       .transaction(async (session) => {

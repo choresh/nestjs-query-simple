@@ -1,4 +1,4 @@
-import { Resolver, Query, Args } from '@nestjs/graphql'
+import { Resolver, Query } from '@nestjs/graphql'
 import { UsersInfo, UsersService } from './users.service'
 import { UserInputDto, UserUpdateDto } from './dtos/user.dto'
 import { CRUDResolver } from '@ptc-org/nestjs-query-graphql'
@@ -11,11 +11,6 @@ export class UsersResolver extends CRUDResolver(UserDato, { CreateDTOClass: User
   ) {
     super(_service)
   }
-
-  // @Query(() => User)
-  // async demonstrateComplexQuery (): Promise<User | null> {
-  //   return await this.usersService.demonstrateComplexQuery()
-  // }
 
   @Query(() => UsersInfo)
   async demonstrateComplexQuery (): Promise<UsersInfo> {
