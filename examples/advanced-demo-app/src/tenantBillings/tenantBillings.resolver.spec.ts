@@ -42,14 +42,14 @@ describe('TenantBillingsResolver', () => {
         AppHelper.forRoot('mongodb://localhost', console),
         ResourceHelper.forFeature({
           dtos: [{ DTOClass: TenantBillingDato }],
-          entities: [TenantBillingDato]
+          datos: [TenantBillingDato]
         })
       ]
     }).compile()
 
     resolver = module.get<TenantBillingsResolver>(TenantBillingsResolver)
 
-    // Create 'Tenant' dato, to be related (one-to-one) to/from the tested 'TenantBillingDato' entities.
+    // Create 'Tenant' dato, to be related (one-to-one) to/from the tested 'TenantBilling' dato.
     const tenantDatoInput = {
       name: 'tenant-1'
     }

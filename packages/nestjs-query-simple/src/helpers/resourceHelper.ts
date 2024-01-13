@@ -6,19 +6,15 @@ import { type TypegooseClass } from '@ptc-org/nestjs-query-typegoose/src/typegoo
 
 /**
  * Options for configuring a DTO module.
- * @interface DTOModuleOpts
+ * @interface DtoModuleOpts
  * @template DTO - The DTO class.
  */
-interface DTOModuleOpts<DTO> {
+export interface DtoModuleOpts<DTO> {
   /**
    * The DTO class.
    * @type {Class<DTO>}
    */
   DTOClass: Class<DTO>
-
-  // You can add other options here if needed.
-  // CreateDTOClass?: Class<DTO>;
-  // UpdateDTOClass?: Class<DTO>;
 }
 
 /**
@@ -27,16 +23,16 @@ interface DTOModuleOpts<DTO> {
  */
 export interface ModuleOpts {
   /**
-   * Array of DTO module options.
-   * @type {Array<DTOModuleOpts<unknown>>}
+   * Array of DTO classes.
+   * @type {Array<DtoModuleOpts<unknown>>}
    */
-  dtos: Array<DTOModuleOpts<unknown>>
+  dtos: Array<DtoModuleOpts<unknown>>
 
   /**
-   * Array of entities (Typegoose classes).
+   * Array of DATO classes.
    * @type {TypegooseClass[]}
    */
-  entities: TypegooseClass[]
+  datos: TypegooseClass[]
 }
 
 /**
@@ -52,7 +48,7 @@ export class ResourceHelper {
    */
   static forFeature (opts: ModuleOpts): DynamicModule {
     return NestjsQueryGraphQLModule.forFeature({
-      imports: [NestjsQueryTypegooseModule.forFeature(opts.entities)],
+      imports: [NestjsQueryTypegooseModule.forFeature(opts.datos)],
       dtos: opts.dtos
     })
   }

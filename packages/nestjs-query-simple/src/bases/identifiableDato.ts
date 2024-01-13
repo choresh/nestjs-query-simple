@@ -7,14 +7,13 @@ import { ObjectType } from '@nestjs/graphql'
 /**
  * Represents a document returned from Typegoose fetch methods in services.
  * Contains fetched data along with Typegoose methods (e.g., 'save()').
- * Usually used to represent fetched entities, not DTOs.
  */
 export type DatoDoc<Dato> = Document<unknown, any, Dato> &
 Dato &
 Required<{ _id: Types.ObjectId }>
 
 /**
- * Base class for identifiable entities.
+ * Base class for identifiable DATO.
  */
 
 @ObjectType()

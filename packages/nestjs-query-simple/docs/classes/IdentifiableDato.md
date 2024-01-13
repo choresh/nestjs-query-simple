@@ -2,7 +2,7 @@
 
 # Class: IdentifiableDato
 
-Base class for identifiable entities.
+Base class for identifiable DATO.
 
 ## Implements
 
@@ -43,7 +43,7 @@ Base.\_id
 
 #### Defined in
 
-[src/bases/identifiableDato.ts:27](https://github.com/choresh/nestjs-query-simple/blob/4cd7de2/packages/nestjs-query-simple/src/bases/identifiableDato.ts#L27)
+[src/bases/identifiableDato.ts:26](https://github.com/choresh/nestjs-query-simple/blob/5137169/packages/nestjs-query-simple/src/bases/identifiableDato.ts#L26)
 
 ___
 
@@ -59,4 +59,4 @@ Base.id
 
 #### Defined in
 
-[src/bases/identifiableDato.ts:33](https://github.com/choresh/nestjs-query-simple/blob/4cd7de2/packages/nestjs-query-simple/src/bases/identifiableDato.ts#L33)
+[src/bases/identifiableDato.ts:32](https://github.com/choresh/nestjs-query-simple/blob/5137169/packages/nestjs-query-simple/src/bases/identifiableDato.ts#L32)

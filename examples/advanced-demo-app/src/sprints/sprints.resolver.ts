@@ -5,7 +5,7 @@ import { CRUDResolver } from '@ptc-org/nestjs-query-graphql'
 import { SprintDato } from './datos/sprint.dato'
 
 @Resolver(() => SprintDato)
-export class SprintsResolver extends CRUDResolver(SprintDato, { CreateDTOClass: SprintInputDto, UpdateDTOClass: SprintUpdateDto }) {
+export class SprintsResolver extends CRUDResolver(SprintDato, { CreateDtoClass: SprintInputDto, UpdateDtoClass: SprintUpdateDto }) {
   constructor (
     readonly _service: SprintsService
   ) {

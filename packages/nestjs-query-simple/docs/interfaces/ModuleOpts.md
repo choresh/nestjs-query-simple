@@ -9,29 +9,29 @@ Options for configuring a resource module.
 
 ### Properties
 
+- [datos](ModuleOpts.md#datos)
 - [dtos](ModuleOpts.md#dtos)
-- [entities](ModuleOpts.md#entities)
 
 ## Properties
 
-### dtos
+### datos
 
-• **dtos**: `DTOModuleOpts`\<`unknown`\>[]
+• **datos**: `TypegooseClass`[]
 
-Array of DTO module options.
+Array of DATO classes.
 
 #### Defined in
 
-[src/helpers/resourceHelper.ts:33](https://github.com/choresh/nestjs-query-simple/blob/4cd7de2/packages/nestjs-query-simple/src/helpers/resourceHelper.ts#L33)
+[src/helpers/resourceHelper.ts:35](https://github.com/choresh/nestjs-query-simple/blob/5137169/packages/nestjs-query-simple/src/helpers/resourceHelper.ts#L35)
 
 ___
 
-### entities
+### dtos
 
-• **entities**: `TypegooseClass`[]
+• **dtos**: [`DtoModuleOpts`](DtoModuleOpts.md)\<`unknown`\>[]
 
-Array of entities (Typegoose classes).
+Array of DTO classes.
 
 #### Defined in
 
-[src/helpers/resourceHelper.ts:39](https://github.com/choresh/nestjs-query-simple/blob/4cd7de2/packages/nestjs-query-simple/src/helpers/resourceHelper.ts#L39)
+[src/helpers/resourceHelper.ts:29](https://github.com/choresh/nestjs-query-simple/blob/5137169/packages/nestjs-query-simple/src/helpers/resourceHelper.ts#L29)

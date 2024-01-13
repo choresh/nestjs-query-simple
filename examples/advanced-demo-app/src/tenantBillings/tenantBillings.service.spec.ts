@@ -38,7 +38,7 @@ describe('TenantBillingsService', () => {
 
     service = module.get<TenantBillingsService>(TenantBillingsService)
 
-    // Create 'Tenant' dato, to be related (one-to-one) to/from the tested 'TenantBillingDato' entities.
+    // Create 'Tenant' dato, to be related (one-to-one) to/from the tested 'TenantBilling' dato.
     const tenantDatoInput = {
       name: 'tenant-1'
     }

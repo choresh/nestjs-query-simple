@@ -22,7 +22,7 @@ export interface Logger {
 /**
  * Options for configuring the AppHelper module.
  */
-interface Options {
+export interface Options {
   typegooseOptions: TypegooseModuleAsyncOptions
   logger?: Logger
 }

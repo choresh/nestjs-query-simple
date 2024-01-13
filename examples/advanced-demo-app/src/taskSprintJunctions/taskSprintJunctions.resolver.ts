@@ -5,7 +5,7 @@ import { CRUDResolver } from '@ptc-org/nestjs-query-graphql'
 import { TaskSprintJunctionDato } from './datos/taskSprintJunction.dato'
 
 @Resolver(() => TaskSprintJunctionDato)
-export class TaskSprintJunctionsResolver extends CRUDResolver(TaskSprintJunctionDato, { CreateDTOClass: TaskSprintJunctionInputDto, UpdateDTOClass: TaskSprintJunctionUpdateDto }) {
+export class TaskSprintJunctionsResolver extends CRUDResolver(TaskSprintJunctionDato, { CreateDtoClass: TaskSprintJunctionInputDto, UpdateDtoClass: TaskSprintJunctionUpdateDto }) {
   constructor (
     readonly _service: TaskSprintJunctionsService
   ) {

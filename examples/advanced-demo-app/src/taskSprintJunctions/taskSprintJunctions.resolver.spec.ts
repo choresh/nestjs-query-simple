@@ -34,7 +34,7 @@ describe('TaskSprintJunctionsResolver', () => {
         AppHelper.forRoot('mongodb://localhost', console),
         ResourceHelper.forFeature({
           dtos: [{ DTOClass: TaskSprintJunctionDato }],
-          entities: [TaskSprintJunctionDato]
+          datos: [TaskSprintJunctionDato]
         })
       ]
     }).compile()

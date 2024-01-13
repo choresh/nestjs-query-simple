@@ -34,7 +34,7 @@ describe('TasksResolver', () => {
         AppHelper.forRoot('mongodb://localhost', console),
         ResourceHelper.forFeature({
           dtos: [{ DTOClass: TaskDato }],
-          entities: [TaskDato]
+          datos: [TaskDato]
         })
       ]
     }).compile()

@@ -9,7 +9,7 @@ import { ResourceHelper } from 'nestjs-query-simple'
   imports: [
     ResourceHelper.forFeature({
       dtos: [{ DTOClass: ExampleItemDato }],
-      entities: [ExampleItemDato]
+      datos: [ExampleItemDato]
     })
   ],
   exports: [ExampleItemsService]

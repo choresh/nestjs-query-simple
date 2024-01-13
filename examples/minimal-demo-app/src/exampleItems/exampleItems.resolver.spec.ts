@@ -34,7 +34,7 @@ describe('ExampleItemsResolver', () => {
         AppHelper.forRoot('mongodb://localhost', console),
         ResourceHelper.forFeature({
           dtos: [{ DTOClass: ExampleItemDato }],
-          entities: [ExampleItemDato]
+          datos: [ExampleItemDato]
         })
       ]
     }).compile()

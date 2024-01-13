@@ -34,7 +34,7 @@ describe('UsersResolver', () => {
         AppHelper.forRoot('mongodb://localhost', console),
         ResourceHelper.forFeature({
           dtos: [{ DTOClass: UserDato }],
-          entities: [UserDato]
+          datos: [UserDato]
         })
       ]
     }).compile()

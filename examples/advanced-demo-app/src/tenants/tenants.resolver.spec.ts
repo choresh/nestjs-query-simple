@@ -34,7 +34,7 @@ describe('TenantsResolver', () => {
         AppHelper.forRoot('mongodb://localhost', console),
         ResourceHelper.forFeature({
           dtos: [{ DTOClass: TenantDato }],
-          entities: [TenantDato]
+          datos: [TenantDato]
         })
       ]
     }).compile()

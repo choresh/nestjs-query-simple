@@ -1,11 +1,11 @@
 /**
- * Possible types of relations between entities.
+ * Possible types of relations between DATOs.
  * @typedef {'oneToMany' | 'manyToOne' | 'manyToOne'} RelationType
  */
 export type RelationType = 'oneToMany' | 'manyToOne' | 'oneToOne'
 
 /**
- * Metadata for a single relation between entities.
+ * Metadata for a single relation between DATOs.
  * @interface RelationMetadata
  */
 export interface RelationMetadata {
@@ -34,7 +34,7 @@ export interface RelationMetadata {
 }
 
 /**
- * Metadata for multiple relations between entities.
+ * Metadata for multiple relations between DATOs.
  * @typedef {RelationMetadata[]} RelationsMetadata
  */
 export type RelationsMetadata = [RelationMetadata]

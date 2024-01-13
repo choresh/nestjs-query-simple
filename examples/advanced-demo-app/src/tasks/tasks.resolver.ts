@@ -5,7 +5,7 @@ import { TasksService } from './tasks.service'
 import { TaskDato } from './datos/task.dato'
 
 @Resolver(() => TaskDato)
-export class TasksResolver extends CRUDResolver(TaskDato, { CreateDTOClass: TaskInputDto, UpdateDTOClass: TaskUpdateDto }) {
+export class TasksResolver extends CRUDResolver(TaskDato, { CreateDtoClass: TaskInputDto, UpdateDtoClass: TaskUpdateDto }) {
   constructor (
     readonly _service: TasksService
   ) {

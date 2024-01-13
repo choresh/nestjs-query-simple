@@ -10,7 +10,7 @@ import { TenantsModule } from '../tenants/tenants.module'
   imports: [
     ResourceHelper.forFeature({
       dtos: [{ DTOClass: TenantBillingDato }],
-      entities: [TenantBillingDato]
+      datos: [TenantBillingDato]
     }),
     TenantsModule
   ]
