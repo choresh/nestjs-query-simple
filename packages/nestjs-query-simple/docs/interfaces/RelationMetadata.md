@@ -24,7 +24,7 @@ Specifies if 'one-to-one' relation property can be nullable in the GraphQL schem
 
 #### Defined in
 
-[src/decorators/infra/relationsMetadata.ts:33](https://github.com/choresh/nestjs-query-simple/blob/e803793/packages/nestjs-query-simple/src/decorators/infra/relationsMetadata.ts#L33)
+[src/decorators/infra/relationsMetadata.ts:33](https://github.com/choresh/nestjs-query-simple/blob/d4bd01f/packages/nestjs-query-simple/src/decorators/infra/relationsMetadata.ts#L33)
 
 ___
 
@@ -36,7 +36,7 @@ The property name of the relation.
 
 #### Defined in
 
-[src/decorators/infra/relationsMetadata.ts:22](https://github.com/choresh/nestjs-query-simple/blob/e803793/packages/nestjs-query-simple/src/decorators/infra/relationsMetadata.ts#L22)
+[src/decorators/infra/relationsMetadata.ts:22](https://github.com/choresh/nestjs-query-simple/blob/d4bd01f/packages/nestjs-query-simple/src/decorators/infra/relationsMetadata.ts#L22)
 
 ___
 
@@ -48,7 +48,7 @@ The type of relation.
 
 #### Defined in
 
-[src/decorators/infra/relationsMetadata.ts:28](https://github.com/choresh/nestjs-query-simple/blob/e803793/packages/nestjs-query-simple/src/decorators/infra/relationsMetadata.ts#L28)
+[src/decorators/infra/relationsMetadata.ts:28](https://github.com/choresh/nestjs-query-simple/blob/d4bd01f/packages/nestjs-query-simple/src/decorators/infra/relationsMetadata.ts#L28)
 
 ___
 
@@ -70,4 +70,4 @@ Returns the type of the related dato.
 
 #### Defined in
 
-[src/decorators/infra/relationsMetadata.ts:16](https://github.com/choresh/nestjs-query-simple/blob/e803793/packages/nestjs-query-simple/src/decorators/infra/relationsMetadata.ts#L16)
+[src/decorators/infra/relationsMetadata.ts:16](https://github.com/choresh/nestjs-query-simple/blob/d4bd01f/packages/nestjs-query-simple/src/decorators/infra/relationsMetadata.ts#L16)

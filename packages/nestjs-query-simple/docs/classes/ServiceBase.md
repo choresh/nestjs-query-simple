@@ -79,7 +79,7 @@ TypegooseQueryService\&lt;Dato\&gt;.constructor
 
 #### Defined in
 
-[src/bases/serviceBase.ts:10](https://github.com/choresh/nestjs-query-simple/blob/e803793/packages/nestjs-query-simple/src/bases/serviceBase.ts#L10)
+[src/bases/serviceBase.ts:10](https://github.com/choresh/nestjs-query-simple/blob/d4bd01f/packages/nestjs-query-simple/src/bases/serviceBase.ts#L10)
 
 ## Properties
 
@@ -117,7 +117,7 @@ ___
 
 #### Defined in
 
-[src/bases/serviceBase.ts:10](https://github.com/choresh/nestjs-query-simple/blob/e803793/packages/nestjs-query-simple/src/bases/serviceBase.ts#L10)
+[src/bases/serviceBase.ts:10](https://github.com/choresh/nestjs-query-simple/blob/d4bd01f/packages/nestjs-query-simple/src/bases/serviceBase.ts#L10)
 
 ## Methods
 

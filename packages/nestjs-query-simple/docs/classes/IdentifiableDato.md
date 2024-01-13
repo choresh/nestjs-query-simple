@@ -43,7 +43,7 @@ Base.\_id
 
 #### Defined in
 
-[src/bases/identifiableDato.ts:26](https://github.com/choresh/nestjs-query-simple/blob/e803793/packages/nestjs-query-simple/src/bases/identifiableDato.ts#L26)
+[src/bases/identifiableDato.ts:26](https://github.com/choresh/nestjs-query-simple/blob/d4bd01f/packages/nestjs-query-simple/src/bases/identifiableDato.ts#L26)
 
 ___
 
@@ -59,4 +59,4 @@ Base.id
 
 #### Defined in
 
-[src/bases/identifiableDato.ts:32](https://github.com/choresh/nestjs-query-simple/blob/e803793/packages/nestjs-query-simple/src/bases/identifiableDato.ts#L32)
+[src/bases/identifiableDato.ts:32](https://github.com/choresh/nestjs-query-simple/blob/d4bd01f/packages/nestjs-query-simple/src/bases/identifiableDato.ts#L32)

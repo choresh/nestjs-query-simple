@@ -1,7 +1,6 @@
 import { type DynamicModule } from '@nestjs/common'
 import { NestjsQueryGraphQLModule } from '@ptc-org/nestjs-query-graphql'
 import { NestjsQueryTypegooseModule } from '@ptc-org/nestjs-query-typegoose'
-import { type Class } from '@ptc-org/nestjs-query-core'
 import { type TypegooseClass } from '@ptc-org/nestjs-query-typegoose/src/typegoose-interface.helpers'
 
 /**
@@ -9,12 +8,6 @@ import { type TypegooseClass } from '@ptc-org/nestjs-query-typegoose/src/typegoo
  * @interface ModuleOpts
  */
 export interface ModuleOpts {
-  /**
-   * Array of DTO classes.
-   * @type {Array<Class<unknown>>}
-   */
-  dtos: Array<Class<unknown>>
-
   /**
    * Array of DATO classes.
    * @type {TypegooseClass[]}
@@ -36,9 +29,9 @@ export class ResourceHelper {
   static forFeature (opts: ModuleOpts): DynamicModule {
     return NestjsQueryGraphQLModule.forFeature({
       imports: [NestjsQueryTypegooseModule.forFeature(opts.datos)],
-      dtos: opts.dtos.map(curr => {
+      dtos: opts.datos.map(currTypegooseClass => {
         return {
-          DTOClass: curr
+          DTOClass: currTypegooseClass
         }
       })
     })

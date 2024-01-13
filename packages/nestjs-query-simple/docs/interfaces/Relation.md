@@ -40,4 +40,4 @@ The reference type for the relation.
 
 #### Defined in
 
-[src/decorators/datoProp.ts:41](https://github.com/choresh/nestjs-query-simple/blob/e803793/packages/nestjs-query-simple/src/decorators/datoProp.ts#L41)
+[src/decorators/datoProp.ts:41](https://github.com/choresh/nestjs-query-simple/blob/d4bd01f/packages/nestjs-query-simple/src/decorators/datoProp.ts#L41)

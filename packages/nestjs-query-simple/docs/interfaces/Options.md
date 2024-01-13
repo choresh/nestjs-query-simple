@@ -19,7 +19,7 @@ Options for configuring the AppHelper module.
 
 #### Defined in
 
-[src/helpers/appHelper.ts:27](https://github.com/choresh/nestjs-query-simple/blob/e803793/packages/nestjs-query-simple/src/helpers/appHelper.ts#L27)
+[src/helpers/appHelper.ts:27](https://github.com/choresh/nestjs-query-simple/blob/d4bd01f/packages/nestjs-query-simple/src/helpers/appHelper.ts#L27)
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 #### Defined in
 
-[src/helpers/appHelper.ts:26](https://github.com/choresh/nestjs-query-simple/blob/e803793/packages/nestjs-query-simple/src/helpers/appHelper.ts#L26)
+[src/helpers/appHelper.ts:26](https://github.com/choresh/nestjs-query-simple/blob/d4bd01f/packages/nestjs-query-simple/src/helpers/appHelper.ts#L26)
