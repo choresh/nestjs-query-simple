@@ -48,7 +48,7 @@ A DynamicModule representing the configured TypegooseModule.
 
 #### Defined in
 
-[src/helpers/appHelper.ts:50](https://github.com/choresh/nestjs-query-simple/blob/5137169/packages/nestjs-query-simple/src/helpers/appHelper.ts#L50)
+[src/helpers/appHelper.ts:50](https://github.com/choresh/nestjs-query-simple/blob/e803793/packages/nestjs-query-simple/src/helpers/appHelper.ts#L50)
 
 ___
 
@@ -72,4 +72,4 @@ A DynamicModule representing the configured TypegooseModule.
 
 #### Defined in
 
-[src/helpers/appHelper.ts:62](https://github.com/choresh/nestjs-query-simple/blob/5137169/packages/nestjs-query-simple/src/helpers/appHelper.ts#L62)
+[src/helpers/appHelper.ts:62](https://github.com/choresh/nestjs-query-simple/blob/e803793/packages/nestjs-query-simple/src/helpers/appHelper.ts#L62)

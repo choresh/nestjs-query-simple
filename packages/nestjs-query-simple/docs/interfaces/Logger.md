@@ -18,4 +18,4 @@ Represents a logger object with an 'info' method.
 
 #### Defined in
 
-[src/helpers/appHelper.ts:19](https://github.com/choresh/nestjs-query-simple/blob/5137169/packages/nestjs-query-simple/src/helpers/appHelper.ts#L19)
+[src/helpers/appHelper.ts:19](https://github.com/choresh/nestjs-query-simple/blob/e803793/packages/nestjs-query-simple/src/helpers/appHelper.ts#L19)

@@ -22,16 +22,16 @@ Array of DATO classes.
 
 #### Defined in
 
-[src/helpers/resourceHelper.ts:35](https://github.com/choresh/nestjs-query-simple/blob/5137169/packages/nestjs-query-simple/src/helpers/resourceHelper.ts#L35)
+[src/helpers/resourceHelper.ts:22](https://github.com/choresh/nestjs-query-simple/blob/e803793/packages/nestjs-query-simple/src/helpers/resourceHelper.ts#L22)
 
 ___
 
 ### dtos
 
-• **dtos**: [`DtoModuleOpts`](DtoModuleOpts.md)\<`unknown`\>[]
+• **dtos**: `Class`\<`unknown`\>[]
 
 Array of DTO classes.
 
 #### Defined in
 
-[src/helpers/resourceHelper.ts:29](https://github.com/choresh/nestjs-query-simple/blob/5137169/packages/nestjs-query-simple/src/helpers/resourceHelper.ts#L29)
+[src/helpers/resourceHelper.ts:16](https://github.com/choresh/nestjs-query-simple/blob/e803793/packages/nestjs-query-simple/src/helpers/resourceHelper.ts#L16)

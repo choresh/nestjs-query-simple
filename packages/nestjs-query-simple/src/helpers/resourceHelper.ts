@@ -11,9 +11,9 @@ import { type TypegooseClass } from '@ptc-org/nestjs-query-typegoose/src/typegoo
 export interface ModuleOpts {
   /**
    * Array of DTO classes.
-   * @type {Class<unknown>[]}
+   * @type {Array<Class<unknown>>}
    */
-  dtos: Class<unknown>[]
+  dtos: Array<Class<unknown>>
 
   /**
    * Array of DATO classes.
