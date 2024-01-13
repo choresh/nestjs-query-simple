@@ -7,7 +7,11 @@ class ResourceHelper {
     static forFeature(opts) {
         return nestjs_query_graphql_1.NestjsQueryGraphQLModule.forFeature({
             imports: [nestjs_query_typegoose_1.NestjsQueryTypegooseModule.forFeature(opts.datos)],
-            dtos: opts.dtos
+            dtos: opts.dtos.map(curr => {
+                return {
+                    DTOClass: curr
+                };
+            })
         });
     }
 }
