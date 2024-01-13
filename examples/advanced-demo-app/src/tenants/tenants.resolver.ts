@@ -5,7 +5,7 @@ import { CRUDResolver } from '@ptc-org/nestjs-query-graphql'
 import { TenantDato } from './datos/tenant.dato'
 
 @Resolver(() => TenantDato)
-export class TenantsResolver extends CRUDResolver(TenantDato, { CreateDtoClass: TenantInputDto, UpdateDtoClass: TenantUpdateDto }) {
+export class TenantsResolver extends CRUDResolver(TenantDato, { CreateDTOClass: TenantInputDto, UpdateDTOClass: TenantUpdateDto }) {
   constructor (
     readonly _service: TenantsService
   ) {
