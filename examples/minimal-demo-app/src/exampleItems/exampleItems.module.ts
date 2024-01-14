@@ -8,7 +8,6 @@ import { ResourceHelper } from 'nestjs-query-simple'
   providers: [ExampleItemsResolver, ExampleItemsService],
   imports: [
     ResourceHelper.forFeature({
-      dtos: [{ DTOClass: ExampleItemDato }],
       datos: [ExampleItemDato]
     })
   ],

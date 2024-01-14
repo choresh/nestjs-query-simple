@@ -9,7 +9,6 @@ import { TenantsModule } from '../tenants/tenants.module'
   providers: [TenantBillingsResolver, TenantBillingsService],
   imports: [
     ResourceHelper.forFeature({
-      dtos: [{ DTOClass: TenantBillingDato }],
       datos: [TenantBillingDato]
     }),
     TenantsModule
