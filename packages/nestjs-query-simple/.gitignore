@@ -9,3 +9,6 @@ coverage
 
 # Files of local MongoDb
 data
+
+# Generate code docs
+codeDocs
