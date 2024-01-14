@@ -25,7 +25,7 @@
   "scripts": {
     "build": "nest build",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
-    "generate-doc": "npx typedoc --plugin typedoc-plugin-markdown src/index.ts"
+    "generate-doc": "npx typedoc --plugin typedoc-plugin-markdown --out codeDocs src/index.ts"
   },
   "devDependencies": {
     "eslint": "^8.56.0",
