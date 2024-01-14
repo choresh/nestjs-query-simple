@@ -1,6 +1,6 @@
 {
   "name": "nestjs-query-simple",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "A thin layer built on top of 'NestJS-Query', enables easy definition of MongoDB/GraphQL Entities and DTOs within NestJS apps.",
   "author": "Raanan Choresh <raanan34@gmail.com>",
   "private": false,
