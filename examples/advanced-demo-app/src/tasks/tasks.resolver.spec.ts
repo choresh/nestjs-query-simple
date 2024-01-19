@@ -33,7 +33,6 @@ describe('TasksResolver', () => {
       imports: [
         AppHelper.forRoot('mongodb://localhost', console),
         ResourceHelper.forFeature({
-          dtos: [{ DTOClass: TaskDato }],
           datos: [TaskDato]
         })
       ]

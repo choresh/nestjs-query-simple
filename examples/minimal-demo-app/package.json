@@ -19,6 +19,7 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "devDependencies": {
+    "@nestjs/cli": "^10.3.0",
     "ts-jest": "^29.1.1",
     "@nestjs/testing": "^10.3.0",
     "@types/jest": "^29.5.11",
@@ -44,6 +45,6 @@
     "testEnvironment": "node"
   },
   "dependencies": {
-    "nestjs-query-simple": "2.0.3"
+    "nestjs-query-simple": "2.0.4"
   }
 }

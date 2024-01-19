@@ -33,7 +33,6 @@ describe('UsersResolver', () => {
       imports: [
         AppHelper.forRoot('mongodb://localhost', console),
         ResourceHelper.forFeature({
-          dtos: [{ DTOClass: UserDato }],
           datos: [UserDato]
         })
       ]

@@ -33,7 +33,6 @@ describe('SprintsResolver', () => {
       imports: [
         AppHelper.forRoot('mongodb://localhost', console),
         ResourceHelper.forFeature({
-          dtos: [{ DTOClass: SprintDato }],
           datos: [SprintDato]
         })
       ]

@@ -33,7 +33,6 @@ describe('ExampleItemsResolver', () => {
       imports: [
         AppHelper.forRoot('mongodb://localhost', console),
         ResourceHelper.forFeature({
-          dtos: [{ DTOClass: ExampleItemDato }],
           datos: [ExampleItemDato]
         })
       ]

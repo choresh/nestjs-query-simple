@@ -41,7 +41,6 @@ describe('TenantBillingsResolver', () => {
       imports: [
         AppHelper.forRoot('mongodb://localhost', console),
         ResourceHelper.forFeature({
-          dtos: [{ DTOClass: TenantBillingDato }],
           datos: [TenantBillingDato]
         })
       ]
