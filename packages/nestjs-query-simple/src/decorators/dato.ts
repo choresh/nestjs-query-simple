@@ -24,7 +24,9 @@ export interface DatoOptions {
    */
   collection?: string
   /**
-   * Indicates if this dato is for output only in GraphQL.
+   * Indicates if this dato is for 'output only', meaning of 'output only':
+   * * The data is calculated (not simple reflection of MongoDB data).
+   * * The data exposed as GraphQL response (not appear in GraphQL request).
    */
   outputOnly?: boolean
 }

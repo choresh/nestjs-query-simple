@@ -28,6 +28,8 @@ const PRIMARY_KEYS_TYPE = ID
 
 /**
  * Possible scopes for a property.
+ * * extrnal: the property exposed only at GraphQL (but not exists at MongoDB).
+ * * internal: the property exists only at MongoDB (but not exposed at GraphQL).
  */
 export type PropScope = 'external' | 'internal'
 
