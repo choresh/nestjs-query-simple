@@ -18,5 +18,4 @@ __exportStar(require("./dto"), exports);
 __exportStar(require("./dtoProp"), exports);
 __exportStar(require("./dato"), exports);
 __exportStar(require("./datoProp"), exports);
-__exportStar(require("./infra"), exports);
 //# sourceMappingURL=index.js.map

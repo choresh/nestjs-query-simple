@@ -13,7 +13,7 @@ import {
   type PropOptionsForString,
   type VirtualOptions
 } from '@typegoose/typegoose/lib/types'
-import { type RelationMetadata, type RelationType } from '.'
+import { type RelationMetadata, type RelationType } from './infra'
 
 type TypegooseOptions =
   | BasePropOptions

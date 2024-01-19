@@ -9,7 +9,7 @@ import {
   QueryOptions
 } from '@ptc-org/nestjs-query-graphql'
 import { InputType, ObjectType } from '@nestjs/graphql'
-import { type RelationMetadata } from '.'
+import { type RelationMetadata } from './infra'
 
 /**
  * Options for the `Dato` decorator.
