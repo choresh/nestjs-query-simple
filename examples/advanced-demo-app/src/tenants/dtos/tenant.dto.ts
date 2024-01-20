@@ -8,12 +8,16 @@ export class TenantInputDto {
 
 @UpdateDto('Tenant')
 export class TenantUpdateDto {
-  @DtoProp({ nullable: true })
+  @DtoProp({
+    nullable: true
+  })
     name?: string
 }
 
 @UpdateDto('TenantRelation')
 export class TenantRelationDto {
-  @DtoProp({ nullable: true })
+  @DtoProp({
+    nullable: true
+  })
     tenantBillingId?: string
 }

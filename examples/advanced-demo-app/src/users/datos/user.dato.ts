@@ -16,9 +16,6 @@ export class UserDato extends IdentifiableDato {
   @DatoProp()
     name: string
 
-  // @DatoProp()
-  //   department: string
-
   @DatoProp({
     oneToMany: {
       foreignField: 'userId',

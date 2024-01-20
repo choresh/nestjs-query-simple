@@ -2,7 +2,7 @@ import { InputType } from '@nestjs/graphql'
 
 /**
  * Decorator that marks a class as a GraphQL input DTO type.
- * @param {string} name - The name of the DTO.
+ * @param {string} name - The dto name suffix, as exposed by GraphQL (will be preceded by 'Input' prefix).
  * @returns {ClassDecorator} - The decorator function.
  */
 export function InputDto (name: string): ClassDecorator {
@@ -13,7 +13,7 @@ export function InputDto (name: string): ClassDecorator {
 
 /**
  * Decorator that marks a class as a GraphQL update DTO type.
- * @param {string} name - The name of the DTO.
+ * @param {string} name - The dto name suffix, as exposed by GraphQL (will be preceded by 'Update' prefix).
  * @returns {ClassDecorator} - The decorator function.
  */
 export function UpdateDto (name: string): ClassDecorator {

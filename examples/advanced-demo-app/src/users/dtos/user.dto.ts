@@ -7,33 +7,41 @@ export class UserInputDto {
   @DtoProp()
     name!: string
 
-  // @DtoProp()
-  //   department: string
-
   @DtoProp()
     tenantId!: string
 
-  @DtoProp({ type: () => Gender })
+  @DtoProp({
+    type: () => Gender
+  })
     gender!: Gender
 
-  @DtoProp({ type: () => Int })
+  @DtoProp({
+    type: () => Int
+  })
     age!: number
 }
 
 @UpdateDto('User')
 export class UserUpdateDto {
-  @DtoProp({ nullable: true })
+  @DtoProp({
+    nullable: true
+  })
     name?: string
 
-  // @UpdateDtoProp({ nullable: true })
-  //   department?: string
-
-  @DtoProp({ nullable: true })
+  @DtoProp({
+    nullable: true
+  })
     tenantId?: string
 
-  @DtoProp({ nullable: true, type: () => Gender })
+  @DtoProp({
+    nullable: true,
+    type: () => Gender
+  })
     gender?: Gender
 
-  @DtoProp({ nullable: true, type: () => Int })
+  @DtoProp({
+    nullable: true,
+    type: () => Int
+  })
     age?: number
 }

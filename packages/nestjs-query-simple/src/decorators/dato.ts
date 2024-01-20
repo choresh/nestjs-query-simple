@@ -16,11 +16,11 @@ import { type RelationMetadata } from './infra'
  */
 export interface DatoOptions {
   /**
-   * The name of the dato, as exposed by GraphQL.
+   * The dato name, as exposed by GraphQL.
    */
   name: string
   /**
-   * The name of the dato's collection at MongoDB.
+   * The dato collection name at MongoDB.
    */
   collection?: string
   /**

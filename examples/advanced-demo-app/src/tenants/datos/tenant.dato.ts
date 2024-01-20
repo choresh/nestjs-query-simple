@@ -33,6 +33,8 @@ export class TenantDato extends IdentifiableDato {
   })
     tenantBilling?: Ref<TenantBillingDato>
 
-  @DatoProp({ nullable: true })
+  @DatoProp({
+    nullable: true
+  })
     tenantBillingId?: string
 }

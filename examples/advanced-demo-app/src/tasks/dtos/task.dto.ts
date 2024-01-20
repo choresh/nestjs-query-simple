@@ -10,24 +10,38 @@ export class TaskInputDto {
   @DtoProp()
     userId!: string
 
-  @DtoProp({ type: () => TaskDetailsInputDto })
+  @DtoProp({
+    type: () => TaskDetailsInputDto
+  })
     details!: TaskDetailsInputDto
 
-  @DtoProp({ type: () => TaskCommentInputDto })
+  @DtoProp({
+    type: () => TaskCommentInputDto
+  })
     comments!: [TaskCommentInputDto]
 }
 
 @UpdateDto('Task')
 export class TaskUpdateDto {
-  @DtoProp({ nullable: true })
+  @DtoProp({
+    nullable: true
+  })
     name?: string
 
-  @DtoProp({ nullable: true })
+  @DtoProp({
+    nullable: true
+  })
     userId?: string
 
-  @DtoProp({ nullable: true, type: () => TaskDetailsUpdateDto })
+  @DtoProp({
+    nullable: true,
+    type: () => TaskDetailsUpdateDto
+  })
     details?: TaskDetailsUpdateDto
 
-  @DtoProp({ nullable: true, type: () => TaskCommentUpdateDto })
+  @DtoProp({
+    nullable: true,
+    type: () => TaskCommentUpdateDto
+  })
     comments?: [TaskCommentUpdateDto]
 }

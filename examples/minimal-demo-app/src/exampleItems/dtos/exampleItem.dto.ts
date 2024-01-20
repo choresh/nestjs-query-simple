@@ -8,9 +8,13 @@ export class ExampleItemInputDto {
 
 @UpdateDto('ExampleItem')
 export class ExampleItemUpdateDto {
-  @DtoProp({ nullable: true })
+  @DtoProp({
+    nullable: true
+  })
     exampleProperty1?: string
 
-  @DtoProp({ nullable: true })
+  @DtoProp({
+    nullable: true
+  })
     exampleProperty2?: string
 }

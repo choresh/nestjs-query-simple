@@ -8,6 +8,8 @@ export class SprintInputDto {
 
 @UpdateDto('Sprint')
 export class SprintUpdateDto {
-  @DtoProp({ nullable: true })
+  @DtoProp({
+    nullable: true
+  })
     name?: string
 }
