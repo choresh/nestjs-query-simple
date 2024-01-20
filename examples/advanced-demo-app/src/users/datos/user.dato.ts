@@ -2,7 +2,7 @@ import { Index, type Ref } from '@typegoose/typegoose'
 import { TaskDato } from '../../tasks/datos/task.dato'
 import { Dato, DatoProp, IdentifiableDato } from 'nestjs-query-simple'
 import { TenantDato } from '../../tenants/datos/tenant.dato'
-import { registerEnumType } from '@nestjs/graphql'
+import { registerEnumType, Int } from '@nestjs/graphql'
 
 export enum Gender {
   female = 'female',
@@ -43,6 +43,8 @@ export class UserDato extends IdentifiableDato {
   })
     gender: Gender
 
-  @DatoProp()
+  @DatoProp({
+    type: () => Int
+  })
     age: number
 }

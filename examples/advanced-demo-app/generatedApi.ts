@@ -188,6 +188,26 @@ export type IdFilterComparison = {
   notLike?: InputMaybe<Scalars['ID']['input']>;
 };
 
+export type IntFieldComparison = {
+  between?: InputMaybe<IntFieldComparisonBetween>;
+  eq?: InputMaybe<Scalars['Int']['input']>;
+  gt?: InputMaybe<Scalars['Int']['input']>;
+  gte?: InputMaybe<Scalars['Int']['input']>;
+  in?: InputMaybe<Array<Scalars['Int']['input']>>;
+  is?: InputMaybe<Scalars['Boolean']['input']>;
+  isNot?: InputMaybe<Scalars['Boolean']['input']>;
+  lt?: InputMaybe<Scalars['Int']['input']>;
+  lte?: InputMaybe<Scalars['Int']['input']>;
+  neq?: InputMaybe<Scalars['Int']['input']>;
+  notBetween?: InputMaybe<IntFieldComparisonBetween>;
+  notIn?: InputMaybe<Array<Scalars['Int']['input']>>;
+};
+
+export type IntFieldComparisonBetween = {
+  lower: Scalars['Int']['input'];
+  upper: Scalars['Int']['input'];
+};
+
 export type Mutation = {
   __typename?: 'Mutation';
   createManySprints: Array<Sprint>;
@@ -406,26 +426,6 @@ export type MutationUpdateOneTenantBillingArgs = {
 
 export type MutationUpdateOneUserArgs = {
   input: UpdateOneUserInput;
-};
-
-export type NumberFieldComparison = {
-  between?: InputMaybe<NumberFieldComparisonBetween>;
-  eq?: InputMaybe<Scalars['Float']['input']>;
-  gt?: InputMaybe<Scalars['Float']['input']>;
-  gte?: InputMaybe<Scalars['Float']['input']>;
-  in?: InputMaybe<Array<Scalars['Float']['input']>>;
-  is?: InputMaybe<Scalars['Boolean']['input']>;
-  isNot?: InputMaybe<Scalars['Boolean']['input']>;
-  lt?: InputMaybe<Scalars['Float']['input']>;
-  lte?: InputMaybe<Scalars['Float']['input']>;
-  neq?: InputMaybe<Scalars['Float']['input']>;
-  notBetween?: InputMaybe<NumberFieldComparisonBetween>;
-  notIn?: InputMaybe<Array<Scalars['Float']['input']>>;
-};
-
-export type NumberFieldComparisonBetween = {
-  lower: Scalars['Float']['input'];
-  upper: Scalars['Float']['input'];
 };
 
 export type OffsetPageInfo = {
@@ -1130,7 +1130,7 @@ export type TenantFilterTenantBillingFilter = {
 };
 
 export type TenantFilterUserFilter = {
-  age?: InputMaybe<NumberFieldComparison>;
+  age?: InputMaybe<IntFieldComparison>;
   and?: InputMaybe<Array<TenantFilterUserFilter>>;
   gender?: InputMaybe<GenderFilterComparison>;
   id?: InputMaybe<IdFilterComparison>;
@@ -1273,7 +1273,7 @@ export type UpdateOneUserInput = {
 
 export type User = {
   __typename?: 'User';
-  age: Scalars['Float']['output'];
+  age: Scalars['Int']['output'];
   gender: Gender;
   id: Scalars['ID']['output'];
   name: Scalars['String']['output'];
@@ -1315,7 +1315,7 @@ export type UserDatoFilterComparison = {
 };
 
 export type UserDeleteFilter = {
-  age?: InputMaybe<NumberFieldComparison>;
+  age?: InputMaybe<IntFieldComparison>;
   and?: InputMaybe<Array<UserDeleteFilter>>;
   gender?: InputMaybe<GenderFilterComparison>;
   id?: InputMaybe<IdFilterComparison>;
@@ -1327,7 +1327,7 @@ export type UserDeleteFilter = {
 
 export type UserDeleteResponse = {
   __typename?: 'UserDeleteResponse';
-  age?: Maybe<Scalars['Float']['output']>;
+  age?: Maybe<Scalars['Int']['output']>;
   gender?: Maybe<Gender>;
   id?: Maybe<Scalars['ID']['output']>;
   name?: Maybe<Scalars['String']['output']>;
@@ -1337,7 +1337,7 @@ export type UserDeleteResponse = {
 };
 
 export type UserFilter = {
-  age?: InputMaybe<NumberFieldComparison>;
+  age?: InputMaybe<IntFieldComparison>;
   and?: InputMaybe<Array<UserFilter>>;
   gender?: InputMaybe<GenderFilterComparison>;
   id?: InputMaybe<IdFilterComparison>;
@@ -1367,14 +1367,14 @@ export type UserFilterTaskFilterTaskDetailsFilter = {
 };
 
 export type UserInput = {
-  age: Scalars['Float']['input'];
+  age: Scalars['Int']['input'];
   gender: Gender;
   name: Scalars['String']['input'];
   tenantId: Scalars['String']['input'];
 };
 
 export type UserNonEmbeddedInput = {
-  age: Scalars['Float']['input'];
+  age: Scalars['Int']['input'];
   gender: Gender;
   name: Scalars['String']['input'];
   tasks?: InputMaybe<Array<TaskNonEmbeddedInput>>;
@@ -1406,14 +1406,14 @@ export type UserTasksConnection = {
 };
 
 export type UserUpdate = {
-  age?: InputMaybe<Scalars['Float']['input']>;
+  age?: InputMaybe<Scalars['Int']['input']>;
   gender?: InputMaybe<Gender>;
   name?: InputMaybe<Scalars['String']['input']>;
   tenantId?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type UserUpdateFilter = {
-  age?: InputMaybe<NumberFieldComparison>;
+  age?: InputMaybe<IntFieldComparison>;
   and?: InputMaybe<Array<UserUpdateFilter>>;
   gender?: InputMaybe<GenderFilterComparison>;
   id?: InputMaybe<IdFilterComparison>;

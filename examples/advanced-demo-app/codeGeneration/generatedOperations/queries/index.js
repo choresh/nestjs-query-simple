@@ -3,10 +3,10 @@ const path = require('path');
 
 module.exports.sprint = fs.readFileSync(path.join(__dirname, 'sprint.graphql'), 'utf8');
 module.exports.sprints = fs.readFileSync(path.join(__dirname, 'sprints.graphql'), 'utf8');
-module.exports.taskSprintJunction = fs.readFileSync(path.join(__dirname, 'taskSprintJunction.graphql'), 'utf8');
-module.exports.taskSprintJunctions = fs.readFileSync(path.join(__dirname, 'taskSprintJunctions.graphql'), 'utf8');
 module.exports.task = fs.readFileSync(path.join(__dirname, 'task.graphql'), 'utf8');
 module.exports.tasks = fs.readFileSync(path.join(__dirname, 'tasks.graphql'), 'utf8');
+module.exports.taskSprintJunction = fs.readFileSync(path.join(__dirname, 'taskSprintJunction.graphql'), 'utf8');
+module.exports.taskSprintJunctions = fs.readFileSync(path.join(__dirname, 'taskSprintJunctions.graphql'), 'utf8');
 module.exports.tenantBilling = fs.readFileSync(path.join(__dirname, 'tenantBilling.graphql'), 'utf8');
 module.exports.tenantBillings = fs.readFileSync(path.join(__dirname, 'tenantBillings.graphql'), 'utf8');
 module.exports.tenant = fs.readFileSync(path.join(__dirname, 'tenant.graphql'), 'utf8');

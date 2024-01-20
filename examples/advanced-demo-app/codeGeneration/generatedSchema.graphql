@@ -50,7 +50,7 @@ input UserFilter {
   tenantId: StringFieldComparison
   tenant: TenantDatoFilterComparison
   gender: GenderFilterComparison
-  age: NumberFieldComparison
+  age: IntFieldComparison
   tasks: UserFilterTaskFilter
 }
 
@@ -127,24 +127,24 @@ enum Gender {
   male
 }
 
-input NumberFieldComparison {
+input IntFieldComparison {
   is: Boolean
   isNot: Boolean
-  eq: Float
-  neq: Float
-  gt: Float
-  gte: Float
-  lt: Float
-  lte: Float
-  in: [Float!]
-  notIn: [Float!]
-  between: NumberFieldComparisonBetween
-  notBetween: NumberFieldComparisonBetween
+  eq: Int
+  neq: Int
+  gt: Int
+  gte: Int
+  lt: Int
+  lte: Int
+  in: [Int!]
+  notIn: [Int!]
+  between: IntFieldComparisonBetween
+  notBetween: IntFieldComparisonBetween
 }
 
-input NumberFieldComparisonBetween {
-  lower: Float!
-  upper: Float!
+input IntFieldComparisonBetween {
+  lower: Int!
+  upper: Int!
 }
 
 input UserFilterTaskFilter {
@@ -225,7 +225,7 @@ type User {
   tenantId: String!
   tenant: Tenant!
   gender: Gender!
-  age: Float!
+  age: Int!
 }
 
 input TaskFilter {
@@ -411,22 +411,6 @@ type SprintTaskSprintJunctionsConnection {
   nodes: [TaskSprintJunction!]!
 }
 
-type TaskSprintJunctionDeleteResponse {
-  id: ID
-  taskId: String
-  sprintId: String
-  task: Task
-  sprint: Sprint
-}
-
-type TaskSprintJunctionConnection {
-  """Paging information"""
-  pageInfo: OffsetPageInfo!
-
-  """Array of nodes."""
-  nodes: [TaskSprintJunction!]!
-}
-
 type TaskDeleteResponse {
   id: ID
   name: String
@@ -446,6 +430,22 @@ type TaskConnection {
 }
 
 type TaskTaskSprintJunctionsConnection {
+  """Paging information"""
+  pageInfo: OffsetPageInfo!
+
+  """Array of nodes."""
+  nodes: [TaskSprintJunction!]!
+}
+
+type TaskSprintJunctionDeleteResponse {
+  id: ID
+  taskId: String
+  sprintId: String
+  task: Task
+  sprint: Sprint
+}
+
+type TaskSprintJunctionConnection {
   """Paging information"""
   pageInfo: OffsetPageInfo!
 
@@ -510,7 +510,7 @@ type UserDeleteResponse {
   tenantId: String
   tenant: Tenant
   gender: Gender
-  age: Float
+  age: Int
 }
 
 type UserConnection {
@@ -558,7 +558,7 @@ input UserNonEmbeddedInput {
   tenantId: String!
   tenant: TenantNonEmbeddedInput!
   gender: Gender!
-  age: Float!
+  age: Int!
 }
 
 input TaskNonEmbeddedInput {
@@ -597,20 +597,6 @@ type Query {
     """Specify to sort results."""
     sorting: [SprintSort!]! = []
   ): SprintConnection!
-  taskSprintJunction(
-    """The id of the record to find."""
-    id: ID!
-  ): TaskSprintJunction!
-  taskSprintJunctions(
-    """Limit or page results."""
-    paging: OffsetPaging! = {limit: 10}
-
-    """Specify to filter the records returned."""
-    filter: TaskSprintJunctionFilter! = {}
-
-    """Specify to sort results."""
-    sorting: [TaskSprintJunctionSort!]! = []
-  ): TaskSprintJunctionConnection!
   task(
     """The id of the record to find."""
     id: ID!
@@ -625,6 +611,20 @@ type Query {
     """Specify to sort results."""
     sorting: [TaskSort!]! = []
   ): TaskConnection!
+  taskSprintJunction(
+    """The id of the record to find."""
+    id: ID!
+  ): TaskSprintJunction!
+  taskSprintJunctions(
+    """Limit or page results."""
+    paging: OffsetPaging! = {limit: 10}
+
+    """Specify to filter the records returned."""
+    filter: TaskSprintJunctionFilter! = {}
+
+    """Specify to sort results."""
+    sorting: [TaskSprintJunctionSort!]! = []
+  ): TaskSprintJunctionConnection!
   tenantBilling(
     """The id of the record to find."""
     id: ID!
@@ -753,7 +753,7 @@ input TenantFilterUserFilter {
   tenantId: StringFieldComparison
   tenant: TenantDatoFilterComparison
   gender: GenderFilterComparison
-  age: NumberFieldComparison
+  age: IntFieldComparison
 }
 
 input TenantSort {
@@ -774,18 +774,18 @@ type Mutation {
   updateManySprints(input: UpdateManySprintsInput!): UpdateManyResponse!
   deleteOneSprint(input: DeleteOneSprintInput!): SprintDeleteResponse!
   deleteManySprints(input: DeleteManySprintsInput!): DeleteManyResponse!
-  createOneTaskSprintJunction(input: CreateOneTaskSprintJunctionInput!): TaskSprintJunction!
-  createManyTaskSprintJunctions(input: CreateManyTaskSprintJunctionsInput!): [TaskSprintJunction!]!
-  updateOneTaskSprintJunction(input: UpdateOneTaskSprintJunctionInput!): TaskSprintJunction!
-  updateManyTaskSprintJunctions(input: UpdateManyTaskSprintJunctionsInput!): UpdateManyResponse!
-  deleteOneTaskSprintJunction(input: DeleteOneTaskSprintJunctionInput!): TaskSprintJunctionDeleteResponse!
-  deleteManyTaskSprintJunctions(input: DeleteManyTaskSprintJunctionsInput!): DeleteManyResponse!
   createOneTask(input: CreateOneTaskInput!): Task!
   createManyTasks(input: CreateManyTasksInput!): [Task!]!
   updateOneTask(input: UpdateOneTaskInput!): Task!
   updateManyTasks(input: UpdateManyTasksInput!): UpdateManyResponse!
   deleteOneTask(input: DeleteOneTaskInput!): TaskDeleteResponse!
   deleteManyTasks(input: DeleteManyTasksInput!): DeleteManyResponse!
+  createOneTaskSprintJunction(input: CreateOneTaskSprintJunctionInput!): TaskSprintJunction!
+  createManyTaskSprintJunctions(input: CreateManyTaskSprintJunctionsInput!): [TaskSprintJunction!]!
+  updateOneTaskSprintJunction(input: UpdateOneTaskSprintJunctionInput!): TaskSprintJunction!
+  updateManyTaskSprintJunctions(input: UpdateManyTaskSprintJunctionsInput!): UpdateManyResponse!
+  deleteOneTaskSprintJunction(input: DeleteOneTaskSprintJunctionInput!): TaskSprintJunctionDeleteResponse!
+  deleteManyTaskSprintJunctions(input: DeleteManyTaskSprintJunctionsInput!): DeleteManyResponse!
   createOneTenantBilling(input: CreateOneTenantBillingInput!): TenantBilling!
   createManyTenantBillings(input: CreateManyTenantBillingsInput!): [TenantBilling!]!
   updateOneTenantBilling(input: UpdateOneTenantBillingInput!): TenantBilling!
@@ -862,72 +862,6 @@ input SprintDeleteFilter {
   or: [SprintDeleteFilter!]
   id: IDFilterComparison
   name: StringFieldComparison
-}
-
-input CreateOneTaskSprintJunctionInput {
-  """The record to create"""
-  taskSprintJunction: TaskSprintJunctionInput!
-}
-
-input TaskSprintJunctionInput {
-  taskId: String!
-  sprintId: String!
-}
-
-input CreateManyTaskSprintJunctionsInput {
-  """Array of records to create"""
-  taskSprintJunctions: [TaskSprintJunctionInput!]!
-}
-
-input UpdateOneTaskSprintJunctionInput {
-  """The id of the record to update"""
-  id: ID!
-
-  """The update to apply."""
-  update: TaskSprintJunctionUpdate!
-}
-
-input TaskSprintJunctionUpdate {
-  taskId: String
-  sprintId: String!
-}
-
-input UpdateManyTaskSprintJunctionsInput {
-  """Filter used to find fields to update"""
-  filter: TaskSprintJunctionUpdateFilter!
-
-  """The update to apply to all records found using the filter"""
-  update: TaskSprintJunctionUpdate!
-}
-
-input TaskSprintJunctionUpdateFilter {
-  and: [TaskSprintJunctionUpdateFilter!]
-  or: [TaskSprintJunctionUpdateFilter!]
-  id: IDFilterComparison
-  taskId: StringFieldComparison
-  sprintId: StringFieldComparison
-  task: TaskDatoFilterComparison
-  sprint: SprintDatoFilterComparison
-}
-
-input DeleteOneTaskSprintJunctionInput {
-  """The id of the record to delete."""
-  id: ID!
-}
-
-input DeleteManyTaskSprintJunctionsInput {
-  """Filter to find records to delete"""
-  filter: TaskSprintJunctionDeleteFilter!
-}
-
-input TaskSprintJunctionDeleteFilter {
-  and: [TaskSprintJunctionDeleteFilter!]
-  or: [TaskSprintJunctionDeleteFilter!]
-  id: IDFilterComparison
-  taskId: StringFieldComparison
-  sprintId: StringFieldComparison
-  task: TaskDatoFilterComparison
-  sprint: SprintDatoFilterComparison
 }
 
 input CreateOneTaskInput {
@@ -1032,6 +966,72 @@ input TaskDeleteFilterTaskDetailsDeleteFilter {
   id: IDFilterComparison
   title: StringFieldComparison
   description: StringFieldComparison
+}
+
+input CreateOneTaskSprintJunctionInput {
+  """The record to create"""
+  taskSprintJunction: TaskSprintJunctionInput!
+}
+
+input TaskSprintJunctionInput {
+  taskId: String!
+  sprintId: String!
+}
+
+input CreateManyTaskSprintJunctionsInput {
+  """Array of records to create"""
+  taskSprintJunctions: [TaskSprintJunctionInput!]!
+}
+
+input UpdateOneTaskSprintJunctionInput {
+  """The id of the record to update"""
+  id: ID!
+
+  """The update to apply."""
+  update: TaskSprintJunctionUpdate!
+}
+
+input TaskSprintJunctionUpdate {
+  taskId: String
+  sprintId: String!
+}
+
+input UpdateManyTaskSprintJunctionsInput {
+  """Filter used to find fields to update"""
+  filter: TaskSprintJunctionUpdateFilter!
+
+  """The update to apply to all records found using the filter"""
+  update: TaskSprintJunctionUpdate!
+}
+
+input TaskSprintJunctionUpdateFilter {
+  and: [TaskSprintJunctionUpdateFilter!]
+  or: [TaskSprintJunctionUpdateFilter!]
+  id: IDFilterComparison
+  taskId: StringFieldComparison
+  sprintId: StringFieldComparison
+  task: TaskDatoFilterComparison
+  sprint: SprintDatoFilterComparison
+}
+
+input DeleteOneTaskSprintJunctionInput {
+  """The id of the record to delete."""
+  id: ID!
+}
+
+input DeleteManyTaskSprintJunctionsInput {
+  """Filter to find records to delete"""
+  filter: TaskSprintJunctionDeleteFilter!
+}
+
+input TaskSprintJunctionDeleteFilter {
+  and: [TaskSprintJunctionDeleteFilter!]
+  or: [TaskSprintJunctionDeleteFilter!]
+  id: IDFilterComparison
+  taskId: StringFieldComparison
+  sprintId: StringFieldComparison
+  task: TaskDatoFilterComparison
+  sprint: SprintDatoFilterComparison
 }
 
 input CreateOneTenantBillingInput {
@@ -1168,7 +1168,7 @@ input UserInput {
   name: String!
   tenantId: String!
   gender: Gender!
-  age: Float!
+  age: Int!
 }
 
 input CreateManyUsersInput {
@@ -1188,7 +1188,7 @@ input UserUpdate {
   name: String
   tenantId: String
   gender: Gender
-  age: Float
+  age: Int
 }
 
 input UpdateManyUsersInput {
@@ -1207,7 +1207,7 @@ input UserUpdateFilter {
   tenantId: StringFieldComparison
   tenant: TenantDatoFilterComparison
   gender: GenderFilterComparison
-  age: NumberFieldComparison
+  age: IntFieldComparison
 }
 
 input DeleteOneUserInput {
@@ -1228,5 +1228,5 @@ input UserDeleteFilter {
   tenantId: StringFieldComparison
   tenant: TenantDatoFilterComparison
   gender: GenderFilterComparison
-  age: NumberFieldComparison
+  age: IntFieldComparison
 }
