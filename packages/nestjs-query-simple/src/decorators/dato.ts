@@ -16,17 +16,17 @@ import { type RelationMetadata } from './infra'
  */
 export interface DatoOptions {
   /**
-   * The name of the dato.
+   * The name of the dato, as exposed by GraphQL.
    */
   name: string
   /**
-   * The collection name for MongoDB.
+   * The name of the dato's collection at MongoDB.
    */
   collection?: string
   /**
-   * Indicates if this dato is for 'output only', meaning of 'output only':
-   * * The data is calculated (not simple reflection of MongoDB data).
-   * * The data exposed as GraphQL response (not appear in GraphQL request).
+   * Indicates whether this dato contains 'outputOnly' data.
+   * * An 'outputOnly' dato is one that includes 'virtual' data.
+   * * The virtual data is not a simple reflection of the MongoDB document; rather, it results from calculations (e.g. aggregation).
    */
   outputOnly?: boolean
 }

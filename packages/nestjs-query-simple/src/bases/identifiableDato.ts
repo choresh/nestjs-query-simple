@@ -6,7 +6,7 @@ import { ObjectType } from '@nestjs/graphql'
 
 /**
  * Represents a document returned from Typegoose fetch methods in services.
- * Contains fetched data along with Typegoose methods (e.g., 'save()').
+ * Contains fetched data along with Typegoose methods (e.g. 'save()').
  */
 export type DatoDoc<Dato> = Document<unknown, any, Dato> &
 Dato &

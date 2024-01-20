@@ -38,7 +38,7 @@ export type PropScope = 'external' | 'internal'
  */
 export interface Relation {
   /**
-   * The reference type for the relation.
+   * The type of the referred dato, specifies how it exists in MongoDB and how it is exposed in GraphQL.
    */
   refType: () => Type<any>
 }
@@ -99,10 +99,12 @@ export interface DatoPropOptions {
   oneToOne?: OneToOne
   /**
    * The scope of the property.
+   * * extrnal: the property exposed only at GraphQL (but not exists at MongoDB).
+   * * internal: the property exists only at MongoDB (but not exposed at GraphQL).
    */
   propScope?: PropScope
   /**
-   * The type of the property.
+   * The type of the property (how it exists at MongoDB, and how it exposed at GraphQL).
    */
   type?: () => any
 }
