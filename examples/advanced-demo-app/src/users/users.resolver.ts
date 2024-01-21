@@ -12,6 +12,8 @@ export class UsersResolver extends CRUDResolver(UserDato, { CreateDTOClass: User
     super(_service)
   }
 
+  // #region Custom methods.
+
   @Query(() => UsersInfo)
   async demonstrateComplexQuery (): Promise<UsersInfo> {
     return await this._service.demonstrateComplexQuery()
@@ -31,4 +33,6 @@ export class UsersResolver extends CRUDResolver(UserDato, { CreateDTOClass: User
   async demonstrateTransactionLock (): Promise<UserDato[]> {
     return await this._service.demonstrateTransactionLock()
   }
+
+  // #endregion // Custom methods.
 }

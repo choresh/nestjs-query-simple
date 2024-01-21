@@ -19,6 +19,8 @@ export class TenantBillingsService extends ServiceBase<TenantBillingDato> {
     super(model)
   }
 
+  // #region Overrides of base class methods.
+
   async createOne (
     item: DeepPartial<TenantBillingDato>
   ): Promise<DocumentType<TenantBillingDato>> {
@@ -50,6 +52,8 @@ export class TenantBillingsService extends ServiceBase<TenantBillingDato> {
   async deleteMany (filter: Filter<TenantBillingDato>): Promise<DeleteManyResponse> {
     throw new Error('Method not implemented.')
   }
+
+  // #endregion // Override of base class methods.
 
   private async _updateRelatedTenant (
     id: string,

@@ -32,6 +32,8 @@ export class UsersService extends ServiceBase<UserDato> {
     super(model)
   }
 
+  // #region Custom methods.
+
   async demonstrateComplexQuery (): Promise<UsersInfo> {
     const result = await this.model.aggregate([
       {
@@ -182,4 +184,6 @@ export class UsersService extends ServiceBase<UserDato> {
     console.log(`All transactions ended, length: ${length3}`)
     return await this.model.find().exec()
   }
+
+  // #endregion // Custom methods.
 }
