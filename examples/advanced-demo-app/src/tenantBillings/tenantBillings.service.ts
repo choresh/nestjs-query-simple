@@ -57,14 +57,14 @@ export class TenantBillingsService extends ServiceBase<TenantBillingDato> {
 
   private async _updateRelatedTenant (
     id: string,
-    footageId: string,
+    tenantId: string,
     deleted: boolean
   ): Promise<void> {
     const tenantRelationDto: TenantRelationDto = {
       tenantBillingId: deleted ? undefined : id
     }
     await this._tenantsService.updateOne(
-      footageId,
+      tenantId,
       tenantRelationDto
     )
   }
