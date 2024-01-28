@@ -1,17 +1,22 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateDto = exports.InputDto = void 0;
+exports.Dto = void 0;
 const graphql_1 = require("@nestjs/graphql");
-function InputDto(name) {
+function Dto(name, type) {
+    let suffix;
+    switch (type) {
+        case 'input':
+            suffix = 'Input';
+            break;
+        case 'update':
+            suffix = 'Update';
+            break;
+        default:
+            throw new Error('Invalid dto type');
+    }
     return (target) => {
-        (0, graphql_1.InputType)(name + 'Input')(target);
+        (0, graphql_1.InputType)(name + suffix)(target);
     };
 }
-exports.InputDto = InputDto;
-function UpdateDto(name) {
-    return (target) => {
-        (0, graphql_1.InputType)(name + 'Update')(target);
-    };
-}
-exports.UpdateDto = UpdateDto;
+exports.Dto = Dto;
 //# sourceMappingURL=dto.js.map

@@ -1,2 +1,2 @@
-export declare function InputDto(name: string): ClassDecorator;
-export declare function UpdateDto(name: string): ClassDecorator;
+export type DtoType = 'input' | 'update';
+export declare function Dto(name: string, type: DtoType): ClassDecorator;

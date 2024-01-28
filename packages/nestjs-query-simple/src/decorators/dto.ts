@@ -1,23 +1,26 @@
 import { InputType } from '@nestjs/graphql'
 
-/**
- * Decorator that marks a class as a GraphQL input DTO type.
- * @param {string} name - The dto name, as exposed by GraphQL ('Input' suffix will be added automaticly).
- * @returns {ClassDecorator} - The decorator function.
- */
-export function InputDto (name: string): ClassDecorator {
-  return (target: any) => {
-    InputType(name + 'Input')(target) // Apply the @InputType() decorator to the class.
-  }
-}
+export type DtoType = 'input' | 'update'
 
 /**
- * Decorator that marks a class as a GraphQL update DTO type.
- * @param {string} name - The dto name, as exposed by GraphQL ('Update' suffix will be added automaticly).
+ * Decorator that marks a class as a GraphQL input/update DTO type.
+ * @param {string} name - The dto name, as exposed by GraphQL ('Input' or 'Update' suffix will be added automaticly, according the 'type' parameter).
  * @returns {ClassDecorator} - The decorator function.
  */
-export function UpdateDto (name: string): ClassDecorator {
+export function Dto (name: string, type: DtoType): ClassDecorator {
+  let suffix: string
+  switch (type) {
+    case 'input':
+      suffix = 'Input'
+      break
+    case 'update':
+      suffix = 'Update'
+      break
+    default:
+      throw new Error('Invalid dto type')
+  }
+
   return (target: any) => {
-    InputType(name + 'Update')(target) // Apply the @InputType() decorator to the class.
+    InputType(name + suffix)(target) // Apply the @InputType() decorator to the class.
   }
 }
