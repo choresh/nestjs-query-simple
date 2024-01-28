@@ -1,6 +1,6 @@
-import { InputDto, UpdateDto, DtoProp } from 'nestjs-query-simple'
+import { Dto, DtoProp } from 'nestjs-query-simple'
 
-@InputDto('TaskDetails')
+@Dto('TaskDetails', 'input')
 export class TaskDetailsInputDto {
   @DtoProp()
     title!: string
@@ -9,7 +9,7 @@ export class TaskDetailsInputDto {
     description!: string
 }
 
-@UpdateDto('TaskDetails')
+@Dto('TaskDetails', 'update')
 export class TaskDetailsUpdateDto {
   @DtoProp()
     title?: string

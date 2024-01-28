@@ -1,12 +1,12 @@
-import { InputDto, UpdateDto, DtoProp } from 'nestjs-query-simple'
+import { Dto, DtoProp } from 'nestjs-query-simple'
 
-@InputDto('ExampleItem')
+@Dto('ExampleItem', 'input')
 export class ExampleItemInputDto {
   @DtoProp()
     exampleProperty1!: string
 }
 
-@UpdateDto('ExampleItem')
+@Dto('ExampleItem', 'update')
 export class ExampleItemUpdateDto {
   @DtoProp({
     nullable: true

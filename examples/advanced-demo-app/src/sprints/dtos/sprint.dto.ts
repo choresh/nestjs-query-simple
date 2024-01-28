@@ -1,12 +1,12 @@
-import { InputDto, UpdateDto, DtoProp } from 'nestjs-query-simple'
+import { Dto, DtoProp } from 'nestjs-query-simple'
 
-@InputDto('Sprint')
+@Dto('Sprint', 'input')
 export class SprintInputDto {
   @DtoProp()
     name!: string
 }
 
-@UpdateDto('Sprint')
+@Dto('Sprint', 'update')
 export class SprintUpdateDto {
   @DtoProp({
     nullable: true

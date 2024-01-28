@@ -1,8 +1,8 @@
-import { InputDto, UpdateDto, DtoProp } from 'nestjs-query-simple'
+import { Dto, DtoProp } from 'nestjs-query-simple'
 import { Gender } from '../datos/user.dato'
 import { Int } from '@nestjs/graphql'
 
-@InputDto('User')
+@Dto('User', 'input')
 export class UserInputDto {
   @DtoProp()
     name!: string
@@ -21,7 +21,7 @@ export class UserInputDto {
     age!: number
 }
 
-@UpdateDto('User')
+@Dto('User', 'update')
 export class UserUpdateDto {
   @DtoProp({
     nullable: true

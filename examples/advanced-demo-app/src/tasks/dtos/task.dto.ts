@@ -1,8 +1,8 @@
-import { InputDto, UpdateDto, DtoProp } from 'nestjs-query-simple'
+import { Dto, DtoProp } from 'nestjs-query-simple'
 import { TaskDetailsInputDto, TaskDetailsUpdateDto } from './embeddeds/task-details.dto'
 import { TaskCommentInputDto, TaskCommentUpdateDto } from './embeddeds/task-comment.dto'
 
-@InputDto('Task')
+@Dto('Task', 'input')
 export class TaskInputDto {
   @DtoProp()
     name!: string
@@ -21,7 +21,7 @@ export class TaskInputDto {
     comments!: [TaskCommentInputDto]
 }
 
-@UpdateDto('Task')
+@Dto('Task', 'update')
 export class TaskUpdateDto {
   @DtoProp({
     nullable: true

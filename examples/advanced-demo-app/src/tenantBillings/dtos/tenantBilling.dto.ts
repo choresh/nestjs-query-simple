@@ -1,6 +1,6 @@
-import { InputDto, UpdateDto, DtoProp } from 'nestjs-query-simple'
+import { Dto, DtoProp } from 'nestjs-query-simple'
 
-@InputDto('TenantBilling')
+@Dto('TenantBilling', 'input')
 export class TenantBillingInputDto {
   @DtoProp()
     taxNumber: string
@@ -12,7 +12,7 @@ export class TenantBillingInputDto {
     tenantId: string
 }
 
-@UpdateDto('TenantBilling')
+@Dto('TenantBilling', 'update')
 export class TenantBillingUpdateDto {
   @DtoProp()
     taxNumber?: string

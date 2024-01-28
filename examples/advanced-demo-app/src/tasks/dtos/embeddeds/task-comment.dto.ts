@@ -1,12 +1,12 @@
-import { InputDto, UpdateDto, DtoProp } from 'nestjs-query-simple'
+import { Dto, DtoProp } from 'nestjs-query-simple'
 
-@InputDto('TaskComment')
+@Dto('TaskComment', 'input')
 export class TaskCommentInputDto {
   @DtoProp()
     text!: string
 }
 
-@UpdateDto('TaskComment')
+@Dto('TaskComment', 'update')
 export class TaskCommentUpdateDto {
   @DtoProp()
     text?: string

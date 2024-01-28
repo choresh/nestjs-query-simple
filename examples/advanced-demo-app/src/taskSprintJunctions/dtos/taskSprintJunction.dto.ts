@@ -1,6 +1,6 @@
-import { InputDto, UpdateDto, DtoProp } from 'nestjs-query-simple'
+import { Dto, DtoProp } from 'nestjs-query-simple'
 
-@InputDto('TaskSprintJunction')
+@Dto('TaskSprintJunction', 'input')
 export class TaskSprintJunctionInputDto {
   @DtoProp()
     taskId!: string
@@ -9,7 +9,7 @@ export class TaskSprintJunctionInputDto {
     sprintId!: string
 }
 
-@UpdateDto('TaskSprintJunction')
+@Dto('TaskSprintJunction', 'update')
 export class TaskSprintJunctionUpdateDto {
   @DtoProp({
     nullable: true
