@@ -6,16 +6,12 @@ import { TasksModule } from './tasks/tasks.module'
 import { TenantsModule } from './tenants/tenants.module'
 import { SprintsModule } from './sprints/sprints.module'
 import { TaskSprintJunctionsModule } from './taskSprintJunctions/taskSprintJunctions.module'
-import { AppHelper } from 'nestjs-query-simple'
 import { TenantBillingsModule } from './tenantBillings/tenantBillings.module'
+import { CommonModule } from 'nestjs-query-simple'
 
 @Module({
   imports: [
-    AppHelper.forRoot('mongodb://localhost', console),
-    GraphQLModule.forRoot<ApolloDriverConfig>({
-      driver: ApolloDriver,
-      autoSchemaFile: true
-    }),
+    CommonModule.forRoot('mongodb://localhost', console),
     UsersModule,
     TasksModule,
     TenantsModule,

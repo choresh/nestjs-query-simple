@@ -8,7 +8,8 @@ export interface AppAsyncOptions {
     typegooseOptions: TypegooseModuleAsyncOptions;
     logger?: Logger;
 }
-export declare class AppHelper {
+export declare class AppCommonModule {
     static forRoot(uri: string, logger?: Logger): DynamicModule;
     static forRootAsync(options: AppAsyncOptions): DynamicModule;
+    private static _setLogger;
 }

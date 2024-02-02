@@ -5,19 +5,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var CommonModule_1;
+var AppCommonModule_1;
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CommonModule = void 0;
+exports.AppCommonModule = void 0;
 const common_1 = require("@nestjs/common");
 const graphql_1 = require("@nestjs/graphql");
 const apollo_1 = require("@nestjs/apollo");
-const __1 = require("..");
-let CommonModule = CommonModule_1 = class CommonModule {
+const nestjs_typegoose_1 = require("@m8a/nestjs-typegoose");
+const mongoose_1 = require("mongoose");
+let AppCommonModule = AppCommonModule_1 = class AppCommonModule {
     static forRoot(uri, logger) {
+        if (logger !== undefined) {
+            AppCommonModule_1._setLogger(logger);
+        }
         return {
-            module: CommonModule_1,
+            module: AppCommonModule_1,
             imports: [
-                __1.AppHelper.forRoot(uri, logger),
+                nestjs_typegoose_1.TypegooseModule.forRoot(uri),
                 graphql_1.GraphQLModule.forRoot({
                     driver: apollo_1.ApolloDriver,
                     autoSchemaFile: true
@@ -26,10 +30,13 @@ let CommonModule = CommonModule_1 = class CommonModule {
         };
     }
     static forRootAsync(options) {
+        if (options.logger !== undefined) {
+            AppCommonModule_1._setLogger(options.logger);
+        }
         return {
-            module: CommonModule_1,
+            module: AppCommonModule_1,
             imports: [
-                __1.AppHelper.forRootAsync(options),
+                nestjs_typegoose_1.TypegooseModule.forRootAsync(options.typegooseOptions),
                 graphql_1.GraphQLModule.forRootAsync({
                     driver: apollo_1.ApolloDriver,
                     useFactory: () => {
@@ -41,13 +48,18 @@ let CommonModule = CommonModule_1 = class CommonModule {
             ]
         };
     }
+    static _setLogger(logger) {
+        (0, mongoose_1.set)('debug', (collection, method, query, doc) => {
+            logger.info('Mongoose log message:', JSON.stringify({ collection, method, query, doc }, null, 4));
+        });
+    }
 };
-exports.CommonModule = CommonModule;
-exports.CommonModule = CommonModule = CommonModule_1 = __decorate([
+exports.AppCommonModule = AppCommonModule;
+exports.AppCommonModule = AppCommonModule = AppCommonModule_1 = __decorate([
     (0, common_1.Module)({
         imports: [],
         controllers: [],
         providers: []
     })
-], CommonModule);
-//# sourceMappingURL=Common.module.js.map
+], AppCommonModule);
+//# sourceMappingURL=appCommon.module.js.map

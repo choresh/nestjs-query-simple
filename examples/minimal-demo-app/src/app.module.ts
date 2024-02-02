@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common'
 import { ExampleItemsModule } from './exampleItems/exampleItems.module'
-import { CommonModule } from './Common.module'
+import { CommonModule } from 'nestjs-query-simple'
 
 @Module({
   imports: [
