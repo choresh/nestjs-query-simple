@@ -3,7 +3,7 @@ import { getModelToken } from '@m8a/nestjs-typegoose'
 import { TenantBillingDato } from './datos/tenantBilling.dato'
 import { TenantBillingsResolver } from './tenantBillings.resolver'
 import { TenantBillingsService } from './tenantBillings.service'
-import { AppHelper, ResourceHelper } from 'nestjs-query-simple'
+import { AppCommonModule, ResourceHelper } from 'nestjs-query-simple'
 import { type Connection, connect } from 'mongoose'
 import { getModelForClass } from '@typegoose/typegoose'
 import { MongoMemoryServer } from 'mongodb-memory-server'
@@ -39,7 +39,7 @@ describe('TenantBillingsResolver', () => {
         }
       ],
       imports: [
-        AppHelper.forRoot('mongodb://localhost', console),
+        AppCommonModule.forRoot('mongodb://localhost', console),
         ResourceHelper.forFeature({
           datos: [TenantBillingDato]
         })

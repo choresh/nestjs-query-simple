@@ -3,7 +3,7 @@ import { getModelToken } from '@m8a/nestjs-typegoose'
 import { TenantDato } from './datos/tenant.dato'
 import { TenantsResolver } from './tenants.resolver'
 import { TenantsService } from './tenants.service'
-import { AppHelper, ResourceHelper } from 'nestjs-query-simple'
+import { AppCommonModule, ResourceHelper } from 'nestjs-query-simple'
 import { type Connection, connect } from 'mongoose'
 import { getModelForClass } from '@typegoose/typegoose'
 import { MongoMemoryServer } from 'mongodb-memory-server'
@@ -31,7 +31,7 @@ describe('TenantsResolver', () => {
         }
       ],
       imports: [
-        AppHelper.forRoot('mongodb://localhost', console),
+        AppCommonModule.forRoot('mongodb://localhost', console),
         ResourceHelper.forFeature({
           datos: [TenantDato]
         })

@@ -3,7 +3,7 @@ import { getModelToken } from '@m8a/nestjs-typegoose'
 import { TaskSprintJunctionDato } from './datos/taskSprintJunction.dato'
 import { TaskSprintJunctionsResolver } from './taskSprintJunctions.resolver'
 import { TaskSprintJunctionsService } from './taskSprintJunctions.service'
-import { AppHelper, ResourceHelper } from 'nestjs-query-simple'
+import { AppCommonModule, ResourceHelper } from 'nestjs-query-simple'
 import { MongoMemoryServer } from 'mongodb-memory-server'
 import { type Connection, connect } from 'mongoose'
 import { getModelForClass } from '@typegoose/typegoose'
@@ -31,7 +31,7 @@ describe('TaskSprintJunctionsResolver', () => {
         }
       ],
       imports: [
-        AppHelper.forRoot('mongodb://localhost', console),
+        AppCommonModule.forRoot('mongodb://localhost', console),
         ResourceHelper.forFeature({
           datos: [TaskSprintJunctionDato]
         })
