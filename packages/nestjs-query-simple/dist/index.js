@@ -17,5 +17,5 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./bases"), exports);
 __exportStar(require("./decorators"), exports);
 __exportStar(require("./helpers"), exports);
-__exportStar(require("./helpers"), exports);
+__exportStar(require("./modules"), exports);
 //# sourceMappingURL=index.js.map
