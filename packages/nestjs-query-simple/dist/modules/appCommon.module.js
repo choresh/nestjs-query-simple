@@ -13,10 +13,15 @@ const graphql_1 = require("@nestjs/graphql");
 const apollo_1 = require("@nestjs/apollo");
 const nestjs_typegoose_1 = require("@m8a/nestjs-typegoose");
 const mongoose_1 = require("mongoose");
+function setLogger(logger) {
+    (0, mongoose_1.set)('debug', (collection, method, query, doc) => {
+        logger.info('Mongoose log message:', JSON.stringify({ collection, method, query, doc }, null, 4));
+    });
+}
 let AppCommonModule = AppCommonModule_1 = class AppCommonModule {
     static forRoot(uri, logger) {
         if (logger !== undefined) {
-            AppCommonModule_1._setLogger(logger);
+            setLogger(logger);
         }
         return {
             module: AppCommonModule_1,
@@ -31,7 +36,7 @@ let AppCommonModule = AppCommonModule_1 = class AppCommonModule {
     }
     static forRootAsync(options) {
         if (options.logger !== undefined) {
-            AppCommonModule_1._setLogger(options.logger);
+            setLogger(options.logger);
         }
         return {
             module: AppCommonModule_1,
@@ -47,11 +52,6 @@ let AppCommonModule = AppCommonModule_1 = class AppCommonModule {
                 })
             ]
         };
-    }
-    static _setLogger(logger) {
-        (0, mongoose_1.set)('debug', (collection, method, query, doc) => {
-            logger.info('Mongoose log message:', JSON.stringify({ collection, method, query, doc }, null, 4));
-        });
     }
 };
 exports.AppCommonModule = AppCommonModule;

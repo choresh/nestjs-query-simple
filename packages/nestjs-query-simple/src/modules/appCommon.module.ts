@@ -29,15 +29,23 @@ export interface AppAsyncOptions {
   logger?: Logger
 }
 
+function setLogger (logger: Logger): void {
+  set('debug', (collection: string, method: string, query: any, doc: any): void => {
+    logger.info('Mongoose log message:', JSON.stringify({ collection, method, query, doc }, null, 4))
+  })
+}
+
+/**
+ * Class that contains methods to import/configure GraphQL and MongoDB modules.
+ */
 @Module({
   imports: [],
   controllers: [],
   providers: []
 })
-
 export class AppCommonModule {
   /**
-   * Creates a DynamicModule for the app with the provided options.
+   * Import/configure GraphQL and MongoDB modules.
    * @static
    * @param {string} uri - The MongoDB connection URI.
    * @param {Logger} logger - The logger object to use for logging at DB level.
@@ -45,7 +53,7 @@ export class AppCommonModule {
    */
   static forRoot (uri: string, logger?: Logger): DynamicModule {
     if (logger !== undefined) {
-      AppCommonModule._setLogger(logger)
+      setLogger(logger)
     }
     return {
       module: AppCommonModule,
@@ -60,14 +68,14 @@ export class AppCommonModule {
   }
 
   /**
-   * Creates a DynamicModule for the app with the provided options.
+   * Import/configure GraphQL and MongoDB modules.
    * @static
    * @param {AppAsyncOptions} options - The configuration options.
    * @returns {DynamicModule} The configured DynamicModule.
    */
   static forRootAsync (options: AppAsyncOptions): DynamicModule {
     if (options.logger !== undefined) {
-      AppCommonModule._setLogger(options.logger)
+      setLogger(options.logger)
     }
     return {
       module: AppCommonModule,
@@ -83,11 +91,5 @@ export class AppCommonModule {
         })
       ]
     }
-  }
-
-  private static _setLogger (logger: Logger): void {
-    set('debug', (collection: string, method: string, query: any, doc: any): void => {
-      logger.info('Mongoose log message:', JSON.stringify({ collection, method, query, doc }, null, 4))
-    })
   }
 }

@@ -11,5 +11,4 @@ export interface AppAsyncOptions {
 export declare class AppCommonModule {
     static forRoot(uri: string, logger?: Logger): DynamicModule;
     static forRootAsync(options: AppAsyncOptions): DynamicModule;
-    private static _setLogger;
 }
