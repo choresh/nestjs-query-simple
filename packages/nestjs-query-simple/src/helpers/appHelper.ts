@@ -20,9 +20,9 @@ export interface Logger {
 }
 
 /**
- * Options for configuring the AppHelper module.
+ * Options for app async configuration.
  */
-export interface Options {
+export interface AppAsyncOptions {
   typegooseOptions: TypegooseModuleAsyncOptions
   logger?: Logger
 }
@@ -56,10 +56,10 @@ export class AppHelper {
 
   /**
    * Creates a TypegooseModule forRootAsync with specified options and logger.
-   * @param options - Options for configuring the TypegooseModule.
+   * @param options - Options for app async configuration.
    * @returns A DynamicModule representing the configured TypegooseModule.
    */
-  static forRootAsync (options: Options): DynamicModule {
+  static forRootAsync (options: AppAsyncOptions): DynamicModule {
     if (options.logger !== undefined) {
       setLogger(options.logger)
     }

@@ -1,16 +1,10 @@
 import { Module } from '@nestjs/common'
-import { GraphQLModule } from '@nestjs/graphql'
-import { ApolloDriver, type ApolloDriverConfig } from '@nestjs/apollo'
 import { ExampleItemsModule } from './exampleItems/exampleItems.module'
-import { AppHelper } from 'nestjs-query-simple'
+import { CommonModule } from './Common.module'
 
 @Module({
   imports: [
-    AppHelper.forRoot('mongodb://localhost', console),
-    GraphQLModule.forRoot<ApolloDriverConfig>({
-      driver: ApolloDriver,
-      autoSchemaFile: true
-    }),
+    CommonModule.forRoot('mongodb://localhost', console),
     ExampleItemsModule
   ],
   controllers: [],

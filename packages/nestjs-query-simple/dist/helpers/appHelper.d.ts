@@ -4,11 +4,11 @@ export type LogFunction = (message: string, ...meta: any[]) => void;
 export interface Logger {
     info: LogFunction;
 }
-export interface Options {
+export interface AppAsyncOptions {
     typegooseOptions: TypegooseModuleAsyncOptions;
     logger?: Logger;
 }
 export declare class AppHelper {
     static forRoot(uri: string, logger?: Logger): DynamicModule;
-    static forRootAsync(options: Options): DynamicModule;
+    static forRootAsync(options: AppAsyncOptions): DynamicModule;
 }
