@@ -45,6 +45,6 @@
     "testEnvironment": "node"
   },
   "dependencies": {
-    "nestjs-query-simple": "5.0.2"
+    "nestjs-query-simple": "5.0.3"
   }
 }
