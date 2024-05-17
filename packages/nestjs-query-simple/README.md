@@ -12,4 +12,4 @@
 * It offers valuable helpers and base classes to streamline the creation of common NestJS components like modules and services.
 
 ## Docs
-See [Nestjs-query-simple website](https://nestjs-query-simple-website.vercel.app).
+See [Nestjs-query-simple website - intro](https://nestjs-query-simple-website.vercel.app/docs/intro).

@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
-/* eslint-disable @typescript-eslint/strict-boolean-expressions */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { Field, type ReturnTypeFunc } from '@nestjs/graphql'
 

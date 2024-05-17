@@ -1,6 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
-/* eslint-disable @typescript-eslint/strict-boolean-expressions */
-
+/* eslint-disable @typescript-eslint/no-explicit-any */ 
+ 
 import { type Type } from '@nestjs/common'
 import { Field, ID, type ReturnTypeFunc } from '@nestjs/graphql'
 import { FilterableField, IDField } from '@ptc-org/nestjs-query-graphql'

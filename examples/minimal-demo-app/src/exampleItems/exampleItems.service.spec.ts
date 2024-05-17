@@ -32,9 +32,9 @@ describe('ExampleItemsService', () => {
   })
 
   afterAll(async () => {
-    await mongoConnection.dropDatabase()
-    await mongoConnection.close()
-    await mongoDb.stop()
+    await mongoConnection?.dropDatabase()
+    await mongoConnection?.close()
+    await mongoDb?.stop()
   })
 
   beforeEach(async () => {})

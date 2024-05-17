@@ -21,11 +21,11 @@
   "devDependencies": {
     "@nestjs/cli": "^10.3.2",
     "ts-jest": "^29.1.2",
-    "@nestjs/testing": "^10.3.7",
+    "@nestjs/testing": "^10.3.8",
     "@types/jest": "^29.5.12",
     "source-map-support": "^0.5.21",
     "eslint-config-standard-with-typescript": "^43.0.1",
-    "mongodb-memory-server": "^9.1.8"
+    "mongodb-memory-server": "^9.2.0"
   },
   "jest": {
     "moduleFileExtensions": [
@@ -45,6 +45,6 @@
     "testEnvironment": "node"
   },
   "dependencies": {
-    "nestjs-query-simple": "5.0.4"
+    "nestjs-query-simple": "5.0.5"
   }
 }

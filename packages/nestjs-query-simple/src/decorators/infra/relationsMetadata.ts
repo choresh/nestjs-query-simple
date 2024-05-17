@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /**
  * Possible types of relations between DATOs.
  * @typedef {'oneToMany' | 'manyToOne' | 'manyToOne'} RelationType

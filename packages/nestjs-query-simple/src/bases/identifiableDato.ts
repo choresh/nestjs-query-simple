@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { DatoProp } from '../decorators/datoProp'
 import { type Base } from '@typegoose/typegoose/lib/defaultClasses'
 import { Types, type Document } from 'mongoose'

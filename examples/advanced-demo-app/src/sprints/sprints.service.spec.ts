@@ -32,7 +32,7 @@ describe('SprintsService', () => {
   })
 
   afterAll(async () => {
-    await mongoConnection.dropDatabase()
+    await mongoConnection?.dropDatabase()
     await mongoConnection.close()
     await mongoDb.stop()
   })

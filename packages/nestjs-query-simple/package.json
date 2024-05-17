@@ -1,6 +1,6 @@
 {
   "name": "nestjs-query-simple",
-  "version": "5.0.4",
+  "version": "5.0.5",
   "description": "A thin layer built on top of 'NestJS-Query', enables easy definition of MongoDB/GraphQL Entities and DTOs within NestJS apps.",
   "author": "Raanan Choresh <raanan34@gmail.com>",
   "private": false,
@@ -28,11 +28,14 @@
     "generate-doc": "npx typedoc --plugin typedoc-plugin-markdown --out codeDocs src/index.ts"
   },
   "devDependencies": {
+    "@eslint/js": "^9.2.0",
     "@nestjs/cli": "^10.3.2",
-    "eslint": "^8.57.0",
+    "eslint": "^9.2.0",
     "eslint-config-standard-with-typescript": "^43.0.1",
-    "typedoc": "^0.25.11",
-    "typedoc-plugin-markdown": "^3.17.1"
+    "globals": "^15.2.0",
+    "typedoc": "^0.25.13",
+    "typedoc-plugin-markdown": "^4.0.2",
+    "typescript-eslint": "^7.9.0"
   },
   "jest": {
     "moduleFileExtensions": [
@@ -53,8 +56,11 @@
   },
   "dependencies": {
     "@nestjs/apollo": "^12.1.0",
-    "@nestjs/platform-express": "^10.3.7",
-    "@ptc-org/nestjs-query-graphql": "^6.0.0",
-    "@ptc-org/nestjs-query-typegoose": "^6.0.0"
+    "@nestjs/platform-express": "^10.3.8",
+    "@ptc-org/nestjs-query-graphql": "^6.1.0",
+    "@ptc-org/nestjs-query-typegoose": "^6.1.0"
+  },
+  "overrides": {
+    "eslint": "$eslint"
   }
 }
